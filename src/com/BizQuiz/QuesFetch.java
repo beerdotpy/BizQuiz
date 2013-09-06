@@ -143,8 +143,8 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
     String question;
     String qanswer;
     int quesid;
-    
-    public Questionfetch(Context ctx) {
+       
+   public Questionfetch(Context ctx) {
     	this.context = ctx;
         pDialog= new ProgressDialog(context);
 	}
@@ -154,6 +154,7 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
 		pDialog.setTitle("Please Wait...");
 		pDialog.setMessage("Loading Question");
 		pDialog.setIndeterminate(true);
+		etanswer.setText("");
 		pDialog.show();
 	}
 	
