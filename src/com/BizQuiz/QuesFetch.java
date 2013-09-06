@@ -213,17 +213,23 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
 	    Boolean check=compareanswer(threshvalue,useranswer);
 	      
 	    if(check){
-	         	Intent intent=new Intent(this,QuesFetch.class);
+	  //       	Intent intent=new Intent(this,QuesFetch.class);
 	  	        QuizDetails.setqid(QuizDetails.getqid()+1);
 	  	        Toast.makeText(this, "Correct Answer", Toast.LENGTH_LONG).show();
 	  	        QuizDetails.set_score(QuizDetails.getscore()+1);
-	  	        startActivity(intent);
+	  	        pDialog.dismiss();
+	  	        
+	  	      new Questionfetch(QuesFetch.this).execute("Category1");
+	 // 	        startActivity(intent);
 	    }else{
 
-		          Intent intent=new Intent(this,QuesFetch.class);
+		//          Intent intent=new Intent(this,QuesFetch.class);
 		          QuizDetails.setqid(QuizDetails.getqid());
 	  	          Toast.makeText(this, "Incorrect Answer.Correct Answer is"+QuizDetails.getans(), Toast.LENGTH_LONG).show();
-	  	          startActivity(intent);
+	  	 //         startActivity(intent);
+	  	          
+	  	        new Questionfetch(QuesFetch.this).execute("Category1");
+	  	        pDialog.dismiss();
         }
 
      }
