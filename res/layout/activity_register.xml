@@ -16,7 +16,7 @@
         android:textSize="26sp" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -30,8 +30,8 @@
         android:id="@+id/edname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView2"
-        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignBaseline="@+id/score"
+        android:layout_alignBottom="@+id/score"
         android:layout_alignLeft="@+id/textView1"
         android:ems="10" />
 
@@ -39,7 +39,7 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignLeft="@+id/score"
         android:layout_below="@+id/edage"
         android:layout_marginTop="18dp"
         android:text="City"
@@ -79,7 +79,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/edcontact"
-        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignLeft="@+id/score"
         android:text="Contact"
         android:textSize="18sp" />
 

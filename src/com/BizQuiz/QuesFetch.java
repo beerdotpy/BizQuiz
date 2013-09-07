@@ -49,6 +49,8 @@ public class QuesFetch extends Activity {
 	Button sell;
 	Button buy;
 	String category;
+	TextView score;
+	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +68,7 @@ public class QuesFetch extends Activity {
        ans=(TextView) findViewById(R.id.ans);
        sell=(Button) findViewById(R.id.sell);
        buy=(Button) findViewById(R.id.buy);
+       score=(TextView) findViewById(R.id.score);
        
        qid=QuizDetails.getqid();
    	   catid=QuizDetails.getcategory();       
@@ -215,6 +218,7 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
     String question;
     String qanswer;
     int quesid;
+    
        
    public Questionfetch(Context ctx) {
     	this.context = ctx;
@@ -262,7 +266,8 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
 		
 		QuizDetails.setques(question);
 		QuizDetails.setans(qanswer);
-		tvquestion.setText(QuizDetails.getques());		
+		tvquestion.setText(QuizDetails.getques());
+		score.setText("Score:"+Integer.toString(QuizDetails.getscore()));
 		
 		pDialog.dismiss();
 	   

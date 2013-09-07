@@ -4,11 +4,15 @@ import java.sql.Date;
 import java.util.Calendar;
 import android.app.Activity;
 import android.app.AlarmManager;
+import android.app.AlertDialog;
 import android.app.PendingIntent;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.DialogInterface.OnCancelListener;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -18,12 +22,14 @@ import android.widget.Button;
 
 public class Home extends Activity {
 	
-	SharedPreferences sp; 
+	SharedPreferences sp;
+	int counter=0;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
        setContentView(R.layout.activity_home);
+       mCountDown.start();
 		
 		
 		AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);                 
@@ -60,13 +66,11 @@ public class Home extends Activity {
        Log.d("firstrun",Boolean.toString(check));
        if(check){
 
-    	   Intent register=new Intent(Home.this,Register.class);
-			startActivity(register);
+    	   counter=1;
    
        }else{
  
-			Intent categories=new Intent(Home.this,Categories.class);
-			startActivity(categories);
+			counter=2;
 
        }
 	
@@ -90,6 +94,14 @@ public class Home extends Activity {
    		case R.id.menu_about:
    			startActivity(new Intent(this, AboutUs.class));
    			return true;
+   		case R.id.menu_exit:
+   			Intent intent = new Intent(Intent.ACTION_MAIN);
+   			intent.addCategory(Intent.CATEGORY_HOME);
+   			intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+   			startActivity(intent);
+   			
+   			return true;	
+   			
    	    
    		default:
    			return super.onOptionsItemSelected(item);
@@ -97,4 +109,30 @@ public class Home extends Activity {
     
        }
 	
+	protected CountDownTimer mCountDown = new CountDownTimer(10000, 1000)
+    {
+
+        @Override
+        public void onTick(long millisUntilFinished)
+        {
+        	
+        	Log.d("Timer","time for 10sec");
+        	       	            
+        	        }
+
+        @Override
+        public void onFinish()
+        {   
+        	Log.d("Timer","3mins finish");
+        	if(counter==1){
+        		Intent register=new Intent(Home.this,Register.class);
+    			startActivity(register);
+        	}else if(counter==2)
+        	{
+        		Intent categories=new Intent(Home.this,Categories.class);
+    			startActivity(categories);
+        	}
+        	}
+        };
+
 }
