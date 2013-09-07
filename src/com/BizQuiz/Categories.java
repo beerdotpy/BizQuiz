@@ -76,7 +76,12 @@ public class Categories extends Activity {
    		case R.id.menu_register:
    		     startActivity(new Intent(this,Register.class));
    		     return true;
-   	    
+   		case R.id.menu_exit:
+   			Intent intent = new Intent(Intent.ACTION_MAIN);
+   			intent.addCategory(Intent.CATEGORY_HOME);
+   			intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+   			startActivity(intent);
+   		
    		default:
    			return super.onOptionsItemSelected(item);
    		}
