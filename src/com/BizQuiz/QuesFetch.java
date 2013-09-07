@@ -50,7 +50,7 @@ public class QuesFetch extends Activity {
 	Button buy;
 	String category;
 	TextView score;
-	
+	int threshvalue;         //currently set to 50% 
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -285,7 +285,7 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
 	    pDialog.show();
 	
 	    int length=useranswer.length();
-	    int threshvalue=length/2+1;
+	    threshvalue=length/2+1;
 	    
 	    Log.d("ThreshValue",Integer.toString(threshvalue));
 	    Boolean check=compareanswer(threshvalue,useranswer);
