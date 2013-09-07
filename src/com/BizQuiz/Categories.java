@@ -32,7 +32,7 @@ public class Categories extends Activity {
     
        cat1=(Button) findViewById(R.id.category1);
        cat1.setOnClickListener(new OnClickListener() {
-		
+	   	
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
@@ -55,6 +55,8 @@ public class Categories extends Activity {
 			
 		}
 	});
+       
+       QuizDetails.setshuffle(1);
 }
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

@@ -7,6 +7,7 @@ public class QuizDetails {
     static int qid;	
     static int category;
     static int score=0;
+    static int shuffle=0;
     
   static void setcategory(int cat){
 	  category=cat;
@@ -49,5 +50,13 @@ static int getcategory(){
 
   static int getscore(){
 	  return score;
+  }
+  static int getshuffle()
+  {
+	  return shuffle;
+  }
+  static void setshuffle(int shuff)
+  {
+	  shuffle=shuff;
   }
 }

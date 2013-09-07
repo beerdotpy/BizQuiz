@@ -242,14 +242,17 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
 		
 		params.add(new BasicNameValuePair("selectedcat",nameofcat));
 		params.add(new BasicNameValuePair("QuestionNO",Integer.toString(QuizDetails.getqid())));
+		params.add(new BasicNameValuePair("shuffle",Integer.toString(QuizDetails.getshuffle())));
+		
 		jsonObject = jsonParser.makeHttpRequest(url, "GET", params);
 		
 		try {
 			 quesid = jsonObject.getInt("id");
 			 question=jsonObject.getString("question");
 			 qanswer=jsonObject.getString("answer");
+			 int shuffle=jsonObject.getInt("shuffle");
 			
-			Log.d("qid",Integer.toString(qid));
+			Log.d("qid+shuffle",Integer.toString(qid)+Integer.toString(shuffle));
 			Log.d("question+answer",question+" + "+qanswer);
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
@@ -268,7 +271,7 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
 		QuizDetails.setans(qanswer);
 		tvquestion.setText(QuizDetails.getques());
 		score.setText("Score:"+Integer.toString(QuizDetails.getscore()));
-		
+		QuizDetails.setshuffle(0);
 		pDialog.dismiss();
 	   
 	}
