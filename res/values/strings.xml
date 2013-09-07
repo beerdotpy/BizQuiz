@@ -6,5 +6,12 @@
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
     <string name="menu_aboutus">About Us</string>
+    <string name="feedback">Chose the type of feedback</string>
+    <string-array name="type_feedback">
+        <item>Question</item>
+        <item>Suggestion</item>
+        <item>Feedback</item>
+        
+    </string-array>
 
 </resources>

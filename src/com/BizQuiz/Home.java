@@ -129,7 +129,7 @@ public class Home extends Activity {
     			startActivity(register);
         	}else if(counter==2)
         	{
-        		Intent categories=new Intent(Home.this,Categories.class);
+        		Intent categories=new Intent(Home.this,Feedback.class);
     			startActivity(categories);
         	}
         	}

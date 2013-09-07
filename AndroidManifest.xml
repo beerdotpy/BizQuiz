@@ -26,6 +26,8 @@
         <activity
             android:name="com.BizQuiz.Show"></activity>
         <activity
+            android:name="com.BizQuiz.Feedback"></activity>
+        <activity
             android:name="com.BizQuiz.AboutUs"></activity>
         <activity
             android:name="com.BizQuiz.DisplayNotification"></activity>

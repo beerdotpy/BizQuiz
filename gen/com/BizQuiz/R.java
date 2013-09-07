@@ -8,6 +8,9 @@
 package com.BizQuiz;
 
 public final class R {
+    public static final class array {
+        public static final int type_feedback=0x7f060000;
+    }
     public static final class attr {
     }
     public static final class dimen {
@@ -24,52 +27,60 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int ans=0x7f08000a;
-        public static final int answer=0x7f080009;
-        public static final int button3=0x7f080003;
-        public static final int button4=0x7f080004;
-        public static final int button5=0x7f080005;
-        public static final int button6=0x7f080006;
-        public static final int button7=0x7f080007;
-        public static final int buy=0x7f08000e;
-        public static final int category1=0x7f080001;
-        public static final int category8=0x7f080008;
-        public static final int edage=0x7f080014;
-        public static final int edcity=0x7f08001a;
-        public static final int edcontact=0x7f080018;
-        public static final int edeamil=0x7f080016;
-        public static final int edname=0x7f080012;
-        public static final int menu_about=0x7f08001d;
-        public static final int menu_exit=0x7f08001e;
-        public static final int menu_register=0x7f08001f;
-        public static final int menu_settings=0x7f08001c;
-        public static final int next=0x7f080002;
-        public static final int previous=0x7f08000c;
-        public static final int question=0x7f080010;
-        public static final int reg=0x7f08001b;
-        public static final int score=0x7f080011;
-        public static final int sell=0x7f08000d;
-        public static final int submit=0x7f08000f;
-        public static final int textView1=0x7f080000;
-        public static final int textView3=0x7f080019;
-        public static final int textView4=0x7f080017;
-        public static final int textView5=0x7f080015;
-        public static final int textView6=0x7f080013;
-        public static final int timer=0x7f08000b;
+        public static final int ans=0x7f090011;
+        public static final int answer=0x7f090010;
+        public static final int button3=0x7f090003;
+        public static final int button4=0x7f090004;
+        public static final int button5=0x7f090005;
+        public static final int button6=0x7f090006;
+        public static final int button7=0x7f090007;
+        public static final int buy=0x7f090015;
+        public static final int category1=0x7f090001;
+        public static final int category8=0x7f090008;
+        public static final int ed_about=0x7f09000d;
+        public static final int ed_email=0x7f09000a;
+        public static final int ed_username=0x7f090009;
+        public static final int edage=0x7f09001b;
+        public static final int edcity=0x7f090020;
+        public static final int edcontact=0x7f09001f;
+        public static final int edeamil=0x7f09001d;
+        public static final int edname=0x7f090019;
+        public static final int fd_submit=0x7f09000e;
+        public static final int menu_about=0x7f090023;
+        public static final int menu_exit=0x7f090024;
+        public static final int menu_register=0x7f090025;
+        public static final int menu_settings=0x7f090022;
+        public static final int next=0x7f090002;
+        public static final int previous=0x7f090013;
+        public static final int question=0x7f090017;
+        public static final int reg=0x7f090021;
+        public static final int score=0x7f090018;
+        public static final int sell=0x7f090014;
+        public static final int spinner1=0x7f09000c;
+        public static final int submit=0x7f090016;
+        public static final int textView1=0x7f090000;
+        public static final int textView2=0x7f09000b;
+        public static final int textView3=0x7f09000f;
+        public static final int textView4=0x7f09001e;
+        public static final int textView5=0x7f09001c;
+        public static final int textView6=0x7f09001a;
+        public static final int timer=0x7f090012;
     }
     public static final class layout {
         public static final int activity_aboutus=0x7f030000;
         public static final int activity_categories=0x7f030001;
-        public static final int activity_home=0x7f030002;
-        public static final int activity_qfetch=0x7f030003;
-        public static final int activity_register=0x7f030004;
+        public static final int activity_feedback=0x7f030002;
+        public static final int activity_home=0x7f030003;
+        public static final int activity_qfetch=0x7f030004;
+        public static final int activity_register=0x7f030005;
     }
     public static final class menu {
-        public static final int activity_home=0x7f070000;
+        public static final int activity_home=0x7f080000;
     }
     public static final class string {
         public static final int action_settings=0x7f050001;
         public static final int app_name=0x7f050000;
+        public static final int feedback=0x7f050005;
         public static final int hello_world=0x7f050002;
         public static final int menu_aboutus=0x7f050004;
         public static final int menu_settings=0x7f050003;
@@ -96,10 +107,10 @@ public final class R {
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f060000;
+        public static final int AppBaseTheme=0x7f070000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f060001;
+        public static final int AppTheme=0x7f070001;
     }
 }
