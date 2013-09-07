@@ -4,7 +4,7 @@
     android:layout_height="match_parent" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/tv_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView1"
+        android:layout_below="@+id/tv_score"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="47dp"
         android:text="Name"
@@ -32,7 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/score"
         android:layout_alignBottom="@+id/score"
-        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignLeft="@+id/tv_score"
         android:ems="10" />
 
     <TextView
@@ -115,7 +115,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/textView1"
+        android:layout_alignRight="@+id/tv_score"
         android:layout_marginBottom="18dp"
         android:text="Register" />
 

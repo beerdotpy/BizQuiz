@@ -6,5 +6,6 @@
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
     <string name="menu_aboutus">About Us</string>
-
+	<string name="app_id">154125568128582</string>
+    
 </resources>
