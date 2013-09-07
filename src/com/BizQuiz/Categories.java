@@ -30,7 +30,7 @@ public class Categories extends Activity {
        setContentView(R.layout.activity_categories);
        
     
-       cat1=(Button) findViewById(R.id.previous);
+       cat1=(Button) findViewById(R.id.category1);
        cat1.setOnClickListener(new OnClickListener() {
 		
 		@Override
@@ -43,6 +43,18 @@ public class Categories extends Activity {
 		}
 	});
 	
+       cat8=(Button) findViewById(R.id.category8);
+       cat8.setOnClickListener(new OnClickListener() {
+		
+		@Override
+		public void onClick(View v) {
+			Intent intent=new Intent(Categories.this,QuesFetch.class);
+		  	QuizDetails.setcategory(8);
+		  	QuizDetails.setqid(1);
+		  	startActivity(intent);
+			
+		}
+	});
 }
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
