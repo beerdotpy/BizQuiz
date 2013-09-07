@@ -8,5 +8,6 @@
     <item android:id="@+id/menu_about" android:orderInCategory="100" android:title="About Us"></item>
     <item android:id="@+id/menu_exit" android:orderInCategory="100" android:title="Exit"></item>
     <item android:id="@+id/menu_register" android:orderInCategory="100" android:title="Register"></item>
+    <item android:id="@+id/menu_feedback" android:orderInCategory="100" android:title="Feedback"></item>
 
 </menu>

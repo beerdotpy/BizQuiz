@@ -99,10 +99,11 @@ public class Home extends Activity {
    			intent.addCategory(Intent.CATEGORY_HOME);
    			intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
    			startActivity(intent);
-   			
    			return true;	
-   			
-   	    
+   		case R.id.menu_feedback:
+   			Intent intent1=new Intent(this,Feedback.class);
+   			startActivity(intent1);
+   			return true;
    		default:
    			return super.onOptionsItemSelected(item);
    		}
@@ -129,7 +130,7 @@ public class Home extends Activity {
     			startActivity(register);
         	}else if(counter==2)
         	{
-        		Intent categories=new Intent(Home.this,Feedback.class);
+        		Intent categories=new Intent(Home.this,Categories.class);
     			startActivity(categories);
         	}
         	}

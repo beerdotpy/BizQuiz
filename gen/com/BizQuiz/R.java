@@ -48,6 +48,7 @@ public final class R {
         public static final int fd_submit=0x7f09000e;
         public static final int menu_about=0x7f090023;
         public static final int menu_exit=0x7f090024;
+        public static final int menu_feedback=0x7f090026;
         public static final int menu_register=0x7f090025;
         public static final int menu_settings=0x7f090022;
         public static final int next=0x7f090002;

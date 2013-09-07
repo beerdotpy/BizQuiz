@@ -83,7 +83,10 @@ public class Categories extends Activity {
    			intent.addCategory(Intent.CATEGORY_HOME);
    			intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
    			startActivity(intent);
-   		
+   		case R.id.menu_feedback:
+   			Intent intent1=new Intent(this,Feedback.class);
+   			startActivity(intent1);
+   			return true;
    		default:
    			return super.onOptionsItemSelected(item);
    		}
