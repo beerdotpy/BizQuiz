@@ -27,14 +27,14 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView1"
         android:layout_marginTop="122dp"
-        android:layout_toRightOf="@+id/textView3"
+        android:layout_toRightOf="@+id/ans"
         android:ems="10" >
 
         <requestFocus />
     </EditText>
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/ans"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/answer"
@@ -58,8 +58,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/question"
-        android:layout_marginBottom="83dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="74dp"
+        android:layout_marginLeft="18dp"
         android:text="Previous" />
 
     <Button
@@ -68,16 +69,34 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/previous"
         android:layout_alignBottom="@+id/previous"
-        android:layout_alignRight="@+id/answer"
+        android:layout_alignRight="@+id/timer"
         android:text="Next" />
+
+    <Button
+        android:id="@+id/sell"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/buy"
+        android:layout_alignBottom="@+id/buy"
+        android:layout_alignRight="@+id/previous"
+        android:text="Sell" />
+
+    <Button
+        android:id="@+id/buy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/next"
+        android:layout_marginBottom="23dp"
+        android:layout_toLeftOf="@+id/timer"
+        android:text="Buy" />
 
     <Button
         android:id="@+id/submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/previous"
-        android:layout_marginBottom="21dp"
-        android:layout_toLeftOf="@+id/next"
+        android:layout_alignBaseline="@+id/buy"
+        android:layout_alignBottom="@+id/buy"
+        android:layout_centerHorizontal="true"
         android:text="Submit" />
 
 </RelativeLayout>

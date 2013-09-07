@@ -45,6 +45,10 @@ public class QuesFetch extends Activity {
 	Handler mHandler; 
 	Runnable mUpdateUITimerTask;
 	Context context;
+	TextView ans;
+	Button sell;
+	Button buy;
+	String category;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +63,9 @@ public class QuesFetch extends Activity {
        tvquestion=(TextView) findViewById(R.id.question);
        etanswer=(EditText) findViewById(R.id.answer);
        timer=(TextView) findViewById(R.id.timer);
+       ans=(TextView) findViewById(R.id.ans);
+       sell=(Button) findViewById(R.id.sell);
+       buy=(Button) findViewById(R.id.buy);
        
        qid=QuizDetails.getqid();
    	   catid=QuizDetails.getcategory();       
@@ -69,22 +76,37 @@ public class QuesFetch extends Activity {
 	   
 	if(catid==1)
 	{
-		new Questionfetch(QuesFetch.this).execute("Category1");
+		category="Category1";
+		new Questionfetch(QuesFetch.this).execute(category);
+		sell.setVisibility(View.INVISIBLE);
+		buy.setVisibility(View.INVISIBLE);
+		
 	}else if(catid==2)
 	{
-		new Questionfetch(QuesFetch.this).execute("Category2");
+		category="Category2";
+		new Questionfetch(QuesFetch.this).execute(category);
 	}else if(catid==3){
-		new Questionfetch(QuesFetch.this).execute("Category3");
+		category="Category3";
+		new Questionfetch(QuesFetch.this).execute(category);
 	}else if(catid==4){
-		new Questionfetch(QuesFetch.this).execute("Category4");
+		category="Category4";
+		new Questionfetch(QuesFetch.this).execute(category);
 	}else if(catid==5){
-		new Questionfetch(QuesFetch.this).execute("Category5");
+		category="Category5";
+		new Questionfetch(QuesFetch.this).execute(category);
 	}else if(catid==6){
-		new Questionfetch(QuesFetch.this).execute("Category6");
+		category="Category6";
+		new Questionfetch(QuesFetch.this).execute(category);
 	}else if(catid==7){
-		new Questionfetch(QuesFetch.this).execute("Category7");
+		category="Category7";
+		new Questionfetch(QuesFetch.this).execute(category);
 	}else if(catid==8){
-		new Questionfetch(QuesFetch.this).execute("Category8");
+		category="Category8";
+		new Questionfetch(QuesFetch.this).execute(category);
+		etanswer.setVisibility(View.INVISIBLE);
+		ans.setVisibility(View.INVISIBLE);
+		submit.setVisibility(View.INVISIBLE);
+		
 	}
 
 	
@@ -98,7 +120,7 @@ public class QuesFetch extends Activity {
 		qid=QuizDetails.getqid();
 	  	QuizDetails.setqid(qid-1);
 	  		 
-	  	new Questionfetch(QuesFetch.this).execute("Category1");
+	  	new Questionfetch(QuesFetch.this).execute(category);
 		
 	}
 });
@@ -123,8 +145,58 @@ public class QuesFetch extends Activity {
 		  	QuizDetails.setqid(qid+1);
 		  	previous.setEnabled(true);
 		  	
-		  	new Questionfetch(QuesFetch.this).execute("Category1");
+		  	new Questionfetch(QuesFetch.this).execute(category);
 			
+		}
+	});
+  
+  sell.setOnClickListener(new OnClickListener() {
+		
+		@Override
+		public void onClick(View v) {
+			
+			String answer=QuizDetails.getans();
+			if(answer.equalsIgnoreCase("Sell"))
+			{
+				QuizDetails.setqid(QuizDetails.getqid()+1);
+	  	        Toast.makeText(QuesFetch.this, "Correct Answer", Toast.LENGTH_LONG).show();
+	  	        QuizDetails.set_score(QuizDetails.getscore()+1);
+	  	        
+	  	        
+	  	      new Questionfetch(QuesFetch.this).execute(category);
+			}else{
+				
+				 QuizDetails.setqid(QuizDetails.getqid());
+	  	         Toast.makeText(QuesFetch.this, "Incorrect Answer.Correct Answer is"+QuizDetails.getans(), Toast.LENGTH_LONG).show();
+	  	        	  	        
+	  	        new Questionfetch(QuesFetch.this).execute(category);
+			
+			}		
+		}
+	});
+  
+  buy.setOnClickListener(new OnClickListener() {
+		
+		@Override
+		public void onClick(View v) {
+			
+			String answer=QuizDetails.getans();
+			if(answer.equalsIgnoreCase("Buy"))
+			{
+				QuizDetails.setqid(QuizDetails.getqid()+1);
+	  	        Toast.makeText(QuesFetch.this, "Correct Answer", Toast.LENGTH_LONG).show();
+	  	        QuizDetails.set_score(QuizDetails.getscore()+1);
+	  	        
+	  	        
+	  	      new Questionfetch(QuesFetch.this).execute(category);
+			}else{
+				
+				 QuizDetails.setqid(QuizDetails.getqid());
+	  	         Toast.makeText(QuesFetch.this, "Incorrect Answer.Correct Answer is"+QuizDetails.getans(), Toast.LENGTH_LONG).show();
+	  	        	  	        
+	  	        new Questionfetch(QuesFetch.this).execute(category);
+			
+			}		
 		}
 	});
 
@@ -220,7 +292,7 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
 	  	        QuizDetails.set_score(QuizDetails.getscore()+1);
 	  	        pDialog.dismiss();
 	  	        
-	  	      new Questionfetch(QuesFetch.this).execute("Category1");
+	  	      new Questionfetch(QuesFetch.this).execute(category);
 	 
 	    }else{
 
@@ -229,7 +301,7 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
 	  	          Toast.makeText(this, "Incorrect Answer.Correct Answer is"+QuizDetails.getans(), Toast.LENGTH_LONG).show();
 	  	        pDialog.dismiss();
 	  	        
-	  	        new Questionfetch(QuesFetch.this).execute("Category1");
+	  	        new Questionfetch(QuesFetch.this).execute(category);
 	  	
         }
 
