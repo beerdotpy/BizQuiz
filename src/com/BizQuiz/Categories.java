@@ -166,6 +166,10 @@ public class Categories extends Activity {
    			Intent intent1=new Intent(this,Feedback.class);
    			startActivity(intent1);
    			return true;
+   			
+   		case R.id.menu_statistics:
+  		     startActivity(new Intent(this,Statistics.class));
+  		     return true;
    		default:
    			return super.onOptionsItemSelected(item);
    		}
