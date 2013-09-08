@@ -29,8 +29,16 @@ public class Categories extends Activity {
 		super.onCreate(savedInstanceState);
        setContentView(R.layout.activity_categories);
        
-    
        cat1=(Button) findViewById(R.id.category1);
+       cat2=(Button) findViewById(R.id.category2);
+       cat3=(Button) findViewById(R.id.category3);
+       cat4=(Button) findViewById(R.id.category4);
+       cat5=(Button) findViewById(R.id.category5);
+       cat6=(Button) findViewById(R.id.category6);
+       cat7=(Button) findViewById(R.id.category7);
+       cat8=(Button) findViewById(R.id.category8);
+       
+       
        cat1.setOnClickListener(new OnClickListener() {
 	   	
 		@Override
@@ -43,7 +51,78 @@ public class Categories extends Activity {
 		}
 	});
 	
-       cat8=(Button) findViewById(R.id.category8);
+       cat2.setOnClickListener(new OnClickListener() {
+   	   	
+   		@Override
+   		public void onClick(View v) {
+   			// TODO Auto-generated method stub
+   		  	Intent intent=new Intent(Categories.this,QuesFetch.class);
+   		  	QuizDetails.setcategory(2);
+   		  	QuizDetails.setqid(1);
+   		  	startActivity(intent);
+   		}
+   	});
+       
+       cat3.setOnClickListener(new OnClickListener() {
+   	   	
+   		@Override
+   		public void onClick(View v) {
+   			// TODO Auto-generated method stub
+   		  	Intent intent=new Intent(Categories.this,QuesFetch.class);
+   		  	QuizDetails.setcategory(3);
+   		  	QuizDetails.setqid(1);
+   		  	startActivity(intent);
+   		}
+   	});
+       
+       cat4.setOnClickListener(new OnClickListener() {
+   	   	
+   		@Override
+   		public void onClick(View v) {
+   			// TODO Auto-generated method stub
+   		  	Intent intent=new Intent(Categories.this,QuesFetch.class);
+   		  	QuizDetails.setcategory(4);
+   		  	QuizDetails.setqid(1);
+   		  	startActivity(intent);
+   		}
+   	});
+       
+       cat5.setOnClickListener(new OnClickListener() {
+   	   	
+   		@Override
+   		public void onClick(View v) {
+   			// TODO Auto-generated method stub
+   		  	Intent intent=new Intent(Categories.this,QuesFetch.class);
+   		  	QuizDetails.setcategory(5);
+   		  	QuizDetails.setqid(1);
+   		  	startActivity(intent);
+   		}
+   	});
+       
+       cat6.setOnClickListener(new OnClickListener() {
+   	   	
+   		@Override
+   		public void onClick(View v) {
+   			// TODO Auto-generated method stub
+   		  	Intent intent=new Intent(Categories.this,QuesFetch.class);
+   		  	QuizDetails.setcategory(6);
+   		  	QuizDetails.setqid(1);
+   		  	startActivity(intent);
+   		}
+   	});
+       
+       cat7.setOnClickListener(new OnClickListener() {
+   	   	
+   		@Override
+   		public void onClick(View v) {
+   			// TODO Auto-generated method stub
+   		  	Intent intent=new Intent(Categories.this,QuesFetch.class);
+   		  	QuizDetails.setcategory(7);
+   		  	QuizDetails.setqid(1);
+   		  	startActivity(intent);
+   		}
+   	});
+            
        cat8.setOnClickListener(new OnClickListener() {
 		
 		@Override
@@ -56,7 +135,7 @@ public class Categories extends Activity {
 		}
 	});
        
-       QuizDetails.setshuffle(1);
+       
 }
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

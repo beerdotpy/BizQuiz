@@ -61,7 +61,7 @@ public class QuesFetch extends Activity {
        mHandler = new Handler();
        previous=(Button) findViewById(R.id.previous);
        submit=(Button) findViewById(R.id.submit);
-       next=(Button) findViewById(R.id.next);
+       next=(Button) findViewById(R.id.category2);
        tvquestion=(TextView) findViewById(R.id.question);
        etanswer=(EditText) findViewById(R.id.answer);
        timer=(TextView) findViewById(R.id.timer);
@@ -88,24 +88,37 @@ public class QuesFetch extends Activity {
 	{
 		category="Category2";
 		new Questionfetch(QuesFetch.this).execute(category);
+		sell.setVisibility(View.INVISIBLE);
+		buy.setVisibility(View.INVISIBLE);
 	}else if(catid==3){
 		category="Category3";
 		new Questionfetch(QuesFetch.this).execute(category);
+		sell.setVisibility(View.INVISIBLE);
+		buy.setVisibility(View.INVISIBLE);
 	}else if(catid==4){
 		category="Category4";
 		new Questionfetch(QuesFetch.this).execute(category);
+		sell.setVisibility(View.INVISIBLE);
+		buy.setVisibility(View.INVISIBLE);
 	}else if(catid==5){
 		category="Category5";
 		new Questionfetch(QuesFetch.this).execute(category);
+		sell.setVisibility(View.INVISIBLE);
+		buy.setVisibility(View.INVISIBLE);
 	}else if(catid==6){
 		category="Category6";
 		new Questionfetch(QuesFetch.this).execute(category);
+		sell.setVisibility(View.INVISIBLE);
+		buy.setVisibility(View.INVISIBLE);
 	}else if(catid==7){
 		category="Category7";
 		new Questionfetch(QuesFetch.this).execute(category);
+		sell.setVisibility(View.INVISIBLE);
+		buy.setVisibility(View.INVISIBLE);
 	}else if(catid==8){
 		category="Category8";
 		new Questionfetch(QuesFetch.this).execute(category);
+		
 		etanswer.setVisibility(View.INVISIBLE);
 		ans.setVisibility(View.INVISIBLE);
 		submit.setVisibility(View.INVISIBLE);
@@ -271,7 +284,7 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
 		QuizDetails.setans(qanswer);
 		tvquestion.setText(QuizDetails.getques());
 		score.setText("Score:"+Integer.toString(QuizDetails.getscore()));
-		QuizDetails.setshuffle(0);
+		
 		pDialog.dismiss();
 	   
 	}

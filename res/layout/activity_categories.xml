@@ -29,7 +29,7 @@
         android:text="1" />
 
     <Button
-        android:id="@+id/next"
+        android:id="@+id/category2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/category1"
@@ -39,7 +39,7 @@
         android:text="2" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/category3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/category1"
@@ -48,38 +48,38 @@
         android:text="3" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/category4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/button3"
-        android:layout_alignBottom="@+id/button3"
-        android:layout_alignRight="@+id/next"
+        android:layout_alignBaseline="@+id/category3"
+        android:layout_alignBottom="@+id/category3"
+        android:layout_alignRight="@+id/category2"
         android:text="4" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/category5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button3"
-        android:layout_below="@+id/button3"
+        android:layout_alignLeft="@+id/category3"
+        android:layout_below="@+id/category3"
         android:layout_marginTop="20dp"
         android:text="5" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/category6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/button5"
-        android:layout_alignBottom="@+id/button5"
-        android:layout_alignRight="@+id/button4"
+        android:layout_alignBaseline="@+id/category5"
+        android:layout_alignBottom="@+id/category5"
+        android:layout_alignRight="@+id/category4"
         android:text="6" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/category7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/button5"
-        android:layout_below="@+id/button5"
+        android:layout_alignLeft="@+id/category5"
+        android:layout_below="@+id/category5"
         android:layout_marginTop="28dp"
         android:text="7" />
 
@@ -87,9 +87,9 @@
         android:id="@+id/category8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/button7"
-        android:layout_alignBottom="@+id/button7"
-        android:layout_alignLeft="@+id/button6"
+        android:layout_alignBaseline="@+id/category7"
+        android:layout_alignBottom="@+id/category7"
+        android:layout_alignLeft="@+id/category6"
         android:text="8" />
     
 </RelativeLayout>

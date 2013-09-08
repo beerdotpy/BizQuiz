@@ -220,13 +220,14 @@ containing a value of this type.
 <<<<<<< HEAD
         public static final int ans=0x7f090011;
         public static final int answer=0x7f090010;
-        public static final int button3=0x7f090003;
-        public static final int button4=0x7f090004;
-        public static final int button5=0x7f090005;
-        public static final int button6=0x7f090006;
-        public static final int button7=0x7f090007;
         public static final int buy=0x7f090015;
         public static final int category1=0x7f090001;
+        public static final int category2=0x7f090002;
+        public static final int category3=0x7f090003;
+        public static final int category4=0x7f090004;
+        public static final int category5=0x7f090005;
+        public static final int category6=0x7f090006;
+        public static final int category7=0x7f090007;
         public static final int category8=0x7f090008;
         public static final int ed_about=0x7f09000d;
         public static final int ed_email=0x7f09000a;
@@ -242,7 +243,6 @@ containing a value of this type.
         public static final int menu_feedback=0x7f090026;
         public static final int menu_register=0x7f090025;
         public static final int menu_settings=0x7f090022;
-        public static final int next=0x7f090002;
         public static final int previous=0x7f090013;
         public static final int question=0x7f090017;
         public static final int reg=0x7f090021;
