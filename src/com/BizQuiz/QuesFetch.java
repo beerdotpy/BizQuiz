@@ -149,6 +149,12 @@ public class QuesFetch extends Activity {
 		String ansbyuser=etanswer.getText().toString();
 		
 	    validateanswer(ansbyuser);
+	    
+	    if(QuizDetails.getqid()==5){
+	    	Intent intent = new Intent(QuesFetch.this,ScoreActivity.class);
+	    	intent.putExtra("score", QuizDetails.getscore());
+	    	startActivity(intent);
+	    }
 	}
 });
  
@@ -160,6 +166,12 @@ public class QuesFetch extends Activity {
 			qid=QuizDetails.getqid();
 		  	QuizDetails.setqid(qid+1);
 		  	previous.setEnabled(true);
+		  	
+		  	if(QuizDetails.getqid()==6){
+		    	Intent intent = new Intent(QuesFetch.this,ScoreActivity.class);
+		    	intent.putExtra("score", QuizDetails.getscore());
+		    	startActivity(intent);
+		    }
 		  	
 		  	new Questionfetch(QuesFetch.this).execute(category);
 			
@@ -284,7 +296,7 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
 		QuizDetails.setans(qanswer);
 		tvquestion.setText(QuizDetails.getques());
 		score.setText("Score:"+Integer.toString(QuizDetails.getscore()));
-		
+	    
 		pDialog.dismiss();
 	   
 	}

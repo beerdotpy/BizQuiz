@@ -32,7 +32,7 @@ public class ScoreActivity extends Activity {
 
 	ProgressDialog pDialog;
 
-	int score = 10;
+	int score ;
 	BQParse parse;
 
 	
@@ -45,6 +45,7 @@ public class ScoreActivity extends Activity {
 		setContentView(R.layout.activity_scores);
 		
 		TextView tvScore = (TextView) findViewById(R.id.tv_score);
+		score=getIntent().getIntExtra("score", -1);
 		tvScore.setText("Score : "+score);
 		
 		Button shareButton = (Button) findViewById(R.id.bt_share);
@@ -85,8 +86,8 @@ public class ScoreActivity extends Activity {
 	                Log.d("NewsInShorts-ParseAPI",
 	                        "User signed up and logged in through Facebook!");
 	        	    List<String> permissions = Arrays.asList("publish_actions");
-	        		Session.NewPermissionsRequest publishAction = new Session.NewPermissionsRequest( ScoreActivity.this, permissions);
-	        		ParseFacebookUtils.getSession().requestNewPublishPermissions(publishAction);
+	        	//	Session.NewPermissionsRequest publishAction = new Session.NewPermissionsRequest( ScoreActivity.this, permissions);
+	        	//	ParseFacebookUtils.getSession().requestNewPublishPermissions(publishAction);
 	        		ParseFacebookUtils.saveLatestSessionData(user);
 	        	    makeMyPost(score);
 

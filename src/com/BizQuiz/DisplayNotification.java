@@ -5,7 +5,7 @@ import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.NotificationCompat;
+
 
 public class DisplayNotification extends Activity {	 
 	
@@ -22,12 +22,12 @@ public class DisplayNotification extends Activity {
         NotificationManager nm = (NotificationManager)
             getSystemService(NOTIFICATION_SERVICE);
         
-        NotificationCompat.Builder builder=
-        		new NotificationCompat.Builder(this)
-        .setSmallIcon(R.drawable.ic_launcher)
-        .setContentTitle("Message")
-        .setContentText("Notification");
-        nm.notify(notifID, builder.build());
+//        NotificationCompat.Builder builder=
+//        		new NotificationCompat.Builder(this)
+//        .setSmallIcon(R.drawable.ic_launcher)
+//        .setContentTitle("Message")
+//        .setContentText("Notification");
+//        nm.notify(notifID, builder.build());
 
         finish();
 	}
