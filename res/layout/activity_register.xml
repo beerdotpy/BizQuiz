@@ -36,7 +36,7 @@
         android:ems="10" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/t3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/score"
@@ -46,20 +46,20 @@
         android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/tv2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/textView6"
+        android:layout_alignRight="@+id/t3"
         android:layout_below="@+id/edeamil"
         android:layout_marginTop="35dp"
         android:text="Age"
         android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/t2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView5"
+        android:layout_alignLeft="@+id/tv2"
         android:layout_below="@+id/edname"
         android:layout_marginTop="97dp"
         android:text="Email"
@@ -75,7 +75,7 @@
         android:ems="10" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tv1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/edcontact"
@@ -87,7 +87,7 @@
         android:id="@+id/edeamil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView4"
+        android:layout_alignBottom="@+id/t2"
         android:layout_alignLeft="@+id/edcontact"
         android:ems="10" />
 
@@ -95,7 +95,7 @@
         android:id="@+id/edage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView5"
+        android:layout_alignBottom="@+id/tv2"
         android:layout_alignLeft="@+id/edeamil"
         android:ems="10" />
 
@@ -104,7 +104,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/edage"
-        android:layout_alignTop="@+id/textView6"
+        android:layout_alignTop="@+id/t3"
         android:ems="10" >
 
         <requestFocus />

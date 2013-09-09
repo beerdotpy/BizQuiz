@@ -15,7 +15,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/t1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView1"
@@ -25,48 +25,83 @@
         android:text="1.xyz" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tv1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView2"
+        android:layout_alignBottom="@+id/t1"
         android:layout_toRightOf="@+id/textView1"
         android:text="5" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/t2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView2"
-        android:layout_below="@+id/textView2"
+        android:layout_alignLeft="@+id/t1"
+        android:layout_below="@+id/t1"
         android:layout_marginTop="35dp"
         android:text="2.abc" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/tv2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView4"
-        android:layout_alignBottom="@+id/textView4"
-        android:layout_alignRight="@+id/textView3"
+        android:layout_alignBaseline="@+id/t2"
+        android:layout_alignBottom="@+id/t2"
+        android:layout_alignRight="@+id/tv1"
         android:text="6" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/t3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView4"
-        android:layout_below="@+id/textView4"
+        android:layout_alignLeft="@+id/t2"
+        android:layout_below="@+id/t2"
         android:layout_marginTop="34dp"
         android:text="3.ishan" />
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/tv3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView6"
-        android:layout_alignBottom="@+id/textView6"
+        android:layout_alignBaseline="@+id/t3"
+        android:layout_alignBottom="@+id/t3"
         android:layout_alignParentRight="true"
         android:layout_marginRight="72dp"
         android:text="5" />
+
+    <TextView
+        android:id="@+id/t4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/t3"
+        android:layout_below="@+id/t3"
+        android:layout_marginTop="38dp"
+        android:text="4.qwe" />
+
+    <TextView
+        android:id="@+id/t5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/t4"
+        android:layout_below="@+id/t4"
+        android:layout_marginTop="36dp"
+        android:text="5.user" />
+
+    <TextView
+        android:id="@+id/tv4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/t4"
+        android:layout_alignRight="@+id/tv3"
+        android:text="0" />
+
+    <TextView
+        android:id="@+id/tv5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/t5"
+        android:layout_alignBottom="@+id/t5"
+        android:layout_toLeftOf="@+id/tv3"
+        android:text="0" />
 
 </RelativeLayout>
