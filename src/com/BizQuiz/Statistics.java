@@ -26,26 +26,27 @@ public class Statistics extends Activity {
 	
 	
 	JSONArray jArray=new JSONArray();
-//	TextView tv1;
-//	TextView tv2;
-//	TextView tv3;
-//	TextView tv4;
-//	TextView tv5;
-	ListView lv;
+	TextView tv1;
+	TextView tv2;
+	TextView tv3;
+	TextView tv4;
+	TextView tv5;
+//	ListView lv;
+//	String[] populate;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		
 	
 	super.onCreate(savedInstanceState);
-    setContentView(R.layout.stats);
+    setContentView(R.layout.activity_statistics);
     
-//     tv1=(TextView) findViewById(R.id.tv1);
-//     tv2=(TextView) findViewById(R.id.tv2);
-//     tv3=(TextView) findViewById(R.id.tv3);
-//     tv4=(TextView) findViewById(R.id.tv4);
-//     tv5=(TextView) findViewById(R.id.tv5);
-       lv=(ListView) findViewById(R.id.listView1);
+     tv1=(TextView) findViewById(R.id.tv1);
+     tv2=(TextView) findViewById(R.id.tv2);
+     tv3=(TextView) findViewById(R.id.tv3);
+     tv4=(TextView) findViewById(R.id.tv4);
+     tv5=(TextView) findViewById(R.id.tv5);
+//       lv=(ListView) findViewById(R.id.listView1);
 
     new Stats(Statistics.this).execute("check");    
 
@@ -114,14 +115,10 @@ public class Statistics extends Activity {
 		 
 		protected void onPostExecute(Boolean b){
 			
-			String[] populate=new String[jArray.length()];
+			//populate=new String[jArray.length()];
 			pDialog.dismiss();        
-//         tv1.setText(Integer.toString(score_array[jArray.length()]));
-//         tv2.setText(Integer.toString(score_array[jArray.length()-1]));
-//         tv3.setText(Integer.toString(score_array[jArray.length()-3]));
-//         tv4.setText(Integer.toString(score_array[jArray.length()-4]));
-//         tv5.setText(Integer.toString(score_array[jArray.length()-5]));
-//		
+         
+		
            for(int i=0;i<jArray.length();i++){
 
                int temp1;
@@ -141,17 +138,26 @@ public class Statistics extends Activity {
        	                }
        	              } 
        	            
-       	        for(int i=jArray.length(),j=0; i<=jArray.length()-5; i--,j++)
+       	        for(int i=jArray.length(),j=0; i>=jArray.length()-1; i--,j++)
        	         {
         	             System.out.println(score_array[i] + " " + user_array[i]+" ");
-                         populate[0]=user_array[i]+"   -  "+Integer.toString(score_array[i]) ;
-                         
+//                         populate[j]=user_array[i]+"   -  "+Integer.toString(score_array[i]) ;
+//                         System.out.println(populate[j]);
        	         }
        	        
-       	 ArrayAdapter<String> adapter=new ArrayAdapter<String>(Statistics.this,android.R.layout.simple_list_item_1,populate);
-      	lv.setAdapter(adapter);
+//       	 ArrayAdapter<String> adapter=new ArrayAdapter<String>(Statistics.this,android.R.layout.simple_list_item_1,populate);
+//      	 lv.setAdapter(adapter);
 
+		
+       	     tv1.setText(Integer.toString(score_array[jArray.length()]));
+             tv2.setText(Integer.toString(score_array[jArray.length()-1]));
+             tv3.setText(Integer.toString(score_array[jArray.length()-3]));
+             tv4.setText(Integer.toString(score_array[jArray.length()-4]));
+             tv5.setText(Integer.toString(score_array[jArray.length()-5]));
+		
 		}
+		
+		
 		
 	}	
 
