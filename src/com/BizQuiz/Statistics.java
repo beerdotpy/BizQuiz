@@ -18,31 +18,34 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.TextView;
 
 public class Statistics extends Activity {
 	
 	
 	JSONArray jArray=new JSONArray();
-	TextView tv1;
-	TextView tv2;
-	TextView tv3;
-	TextView tv4;
-	TextView tv5;
-	
+//	TextView tv1;
+//	TextView tv2;
+//	TextView tv3;
+//	TextView tv4;
+//	TextView tv5;
+	ListView lv;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		
 	
 	super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_statistics);
+    setContentView(R.layout.stats);
     
-     tv1=(TextView) findViewById(R.id.tv1);
-     tv2=(TextView) findViewById(R.id.tv2);
-     tv3=(TextView) findViewById(R.id.tv3);
-     tv4=(TextView) findViewById(R.id.tv4);
-     tv5=(TextView) findViewById(R.id.tv5);
+//     tv1=(TextView) findViewById(R.id.tv1);
+//     tv2=(TextView) findViewById(R.id.tv2);
+//     tv3=(TextView) findViewById(R.id.tv3);
+//     tv4=(TextView) findViewById(R.id.tv4);
+//     tv5=(TextView) findViewById(R.id.tv5);
+       lv=(ListView) findViewById(R.id.listView1);
 
     new Stats(Statistics.this).execute("check");    
 
@@ -111,45 +114,47 @@ public class Statistics extends Activity {
 		 
 		protected void onPostExecute(Boolean b){
 			
-			pDialog.dismiss();
-		
-           sort(score_array,user_array);			        
+			String[] populate=new String[jArray.length()];
+			pDialog.dismiss();        
 //         tv1.setText(Integer.toString(score_array[jArray.length()]));
 //         tv2.setText(Integer.toString(score_array[jArray.length()-1]));
 //         tv3.setText(Integer.toString(score_array[jArray.length()-3]));
 //         tv4.setText(Integer.toString(score_array[jArray.length()-4]));
 //         tv5.setText(Integer.toString(score_array[jArray.length()-5]));
-//			        
+//		
+           for(int i=0;i<jArray.length();i++){
+
+               int temp1;
+               String temp;
+       	          for (int j=0;j<jArray.length()-i;j++ )
+       	                {
+       	                  if (score_array[j]>score_array[j+1])
+       	                 {  
+       	                     temp1=score_array[j];
+       	                     temp=user_array[j];
+       	                     score_array[j]=score_array[j+1];
+       	                     user_array[j]=user_array[j+1];
+       	                     score_array[j+1]=temp1;
+       	                     user_array[j+1]=temp;
+       	                 
+       	                 }
+       	                }
+       	              } 
+       	            
+       	        for(int i=jArray.length(),j=0; i<=jArray.length()-5; i--,j++)
+       	         {
+        	             System.out.println(score_array[i] + " " + user_array[i]+" ");
+                         populate[0]=user_array[i]+"   -  "+Integer.toString(score_array[i]) ;
+                         
+       	         }
+       	        
+       	 ArrayAdapter<String> adapter=new ArrayAdapter<String>(Statistics.this,android.R.layout.simple_list_item_1,populate);
+      	lv.setAdapter(adapter);
+
 		}
 		
 	}	
 
-	void sort(int[] score,String[] user)
-	{
-	for(int i=0;i<jArray.length();i++){
-
-        int temp1;
-        String temp;
-	          for (int j=0;j<jArray.length()-i;j++ )
-	                {
-	                  if (score[j]>score[j+1])
-	                 {  
-	                     temp1=score[j];
-	                     temp=user[j];
-	                     score[j]=score[j+1];
-	                     user[j]=user[j+1];
-	                     score[j+1]=temp1;
-	                     user[j+1]=temp;
-	                 
-	                 }
-	                }
-	              } 
-	            
-	        for(int i=0; i<=jArray.length(); i++)
-	         {
-	             System.out.println(score[i] + " " + user[i]+" ");
-	          }
 	
-}
 	
 	}

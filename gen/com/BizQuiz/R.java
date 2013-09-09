@@ -258,12 +258,13 @@ containing a value of this type.
         public static final int edname=0x7f04001d;
         public static final int fd_submit=0x7f040012;
         public static final int large=0x7f040002;
-        public static final int menu_about=0x7f040042;
-        public static final int menu_exit=0x7f040043;
-        public static final int menu_feedback=0x7f040045;
-        public static final int menu_register=0x7f040044;
-        public static final int menu_settings=0x7f040041;
-        public static final int menu_statistics=0x7f040046;
+        public static final int listView1=0x7f040041;
+        public static final int menu_about=0x7f040043;
+        public static final int menu_exit=0x7f040044;
+        public static final int menu_feedback=0x7f040046;
+        public static final int menu_register=0x7f040045;
+        public static final int menu_settings=0x7f040042;
+        public static final int menu_statistics=0x7f040047;
         public static final int normal=0x7f040001;
         public static final int picker_subtitle=0x7f04003d;
         public static final int previous=0x7f040017;
@@ -313,6 +314,7 @@ containing a value of this type.
         public static final int com_facebook_placepickerfragment=0x7f030014;
         public static final int com_facebook_placepickerfragment_list_row=0x7f030015;
         public static final int com_facebook_usersettingsfragment=0x7f030016;
+        public static final int stats=0x7f030017;
     }
     public static final class menu {
         public static final int activity_home=0x7f0a0000;
