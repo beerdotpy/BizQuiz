@@ -48,9 +48,10 @@ public class QuesFetch extends Activity {
 	TextView ans;
 	Button sell;
 	Button buy;
-	String category;
+	String category;         
 	TextView score;
 	int threshvalue;         //currently set to 50% 
+	int max_ques;            //maximum question in each category
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -150,11 +151,7 @@ public class QuesFetch extends Activity {
 		
 	    validateanswer(ansbyuser);
 	    
-	    if(QuizDetails.getqid()==5){
-	    	Intent intent = new Intent(QuesFetch.this,ScoreActivity.class);
-	    	intent.putExtra("score", QuizDetails.getscore());
-	    	startActivity(intent);
-	    }
+	    
 	}
 });
  
@@ -167,11 +164,6 @@ public class QuesFetch extends Activity {
 		  	QuizDetails.setqid(qid+1);
 		  	previous.setEnabled(true);
 		  	
-		  	if(QuizDetails.getqid()==6){
-		    	Intent intent = new Intent(QuesFetch.this,ScoreActivity.class);
-		    	intent.putExtra("score", QuizDetails.getscore());
-		    	startActivity(intent);
-		    }
 		  	
 		  	new Questionfetch(QuesFetch.this).execute(category);
 			
@@ -183,8 +175,8 @@ public class QuesFetch extends Activity {
 		@Override
 		public void onClick(View v) {
 			
-			String answer=QuizDetails.getans();
-			if(answer.equalsIgnoreCase("Sell"))
+			
+			if(QuizDetails.getans().equalsIgnoreCase("Sell"))
 			{
 				QuizDetails.setqid(QuizDetails.getqid()+1);
 	  	        Toast.makeText(QuesFetch.this, "Correct Answer", Toast.LENGTH_LONG).show();
@@ -208,8 +200,8 @@ public class QuesFetch extends Activity {
 		@Override
 		public void onClick(View v) {
 			
-			String answer=QuizDetails.getans();
-			if(answer.equalsIgnoreCase("Buy"))
+			
+			if(QuizDetails.getans().equalsIgnoreCase("Buy"))
 			{
 				QuizDetails.setqid(QuizDetails.getqid()+1);
 	  	        Toast.makeText(QuesFetch.this, "Correct Answer", Toast.LENGTH_LONG).show();
@@ -275,14 +267,14 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
 			 quesid = jsonObject.getInt("id");
 			 question=jsonObject.getString("question");
 			 qanswer=jsonObject.getString("answer");
-			 int shuffle=jsonObject.getInt("shuffle");
-			
-			Log.d("qid+shuffle",Integer.toString(qid)+Integer.toString(shuffle));
+			 max_ques=jsonObject.getInt("max_question");
+			 
+			Log.d("qid+shuffle",Integer.toString(qid));
 			Log.d("question+answer",question+" + "+qanswer);
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}	
 		
 		
 		return true;
@@ -291,7 +283,13 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
 	 
 	protected void onPostExecute(Boolean b){
 		
+		if(max_ques<QuizDetails.getqid()){
+			
+			Intent score=new Intent (QuesFetch.this,ScoreActivity.class);
+			score.putExtra("score", QuizDetails.getscore());
+			startActivity(score);
 		
+		}
 		QuizDetails.setques(question);
 		QuizDetails.setans(qanswer);
 		tvquestion.setText(QuizDetails.getques());

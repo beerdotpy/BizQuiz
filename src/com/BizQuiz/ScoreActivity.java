@@ -1,14 +1,20 @@
 package com.BizQuiz;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -34,7 +40,8 @@ public class ScoreActivity extends Activity {
 
 	int score ;
 	BQParse parse;
-
+	String username;
+    SharedPreferences sp;   
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +52,12 @@ public class ScoreActivity extends Activity {
 		setContentView(R.layout.activity_scores);
 		
 		TextView tvScore = (TextView) findViewById(R.id.tv_score);
-		score=getIntent().getIntExtra("score", -1);
+		score=getIntent().getIntExtra("score", 0);
+		sp=this.getSharedPreferences("First_run", MODE_PRIVATE);
+	    username=sp.getString("Username", "hi");
+	    Log.d("usernme",username);
+	    
+	    new Updatescore(ScoreActivity.this).execute(username);
 		tvScore.setText("Score : "+score);
 		
 		Button shareButton = (Button) findViewById(R.id.bt_share);
@@ -160,4 +172,78 @@ public class ScoreActivity extends Activity {
 	}
 	    
 	
+	class Updatescore extends AsyncTask<String, Void, Boolean> {
+
+		Context context;
+		ProgressDialog pDialog;
+		JSONObject jsonObject = new JSONObject();
+		List<NameValuePair> params = new ArrayList<NameValuePair>();
+	    JSONParser jsonParser = new JSONParser();
+	    String url="http://practice.site11.com/updatescore.php";
+	    int status;
+		
+	    
+	    public Updatescore(Context ctx) {
+			this.context=ctx;
+			pDialog= new ProgressDialog(context);
+		}
+	    
+	    @Override
+		protected void onPreExecute(){
+			pDialog.setTitle("Please Wait...");
+			pDialog.setMessage("Updating Score..");
+			pDialog.setIndeterminate(true);
+			pDialog.show();
+		}
+
+
+		@Override
+		protected Boolean doInBackground(String... str) {
+			
+            Log.d("username",str[0]);
+			
+			params.add(new BasicNameValuePair("username",str[0]));
+			params.add(new BasicNameValuePair("score",Integer.toString(score)));
+			
+			
+			jsonObject = jsonParser.makeHttpRequest(url, "GET", params);
+			
+			
+			try {
+				
+				status = jsonObject.getInt("status");
+				
+                Log.d("status",Integer.toString(status));
+                                				
+			    } catch (JSONException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			   }
+			
+			return true;
+		}
+	
+		protected void onPostExecute(Boolean b){
+			
+			pDialog.dismiss();
+			if(status==1)
+            {
+			  Toast.makeText(context, "Score Updated", Toast.LENGTH_LONG).show();
+  		   }
+  		   else {
+  			   Toast.makeText(context, "Please try again",
+  					   Toast.LENGTH_LONG).show();
+  			   	   
+		}
+		}
+	}
+	
+	@Override
+    public void onBackPressed() {
+       Log.d("CDA", "onBackPressed Called");
+       Intent back = new Intent(ScoreActivity.this,Categories.class);
+//       setIntent.addCategory(Intent.CATEGORY_HOME);
+//       setIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+       startActivity(back);
+    }
 }

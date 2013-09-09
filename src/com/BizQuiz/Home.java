@@ -126,7 +126,7 @@ public class Home extends Activity {
         {   
         	Log.d("Timer","3mins finish");
         	if(counter==1){
-        		Intent register=new Intent(Home.this,ScoreActivity.class);
+        		Intent register=new Intent(Home.this,Register.class);
     			startActivity(register);
         	}else if(counter==2)
         	{
