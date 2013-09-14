@@ -90,8 +90,8 @@ public class StatisticsRowAdapter extends BaseAdapter {
 		if(getuser().compareToIgnoreCase(myList.get(position).getusername())==0){
 			Log.d("check","check");
 			mViewHolder.individual_score.setVisibility(View.VISIBLE);
-			mViewHolder.individual_score.setTypeface(null,Typeface.BOLD); 
-			mViewHolder.u_name.setTypeface(null,Typeface.BOLD);
+			 
+			
 			mViewHolder.individual_score.setText(Integer.toString(score1)+","+Integer.toString(score2)+","+Integer.toString(score3)
 					                              +","+Integer.toString(score4)+","+Integer.toString(score5)+","+Integer.toString(score6)
 					                              +","+Integer.toString(score7)+","+Integer.toString(score8));	
