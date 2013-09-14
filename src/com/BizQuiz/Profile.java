@@ -1,5 +1,7 @@
 package com.BizQuiz;
 
+
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,8 +9,6 @@ import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import com.BizQuiz.QuesFetch.Questionfetch;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -26,156 +26,174 @@ import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
-public class Register extends Activity {
-
-	EditText etname;
-	EditText etcontact;
-	EditText etcity;
-	EditText etage;
-	EditText etemail;
-	String name;
-	String contact;
-	String email;
-	String city;
- 	String age;	
-    Button register; 
- 	SharedPreferences sp;
- 	
-
- 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-       setContentView(R.layout.activity_register);
+public class Profile extends Activity {
 	
-   etname=(EditText) findViewById(R.id.edname);
-   etcontact=(EditText) findViewById(R.id.edcontact);
-   etcity=(EditText) findViewById(R.id.edcity);
-   etage=(EditText) findViewById(R.id.edage);
-   etemail=(EditText) findViewById(R.id.edeamil);
-   register=(Button) findViewById(R.id.reg);
-   
-   
-	register.setOnClickListener(new OnClickListener() {
+	Button submit_pro;
+	String user_name;
+	String user_email;
+	String user_contact;
+	String user_city;
+	String user_age;
+	
+	String new_name;
+	String new_email;
+	String new_contact;
+	String new_age;
+	String new_city;
+	
+	EditText ed1;
+	EditText ed2;
+	EditText ed3;
+	EditText ed4;
+	EditText ed5;
+	
+	SharedPreferences shared;
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+	
+	super.onCreate(savedInstanceState);
+	setContentView(R.layout.activity_profile);
+	
+	
+	shared=this.getSharedPreferences("First_run", MODE_PRIVATE);
+    user_name=shared.getString("Username", "");
+    user_email=shared.getString("Email", "");
+    user_contact=shared.getString("Contact", "");
+    user_age=shared.getString("Age", "");
+    user_city=shared.getString("City", "");
+	
+	ed1=(EditText) findViewById(R.id.et_name);
+	ed1.setHint(user_name);
+	ed2=(EditText) findViewById(R.id.et_email);
+	ed2.setHint(user_email);
+	ed3=(EditText) findViewById(R.id.et_contact);
+	ed3.setHint(user_contact);
+	ed4=(EditText) findViewById(R.id.et_city);
+	ed4.setHint(user_city);
+	ed5=(EditText) findViewById(R.id.et_age);
+	ed5.setHint(user_age);
+
+	submit_pro=(Button) findViewById(R.id.profile_submit);
+	submit_pro.setOnClickListener(new OnClickListener() {
 		
 		@Override
 		public void onClick(View v) {
 			
-			name=etname.getText().toString();
-			contact=etcontact.getText().toString();
-			email=etemail.getText().toString();
-			city=etcity.getText().toString();
-		    age=etage.getText().toString();
+			new_name=ed1.getText().toString();
+			new_email=ed2.getText().toString();
+			new_contact=ed3.getText().toString();
+			new_age=ed5.getText().toString();
+			new_city=ed4.getText().toString();					
 			
-		    new RegisterValidation(Register.this).execute(name,contact,email,city,age);
+			new ProfileUpdate(Profile.this).execute();
 		}
 	});
+}
 	
 	
-	}
-	
-	class RegisterValidation extends AsyncTask<String, Void, Boolean> {
+	class ProfileUpdate extends AsyncTask<String, Void, Boolean> {
 
 		Context context;
 		ProgressDialog pDialog;
 		JSONObject jsonObject = new JSONObject();
 		List<NameValuePair> params = new ArrayList<NameValuePair>();
 	    JSONParser jsonParser = new JSONParser();
-	    String url="http://practice.site11.com/login.php";
+	    String url="http://practice.site11.com/UpdateProfile.php";
 	    int status;
-		String uname;
 	    
-	    public RegisterValidation(Context ctx) {
-			this.context=ctx;
-			pDialog= new ProgressDialog(context);
+	       
+	   public ProfileUpdate(Context ctx) {
+	    	this.context = ctx;
+	        pDialog= new ProgressDialog(context);
 		}
-	    
-	    @Override
-		protected void onPreExecute(){
-			pDialog.setTitle("Please Wait...");
-			pDialog.setMessage("Registering...");
-			pDialog.setIndeterminate(true);
-			pDialog.show();
-		}
-
 
 		@Override
+		protected void onPreExecute(){
+			pDialog.setTitle("Please Wait...");
+			pDialog.setMessage("Updating Profile..");
+			pDialog.setIndeterminate(true);
+			pDialog.show();
+			
+			}
+
+
+		
+		@Override
 		protected Boolean doInBackground(String... str) {
+				
+			if(new_name.matches("")){
+				new_name=user_name;
+			}
+			if(new_email.matches("")){
+				new_email=user_email;
+			}
+			if(new_contact.matches("")){
+				new_contact=user_contact;
+			}
+			if(new_age.matches("")){
+				new_age=user_age;
+			}
+			if(new_city.matches("")){
+				new_city=user_city;
+			}
 			
-            uname=str[0];
-            String uphone=str[1];
-            String uemail=str[2];
-            String ucity=str[3];
-            String uage=str[4];
-			
-			Log.d("name",uname);
-			Log.d("phone",uphone);
-			Log.d("email",uemail);
-			Log.d("city",ucity);
-			Log.d("age",uage);
-			
-			params.add(new BasicNameValuePair("name",uname));
-			params.add(new BasicNameValuePair("contact",uphone));
-			params.add(new BasicNameValuePair("email",uemail));
-			params.add(new BasicNameValuePair("age",uage));
-			params.add(new BasicNameValuePair("city",ucity));
+			params.add(new BasicNameValuePair("username",new_name));
+			params.add(new BasicNameValuePair("useremail",new_email));
+			params.add(new BasicNameValuePair("usercontact",new_contact));
+			params.add(new BasicNameValuePair("userage",new_age));
+			params.add(new BasicNameValuePair("usercity",new_city));
+			params.add(new BasicNameValuePair("old_name",user_name));
 			
 			
 			jsonObject = jsonParser.makeHttpRequest(url, "GET", params);
 			
-			
 			try {
-				
-				status = jsonObject.getInt("status");
-				
-                Log.d("status",Integer.toString(status));
-                                				
-			    } catch (JSONException e) {
+				 status = jsonObject.getInt("status");
+			
+			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			   }
+			}	
+			
 			
 			return true;
+			
 		}
-	
+		 
 		protected void onPostExecute(Boolean b){
 			
 			pDialog.dismiss();
-			if(status==1)
-            {
-			  Toast.makeText(context, "Successfully Registered", Toast.LENGTH_LONG).show();
-              
-			  sp = context.getSharedPreferences("First_run", MODE_PRIVATE);
-			    SharedPreferences.Editor editor = sp.edit();
-			    editor.putBoolean("Firstrun", false);
-			    editor.putString("Username",uname);
-			    editor.putString("Contact",contact);
-			    editor.putString("Email",email);
-			    editor.putString("Age",age);
-			    editor.putString("City",city);
-			    editor.commit();	    
-			    
-			  Intent intent=new Intent(context,Categories.class);
-  			    context.startActivity(intent);
-  			    
-  			
-  			    
-  		   }
-  		   else if(status==0){
-  			   Toast.makeText(context, "Registeration Failed.Username alreday exist.Please try different username",
-  					   Toast.LENGTH_LONG).show();
-  			   context.startActivity(new Intent(context,Register.class));
-            }else{
-            	Toast.makeText(context, "Registeration Failed.Please try again",
-   					   Toast.LENGTH_LONG).show();
-   			   context.startActivity(new Intent(context,Home.class));
-            }
+		
+			
+			shared = context.getSharedPreferences("First_run", MODE_PRIVATE);
+		    SharedPreferences.Editor editor = shared.edit();
+		    editor.putString("Username",new_name);
+		    editor.putString("Contact",new_contact);
+		    editor.putString("Email",new_email);
+		    editor.putString("Age",new_age);
+		    editor.putString("City",new_city);
+		    editor.commit();	
+			
+			if(status==1){
+				
+				Toast.makeText(Profile.this, "Profile Succefully updated", Toast.LENGTH_LONG).show();
+				Intent intent=new Intent(Profile.this,Categories.class);
+				startActivity(intent);
+				
+			}else{
+				Intent intent=new Intent(Profile.this,Profile.class);
+				startActivity(intent);
+			}
 		   
 		}
-	
-	
+		
 	}
+	
 	
 	@Override
     public boolean onTouchEvent(MotionEvent event) {
@@ -236,4 +254,5 @@ public class Register extends Activity {
 //       setIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
        startActivity(back);
     }
+	
 }

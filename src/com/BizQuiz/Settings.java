@@ -1,24 +1,28 @@
 package com.BizQuiz;
 
-import android.app.Activity;
+
+
 import android.content.Intent;
 import android.os.Bundle;
+import android.preference.Preference;
+import android.preference.PreferenceActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class AboutUs extends Activity {
-	
+public class Settings extends PreferenceActivity {
+
 	
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		addPreferencesFromResource(R.xml.prefs);
 		
-	
-	super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_aboutus);
+		
 
-	}
 	
+	}
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
    		// Inflate the menu; this adds items to the action bar if it is present.
@@ -32,7 +36,7 @@ public class AboutUs extends Activity {
 
    		switch (item.getItemId()) {
    		case R.id.menu_settings:
-   			startActivity(new Intent(AboutUs.this, Settings.class));
+   			startActivity(new Intent(this, Settings.class));
    			return true;
    		case R.id.menu_about:
    			startActivity(new Intent(this, AboutUs.class));
@@ -61,7 +65,7 @@ public class AboutUs extends Activity {
    		}
     
        }
-	
+
 	@Override
     public void onBackPressed() {
        Log.d("CDA", "onBackPressed Called");
@@ -70,7 +74,4 @@ public class AboutUs extends Activity {
 //       setIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
        startActivity(back);
     }
-	
 }
-
-

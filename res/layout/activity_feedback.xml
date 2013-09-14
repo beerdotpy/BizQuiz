@@ -4,7 +4,7 @@
     android:layout_height="match_parent" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/attempt_ques"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -17,10 +17,10 @@
         android:id="@+id/ed_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView1"
-        android:layout_alignBottom="@+id/textView1"
+        android:layout_alignBaseline="@+id/attempt_ques"
+        android:layout_alignBottom="@+id/attempt_ques"
         android:layout_marginLeft="14dp"
-        android:layout_toRightOf="@+id/textView1"
+        android:layout_toRightOf="@+id/attempt_ques"
         android:ems="10" >
 
         <requestFocus />
@@ -78,7 +78,7 @@
         android:id="@+id/t1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignLeft="@+id/attempt_ques"
         android:layout_below="@+id/ed_username"
         android:layout_marginTop="29dp"
         android:text="Email" />

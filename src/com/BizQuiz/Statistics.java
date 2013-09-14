@@ -18,6 +18,8 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -26,13 +28,9 @@ public class Statistics extends Activity {
 	
 	
 	JSONArray jArray=new JSONArray();
-	TextView tv1;
-	TextView tv2;
-	TextView tv3;
-	TextView tv4;
-	TextView tv5;
-//	ListView lv;
-//	String[] populate;
+	ListView lv;
+	private ArrayList<ListData> myList = new ArrayList<ListData>();
+	StatisticsRowAdapter adapter;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -41,12 +39,8 @@ public class Statistics extends Activity {
 	super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_statistics);
     
-     tv1=(TextView) findViewById(R.id.tv1);
-     tv2=(TextView) findViewById(R.id.tv2);
-     tv3=(TextView) findViewById(R.id.tv3);
-     tv4=(TextView) findViewById(R.id.tv4);
-     tv5=(TextView) findViewById(R.id.tv5);
-//       lv=(ListView) findViewById(R.id.listView1);
+    
+     lv=(ListView) findViewById(R.id.listView1);
 
     new Stats(Statistics.this).execute("check");    
 
@@ -62,8 +56,8 @@ public class Statistics extends Activity {
 	    
 	    JSONObject json=new JSONObject();
 	    
-	    int[] score_array=new int[50];
-	    String[] user_array=new String[50];
+	    int[] score_array=new int[11];
+	    String[] user_array=new String[11];
 	    
 	       
 	   public Stats(Context ctx) {
@@ -92,7 +86,7 @@ public class Statistics extends Activity {
 				jArray= json.getJSONArray("data");
 				System.out.println("*****JARRAY*****"+jArray.length());
 				
-				for(int i=0;i<jArray.length();i++){
+				for(int i=0;i<=10;i++){
 				
 				JSONObject json_data = jArray.getJSONObject(i);
                 
@@ -115,52 +109,76 @@ public class Statistics extends Activity {
 		 
 		protected void onPostExecute(Boolean b){
 			
-			//populate=new String[jArray.length()];
-			pDialog.dismiss();        
-         
-		
-           for(int i=0;i<jArray.length();i++){
+			
+			pDialog.dismiss();
+			
+			for(int i=0;i<=10;i++){
+				ListData myListData = new ListData(); 
+				myListData.setscore(score_array[i]);
+				myListData.setusername(user_array[i]);
+				myList.add(myListData);
 
-               int temp1;
-               String temp;
-       	          for (int j=0;j<jArray.length()-i;j++ )
-       	                {
-       	                  if (score_array[j]>score_array[j+1])
-       	                 {  
-       	                     temp1=score_array[j];
-       	                     temp=user_array[j];
-       	                     score_array[j]=score_array[j+1];
-       	                     user_array[j]=user_array[j+1];
-       	                     score_array[j+1]=temp1;
-       	                     user_array[j+1]=temp;
-       	                 
-       	                 }
-       	                }
-       	              } 
-       	            
-       	        for(int i=jArray.length(),j=0; i>=jArray.length()-1; i--,j++)
-       	         {
-        	             System.out.println(score_array[i] + " " + user_array[i]+" ");
-//                         populate[j]=user_array[i]+"   -  "+Integer.toString(score_array[i]) ;
-//                         System.out.println(populate[j]);
-       	         }
-       	        
-//       	 ArrayAdapter<String> adapter=new ArrayAdapter<String>(Statistics.this,android.R.layout.simple_list_item_1,populate);
-//      	 lv.setAdapter(adapter);
-
-		
-       	     tv1.setText(Integer.toString(score_array[jArray.length()]));
-             tv2.setText(Integer.toString(score_array[jArray.length()-1]));
-             tv3.setText(Integer.toString(score_array[jArray.length()-3]));
-             tv4.setText(Integer.toString(score_array[jArray.length()-4]));
-             tv5.setText(Integer.toString(score_array[jArray.length()-5]));
-		
+			}
+			
+			adapter = new StatisticsRowAdapter(Statistics.this, myList);
+			
+			
+			lv.setAdapter(adapter);
+				
 		}
 		
-		
-		
-	}	
-
+}
 	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+   		// Inflate the menu; this adds items to the action bar if it is present.
+   		getMenuInflater().inflate(R.menu.activity_home, menu);
+   		return true;
+   	}
+        
+
+      
+	public boolean onOptionsItemSelected(MenuItem item) {
+
+   		switch (item.getItemId()) {
+   		case R.id.menu_settings:
+   			startActivity(new Intent(this, Settings.class));
+   			return true;
+   		case R.id.menu_about:
+   			startActivity(new Intent(this, AboutUs.class));
+   			return true;
+   		case R.id.menu_exit:
+   			Intent intent = new Intent(Intent.ACTION_MAIN);
+   			intent.addCategory(Intent.CATEGORY_HOME);
+   			intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+   			startActivity(intent);
+   			return true;	
+   		case R.id.menu_feedback:
+   			Intent intent1=new Intent(this,Feedback.class);
+   			startActivity(intent1);
+   			return true;
+   		case R.id.menu_statistics:
+ 		     startActivity(new Intent(this,Statistics.class));
+ 		     return true;
+   		case R.id.menu_profile:
+   			Intent intent2 = new Intent(this,Profile.class);
+   			startActivity(intent2);
+   			return true;
+  		
+ 		     
+   		default:
+   			return super.onOptionsItemSelected(item);
+   		}
+    
+       }
+
+	@Override
+    public void onBackPressed() {
+       Log.d("CDA", "onBackPressed Called");
+       Intent back = new Intent(this,Categories.class);
+//       setIntent.addCategory(Intent.CATEGORY_HOME);
+//       setIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+       startActivity(back);
+    }
 	
 	}

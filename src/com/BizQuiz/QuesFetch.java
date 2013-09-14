@@ -17,11 +17,15 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.DialogInterface.OnCancelListener;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.provider.CalendarContract.Attendees;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -32,8 +36,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class QuesFetch extends Activity {
-
-	int qid;
+  
+	int qid; 
 	int catid;
 	Button previous;
 	Button submit;
@@ -42,6 +46,7 @@ public class QuesFetch extends Activity {
 	TextView tvquestion;
 	TextView timer;
 	AlertDialog.Builder builder;
+	AlertDialog.Builder builder1;
 	Handler mHandler; 
 	Runnable mUpdateUITimerTask;
 	Context context;
@@ -50,8 +55,11 @@ public class QuesFetch extends Activity {
 	Button buy;
 	String category;         
 	TextView score;
+	TextView ques_stats;     // how much questions answered out of total question
 	int threshvalue;         //currently set to 50% 
 	int max_ques;            //maximum question in each category
+	boolean check=true;      //to check if activity is running first time 
+	SharedPreferences sp;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -70,12 +78,41 @@ public class QuesFetch extends Activity {
        sell=(Button) findViewById(R.id.sell);
        buy=(Button) findViewById(R.id.buy);
        score=(TextView) findViewById(R.id.score);
+       ques_stats=(TextView) findViewById(R.id.stats);
        
-       qid=QuizDetails.getqid();
-   	   catid=QuizDetails.getcategory();       
-	   Log.d("id + questionNo.",Integer.toString(catid)+"+"+Integer.toString(qid));
-       
-	   mCountDown.start();
+       QuizDetails.setshuffle(1);
+       QuizDetails.setqid(1);
+       QuizDetails.set_score(0);
+   	   catid=QuizDetails.getcategory();
+   	   
+	   Log.d("id + questionNo.",Integer.toString(catid)+"+"+Integer.toString(QuizDetails.getqid()));
+
+	   
+	   builder1 = new AlertDialog.Builder(context);
+		builder1.setMessage("Info about the Quiz"+
+				" For each correct answer +1 point is awarded.Quiz has a time limit of 3min "+
+				"Press Back to quit or Ok to play")
+				.setCancelable(true)
+				.setOnCancelListener(new OnCancelListener() {
+					
+					public void onCancel(DialogInterface dialog) {
+						// TODO Auto-generated method stub
+						
+						Intent returnhome=new Intent(QuesFetch.this,Categories.class);
+						startActivity(returnhome);
+						
+					}
+				})
+				.setPositiveButton("Ok",new DialogInterface.OnClickListener() {
+					
+					public void onClick(DialogInterface dialog, int which) {
+						// TODO Auto-generated method stub	
+						mCountDown.start();
+					}
+				})
+				.show();   
+	  
+	   
 	   timer.setText(2+":"+59);
 	   
 	if(catid==1)
@@ -91,32 +128,44 @@ public class QuesFetch extends Activity {
 		new Questionfetch(QuesFetch.this).execute(category);
 		sell.setVisibility(View.INVISIBLE);
 		buy.setVisibility(View.INVISIBLE);
+		
 	}else if(catid==3){
+		
 		category="Category3";
 		new Questionfetch(QuesFetch.this).execute(category);
 		sell.setVisibility(View.INVISIBLE);
 		buy.setVisibility(View.INVISIBLE);
+		
 	}else if(catid==4){
+		
 		category="Category4";
 		new Questionfetch(QuesFetch.this).execute(category);
 		sell.setVisibility(View.INVISIBLE);
 		buy.setVisibility(View.INVISIBLE);
+		
 	}else if(catid==5){
+		
 		category="Category5";
 		new Questionfetch(QuesFetch.this).execute(category);
 		sell.setVisibility(View.INVISIBLE);
 		buy.setVisibility(View.INVISIBLE);
+		
 	}else if(catid==6){
+		
 		category="Category6";
 		new Questionfetch(QuesFetch.this).execute(category);
 		sell.setVisibility(View.INVISIBLE);
 		buy.setVisibility(View.INVISIBLE);
+		
 	}else if(catid==7){
+		
 		category="Category7";
 		new Questionfetch(QuesFetch.this).execute(category);
 		sell.setVisibility(View.INVISIBLE);
 		buy.setVisibility(View.INVISIBLE);
+		
 	}else if(catid==8){
+		
 		category="Category8";
 		new Questionfetch(QuesFetch.this).execute(category);
 		
@@ -186,7 +235,7 @@ public class QuesFetch extends Activity {
 	  	      new Questionfetch(QuesFetch.this).execute(category);
 			}else{
 				
-				 QuizDetails.setqid(QuizDetails.getqid());
+				 QuizDetails.setqid(QuizDetails.getqid()+1);
 	  	         Toast.makeText(QuesFetch.this, "Incorrect Answer.Correct Answer is"+QuizDetails.getans(), Toast.LENGTH_LONG).show();
 	  	        	  	        
 	  	        new Questionfetch(QuesFetch.this).execute(category);
@@ -211,7 +260,7 @@ public class QuesFetch extends Activity {
 	  	      new Questionfetch(QuesFetch.this).execute(category);
 			}else{
 				
-				 QuizDetails.setqid(QuizDetails.getqid());
+				 QuizDetails.setqid(QuizDetails.getqid()+1);
 	  	         Toast.makeText(QuesFetch.this, "Incorrect Answer.Correct Answer is"+QuizDetails.getans(), Toast.LENGTH_LONG).show();
 	  	        	  	        
 	  	        new Questionfetch(QuesFetch.this).execute(category);
@@ -244,18 +293,27 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
 
 	@Override
 	protected void onPreExecute(){
-		pDialog.setTitle("Please Wait...");
+		if(!check)
+		{
+			pDialog.setTitle("Please Wait...");
+		
 		pDialog.setMessage("Loading Question");
 		pDialog.setIndeterminate(true);
 		etanswer.setText("");
 		pDialog.show();
+		
+		}
+		
+		check=false;
+		
+		
 	}
 	
 	@Override
 	protected Boolean doInBackground(String... str) {
 		nameofcat=str[0];
 		
-		Log.d("Category + QuestionNo",nameofcat+" "+Integer.toString(qid));
+		Log.d("Category + QuestionNo",nameofcat+" "+Integer.toString(QuizDetails.getqid()));
 		
 		params.add(new BasicNameValuePair("selectedcat",nameofcat));
 		params.add(new BasicNameValuePair("QuestionNO",Integer.toString(QuizDetails.getqid())));
@@ -283,18 +341,22 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
 	 
 	protected void onPostExecute(Boolean b){
 		
-		if(max_ques<QuizDetails.getqid()){
+      if(max_ques<QuizDetails.getqid()){
 			
+    	    calscore();
 			Intent score=new Intent (QuesFetch.this,ScoreActivity.class);
-			score.putExtra("score", QuizDetails.getscore());
+			QuizDetails.setfinal_score(QuizDetails.getfinal_score()+QuizDetails.getscore());
 			startActivity(score);
 		
 		}
+
 		QuizDetails.setques(question);
 		QuizDetails.setans(qanswer);
+		QuizDetails.setshuffle(0);
+		QuizDetails.set_maxques(max_ques);
 		tvquestion.setText(QuizDetails.getques());
 		score.setText("Score:"+Integer.toString(QuizDetails.getscore()));
-	    
+	    ques_stats.setText(Integer.toString(QuizDetails.getscore())+"/"+Integer.toString(QuizDetails.getqid()));
 		pDialog.dismiss();
 	   
 	}
@@ -328,7 +390,7 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
 	    }else{
 
 		
-		          QuizDetails.setqid(QuizDetails.getqid());
+		          QuizDetails.setqid(QuizDetails.getqid()+1);
 	  	          Toast.makeText(this, "Incorrect Answer.Correct Answer is"+QuizDetails.getans(), Toast.LENGTH_LONG).show();
 	  	        pDialog.dismiss();
 	  	        
@@ -358,6 +420,14 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
                       return false;  
              }
    
+    }
+    
+    void calscore(){
+    	
+      sp=QuesFetch.this.getSharedPreferences("First_run", MODE_PRIVATE);
+  	  SharedPreferences.Editor editor = sp.edit();
+  	  editor.putInt(category,QuizDetails.getscore());
+  	  editor.commit();
     }
     
     @Override
@@ -436,8 +506,7 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
         public void onBackPressed() {
            Log.d("CDA", "onBackPressed Called");
            Intent back = new Intent(QuesFetch.this,Categories.class);
-//           setIntent.addCategory(Intent.CATEGORY_HOME);
-//           setIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+           calscore();
            startActivity(back);
         }
         
@@ -448,5 +517,52 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
             imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
             return true;
         }
+
+        @Override
+    	public boolean onCreateOptionsMenu(Menu menu) {
+       		// Inflate the menu; this adds items to the action bar if it is present.
+       		getMenuInflater().inflate(R.menu.activity_home, menu);
+       		return true;
+       	}
+            
+
+          
+    	public boolean onOptionsItemSelected(MenuItem item) {
+
+       		switch (item.getItemId()) {
+       		case R.id.menu_settings:
+       			startActivity(new Intent(this, Settings.class));
+       			return true;
+       		case R.id.menu_about:
+       			startActivity(new Intent(this, AboutUs.class));
+       			return true;
+       		case R.id.menu_exit:
+       			Intent intent = new Intent(Intent.ACTION_MAIN);
+       			intent.addCategory(Intent.CATEGORY_HOME);
+       			intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+       			startActivity(intent);
+       			return true;	
+       		case R.id.menu_feedback:
+       			Intent intent1=new Intent(this,Feedback.class);
+       			startActivity(intent1);
+       			return true;
+       		case R.id.menu_statistics:
+     		     startActivity(new Intent(this,Statistics.class));
+     		     return true;
+       		case R.id.menu_profile:
+       			Intent intent2 = new Intent(this,Profile.class);
+       			startActivity(intent2);
+       			return true;
+      		
+     		     
+       		default:
+       			return super.onOptionsItemSelected(item);
+       		}
+        
+           }
+    	
+
+
+
 } 
 

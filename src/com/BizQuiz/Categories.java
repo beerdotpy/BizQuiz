@@ -28,7 +28,7 @@ public class Categories extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
        setContentView(R.layout.activity_categories);
-       
+              
        cat1=(Button) findViewById(R.id.category1);
        cat2=(Button) findViewById(R.id.category2);
        cat3=(Button) findViewById(R.id.category3);
@@ -46,7 +46,6 @@ public class Categories extends Activity {
 			// TODO Auto-generated method stub
 		  	Intent intent=new Intent(Categories.this,QuesFetch.class);
 		  	QuizDetails.setcategory(1);
-		  	QuizDetails.setqid(1);
 		  	startActivity(intent);
 		}
 	});
@@ -58,7 +57,6 @@ public class Categories extends Activity {
    			// TODO Auto-generated method stub
    		  	Intent intent=new Intent(Categories.this,QuesFetch.class);
    		  	QuizDetails.setcategory(2);
-   		  	QuizDetails.setqid(1);
    		  	startActivity(intent);
    		}
    	});
@@ -70,7 +68,6 @@ public class Categories extends Activity {
    			// TODO Auto-generated method stub
    		  	Intent intent=new Intent(Categories.this,QuesFetch.class);
    		  	QuizDetails.setcategory(3);
-   		  	QuizDetails.setqid(1);
    		  	startActivity(intent);
    		}
    	});
@@ -82,7 +79,6 @@ public class Categories extends Activity {
    			// TODO Auto-generated method stub
    		  	Intent intent=new Intent(Categories.this,QuesFetch.class);
    		  	QuizDetails.setcategory(4);
-   		  	QuizDetails.setqid(1);
    		  	startActivity(intent);
    		}
    	});
@@ -94,7 +90,6 @@ public class Categories extends Activity {
    			// TODO Auto-generated method stub
    		  	Intent intent=new Intent(Categories.this,QuesFetch.class);
    		  	QuizDetails.setcategory(5);
-   		  	QuizDetails.setqid(1);
    		  	startActivity(intent);
    		}
    	});
@@ -106,7 +101,6 @@ public class Categories extends Activity {
    			// TODO Auto-generated method stub
    		  	Intent intent=new Intent(Categories.this,QuesFetch.class);
    		  	QuizDetails.setcategory(6);
-   		  	QuizDetails.setqid(1);
    		  	startActivity(intent);
    		}
    	});
@@ -118,7 +112,6 @@ public class Categories extends Activity {
    			// TODO Auto-generated method stub
    		  	Intent intent=new Intent(Categories.this,QuesFetch.class);
    		  	QuizDetails.setcategory(7);
-   		  	QuizDetails.setqid(1);
    		  	startActivity(intent);
    		}
    	});
@@ -129,7 +122,6 @@ public class Categories extends Activity {
 		public void onClick(View v) {
 			Intent intent=new Intent(Categories.this,QuesFetch.class);
 		  	QuizDetails.setcategory(8);
-		  	QuizDetails.setqid(1);
 		  	startActivity(intent);
 			
 		}
@@ -149,14 +141,14 @@ public class Categories extends Activity {
 
    		switch (item.getItemId()) {
    		case R.id.menu_settings:
-   			//startActivity(new Intent(Home.this, Settings.class));
+   			startActivity(new Intent(Categories.this, Settings.class));
    			return true;
    		case R.id.menu_about:
    			startActivity(new Intent(this, AboutUs.class));
    			return true;
-   		case R.id.menu_register:
-   		     startActivity(new Intent(this,Register.class));
-   		     return true;
+//   		case R.id.menu_register:
+//   		     startActivity(new Intent(this,Register.class));
+//   		     return true;
    		case R.id.menu_exit:
    			Intent intent = new Intent(Intent.ACTION_MAIN);
    			intent.addCategory(Intent.CATEGORY_HOME);
@@ -170,6 +162,11 @@ public class Categories extends Activity {
    		case R.id.menu_statistics:
   		     startActivity(new Intent(this,Statistics.class));
   		     return true;
+   		case R.id.menu_profile:
+   			Intent intent2 = new Intent(Categories.this,Profile.class);
+   			startActivity(intent2);
+   			return true;
+  		     
    		default:
    			return super.onOptionsItemSelected(item);
    		}

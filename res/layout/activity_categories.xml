@@ -2,94 +2,93 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/wallpaper"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Categories" >
 
-    <TextView
-        android:id="@+id/tv_score"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="18dp"
-        android:text="Quiz Categories"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
     <Button
         android:id="@+id/category1"
+        style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/tv_score"
-        android:layout_marginLeft="38dp"
-        android:layout_marginTop="45dp"
-        android:text="1" />
-
-    <Button
-        android:id="@+id/category2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/category1"
-        android:layout_alignBottom="@+id/category1"
+        android:layout_alignParentTop="true"
         android:layout_marginLeft="55dp"
-        android:layout_toRightOf="@+id/category1"
-        android:text="2" />
-
-    <Button
-        android:id="@+id/category3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/category1"
-        android:layout_below="@+id/category1"
-        android:layout_marginTop="16dp"
-        android:text="3" />
-
-    <Button
-        android:id="@+id/category4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/category3"
-        android:layout_alignBottom="@+id/category3"
-        android:layout_alignRight="@+id/category2"
-        android:text="4" />
-
-    <Button
-        android:id="@+id/category5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/category3"
-        android:layout_below="@+id/category3"
-        android:layout_marginTop="20dp"
-        android:text="5" />
+        android:layout_marginTop="74dp"
+        android:background="@drawable/quiztabicon1" />
 
     <Button
         android:id="@+id/category6"
+        style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/category5"
         android:layout_alignBottom="@+id/category5"
-        android:layout_alignRight="@+id/category4"
-        android:text="6" />
+        android:layout_alignLeft="@+id/category4"
+        android:background="@drawable/quiztabicon1" />
 
     <Button
-        android:id="@+id/category7"
+        android:id="@+id/category3"
+        style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/category5"
-        android:layout_below="@+id/category5"
-        android:layout_marginTop="28dp"
-        android:text="7" />
+        android:layout_alignLeft="@+id/category1"
+        android:layout_below="@+id/category1"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/quiztabicon1" />
+
+    <Button
+        android:id="@+id/category4"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/category3"
+        android:layout_alignBottom="@+id/category3"
+        android:layout_alignLeft="@+id/category2"
+        android:background="@drawable/quiztabicon1" />
 
     <Button
         android:id="@+id/category8"
+        style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/category7"
-        android:layout_alignBottom="@+id/category7"
-        android:layout_alignLeft="@+id/category6"
-        android:text="8" />
-    
+        android:layout_below="@+id/category4"
+        android:layout_marginLeft="72dp"
+        android:layout_marginTop="95dp"
+        android:layout_toRightOf="@+id/category7"
+        android:background="@drawable/quiztabicon1" />
+
+    <Button
+        android:id="@+id/category2"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/category1"
+        android:layout_alignBottom="@+id/category1"
+        android:layout_alignRight="@+id/category8"
+        android:background="@drawable/quiztabicon1" />
+
+    <Button
+        android:id="@+id/category5"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/category3"
+        android:layout_marginTop="24dp"
+        android:layout_toLeftOf="@+id/category8"
+        android:background="@drawable/quiztabicon1" />
+
+    <Button
+        android:id="@+id/category7"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/category8"
+        android:layout_alignBottom="@+id/category8"
+        android:layout_alignLeft="@+id/category3"
+        android:background="@drawable/quiztabicon1" />
+
 </RelativeLayout>

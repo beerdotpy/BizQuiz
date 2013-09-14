@@ -1,107 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical" >
+    </LinearLayout>
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/individual_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="34dp"
-        android:text="Statistics"
+        android:text="Top 10 Scores"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <TextView
-        android:id="@+id/t1"
-        android:layout_width="wrap_content"
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
-        android:layout_marginRight="24dp"
-        android:layout_marginTop="43dp"
-        android:layout_toLeftOf="@+id/textView1"
-        android:text="1.xyz" />
-
-    <TextView
-        android:id="@+id/tv1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/t1"
-        android:layout_toRightOf="@+id/textView1"
-        android:text="5" />
-
-    <TextView
-        android:id="@+id/t2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/t1"
-        android:layout_below="@+id/t1"
-        android:layout_marginTop="35dp"
-        android:text="2.abc" />
-
-    <TextView
-        android:id="@+id/tv2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/t2"
-        android:layout_alignBottom="@+id/t2"
-        android:layout_alignRight="@+id/tv1"
-        android:text="6" />
-
-    <TextView
-        android:id="@+id/t3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/t2"
-        android:layout_below="@+id/t2"
-        android:layout_marginTop="34dp"
-        android:text="3.ishan" />
-
-    <TextView
-        android:id="@+id/tv3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/t3"
-        android:layout_alignBottom="@+id/t3"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="72dp"
-        android:text="5" />
-
-    <TextView
-        android:id="@+id/t4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/t3"
-        android:layout_below="@+id/t3"
-        android:layout_marginTop="38dp"
-        android:text="4.qwe" />
-
-    <TextView
-        android:id="@+id/t5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/t4"
-        android:layout_below="@+id/t4"
-        android:layout_marginTop="36dp"
-        android:text="5.user" />
-
-    <TextView
-        android:id="@+id/tv4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/t4"
-        android:layout_alignRight="@+id/tv3"
-        android:text="0" />
-
-    <TextView
-        android:id="@+id/tv5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/t5"
-        android:layout_alignBottom="@+id/t5"
-        android:layout_toLeftOf="@+id/tv3"
-        android:text="0" />
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/linearLayout1" >
+    </ListView>
 
 </RelativeLayout>

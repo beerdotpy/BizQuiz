@@ -39,9 +39,9 @@ public class Home extends Activity {
 	       Calendar cal_alarm = Calendar.getInstance();       
 	       Calendar cal_now=Calendar.getInstance();
 	       //---sets the time for the alarm to trigger---      
-	       cal_alarm.set(Calendar.HOUR, 6);
+	       cal_alarm.set(Calendar.HOUR, 06);
 	       cal_alarm.set(Calendar.MINUTE, 00);
-	       cal_alarm.set(Calendar.SECOND, 0);
+	       cal_alarm.set(Calendar.SECOND, 00);
 	       if(cal_alarm.before(cal_now)){//if its in the past increment
 	           cal_alarm.add(Calendar.DATE,1);
 	       }
@@ -89,7 +89,7 @@ public class Home extends Activity {
 
    		switch (item.getItemId()) {
    		case R.id.menu_settings:
-   			//startActivity(new Intent(Home.this, Settings.class));
+   			startActivity(new Intent(this, Settings.class));
    			return true;
    		case R.id.menu_about:
    			startActivity(new Intent(this, AboutUs.class));
@@ -104,12 +104,20 @@ public class Home extends Activity {
    			Intent intent1=new Intent(this,Feedback.class);
    			startActivity(intent1);
    			return true;
+   		case R.id.menu_statistics:
+ 		     startActivity(new Intent(this,Statistics.class));
+ 		     return true;
+   		case R.id.menu_profile:
+   			Intent intent2 = new Intent(this,Profile.class);
+   			startActivity(intent2);
+   			return true;
+  		
+ 		     
    		default:
    			return super.onOptionsItemSelected(item);
    		}
     
        }
-	
 	protected CountDownTimer mCountDown = new CountDownTimer(10000, 1000)
     {
 

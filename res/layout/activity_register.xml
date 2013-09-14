@@ -33,7 +33,8 @@
         android:layout_alignBaseline="@+id/score"
         android:layout_alignBottom="@+id/score"
         android:layout_alignLeft="@+id/tv_score"
-        android:ems="10" />
+        android:ems="10"
+        android:hint="Enter your username" />
 
     <TextView
         android:id="@+id/t3"
@@ -72,7 +73,9 @@
         android:layout_alignLeft="@+id/edname"
         android:layout_below="@+id/edname"
         android:layout_marginTop="20dp"
-        android:ems="10" />
+        android:ems="10"
+        android:hint="Contact No."
+        android:inputType="number" />
 
     <TextView
         android:id="@+id/tv1"
@@ -89,7 +92,9 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/t2"
         android:layout_alignLeft="@+id/edcontact"
-        android:ems="10" />
+        android:ems="10"
+        android:hint="abc@xyz.com"
+        android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/edage"
@@ -97,7 +102,9 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/tv2"
         android:layout_alignLeft="@+id/edeamil"
-        android:ems="10" />
+        android:ems="10"
+        android:hint="Age"
+        android:inputType="number" />
 
     <EditText
         android:id="@+id/edcity"
@@ -105,7 +112,8 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/edage"
         android:layout_alignTop="@+id/t3"
-        android:ems="10" >
+        android:ems="10"
+        android:hint="City" >
 
         <requestFocus />
     </EditText>
