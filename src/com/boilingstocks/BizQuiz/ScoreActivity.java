@@ -43,6 +43,7 @@ public class ScoreActivity extends Activity {
 	ProgressDialog pDialog;
 
 	int score ;
+	int finalscore;
 	BQParse parse;
 	String username;
     SharedPreferences sp;   
@@ -56,7 +57,8 @@ public class ScoreActivity extends Activity {
 		setContentView(R.layout.activity_scores);
 		
 		TextView tvScore = (TextView) findViewById(R.id.tv_score);
-		score=QuizDetails.getfinal_score();
+		score=QuizDetails.getscore();
+		finalscore=QuizDetails.getfinal_score();
 		sp=this.getSharedPreferences("First_run", MODE_PRIVATE);
 	    username=sp.getString("Username", "hi");
 	    Log.d("usernme",username);
@@ -207,7 +209,7 @@ public class ScoreActivity extends Activity {
             Log.d("username",str[0]);
 			
 			params.add(new BasicNameValuePair("username",str[0]));
-			params.add(new BasicNameValuePair("score",Integer.toString(score)));
+			params.add(new BasicNameValuePair("score",Integer.toString(finalscore)));
 			
 			
 			jsonObject = jsonParser.makeHttpRequest(url, "GET", params);

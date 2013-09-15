@@ -91,7 +91,7 @@ public class QuesFetch extends Activity {
 	   builder1 = new AlertDialog.Builder(context);
 		builder1.setMessage("Info about the Quiz"+
 				" For each correct answer +1 point is awarded.Quiz has a time limit of 3min "+
-				"Press Back to quit or Ok to play")
+				"Press Back to Quit or Ok to Play")
 				.setCancelable(true)
 				.setOnCancelListener(new OnCancelListener() {
 					
@@ -236,7 +236,7 @@ public class QuesFetch extends Activity {
 			}else{
 				
 				 QuizDetails.setqid(QuizDetails.getqid()+1);
-	  	         Toast.makeText(QuesFetch.this, "Incorrect Answer.Correct Answer is"+QuizDetails.getans(), Toast.LENGTH_LONG).show();
+	  	         Toast.makeText(QuesFetch.this, "Incorrect Answer.Correct Answer is "+QuizDetails.getans(), Toast.LENGTH_LONG).show();
 	  	        	  	        
 	  	        new Questionfetch(QuesFetch.this).execute(category);
 			
@@ -261,7 +261,7 @@ public class QuesFetch extends Activity {
 			}else{
 				
 				 QuizDetails.setqid(QuizDetails.getqid()+1);
-	  	         Toast.makeText(QuesFetch.this, "Incorrect Answer.Correct Answer is"+QuizDetails.getans(), Toast.LENGTH_LONG).show();
+	  	         Toast.makeText(QuesFetch.this, "Incorrect Answer.Correct Answer is "+QuizDetails.getans(), Toast.LENGTH_LONG).show();
 	  	        	  	        
 	  	        new Questionfetch(QuesFetch.this).execute(category);
 			
@@ -345,7 +345,6 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
 			
     	    calscore();
 			Intent score=new Intent (QuesFetch.this,ScoreActivity.class);
-			QuizDetails.setfinal_score(QuizDetails.getfinal_score()+QuizDetails.getscore());
 			startActivity(score);
 		
 		}
@@ -372,7 +371,7 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
 	    pDialog.setIndeterminate(true);
 	    pDialog.show();
 	
-	    int length=useranswer.length();
+	    int length=QuizDetails.getans().length();
 	    threshvalue=length/2+1;
 	    
 	    Log.d("ThreshValue",Integer.toString(threshvalue));
@@ -391,7 +390,7 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
 
 		
 		          QuizDetails.setqid(QuizDetails.getqid()+1);
-	  	          Toast.makeText(this, "Incorrect Answer.Correct Answer is"+QuizDetails.getans(), Toast.LENGTH_LONG).show();
+	  	          Toast.makeText(this, "Incorrect Answer.Correct Answer is "+QuizDetails.getans(), Toast.LENGTH_LONG).show();
 	  	        pDialog.dismiss();
 	  	        
 	  	        new Questionfetch(QuesFetch.this).execute(category);
@@ -405,13 +404,16 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
     	ans=ans.toLowerCase();
     	String correctans=QuizDetails.getans().toLowerCase();
     	
-    	for(int i=0;i<ans.length();i++){
-    		
-    		if(ans.charAt(i)==correctans.charAt(i)){
-    		   counter++;
+    	for(int i=0;i<correctans.length();i++){		
+    try{		
+    	  if(ans.charAt(i)==correctans.charAt(i)){
+    		   counter++;		
     		}
-    		
+    		}catch(StringIndexOutOfBoundsException e){
+    		e.printStackTrace();
+    		}
     	}
+    	
     	
     	     if(threshval<=counter){
     	    	      return true;
@@ -428,6 +430,16 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
   	  SharedPreferences.Editor editor = sp.edit();
   	  editor.putInt(category,QuizDetails.getscore());
   	  editor.commit();
+  	    int score1 =sp.getInt("Category1", 0);
+	    int score2 =sp.getInt("Category2", 0);
+	    int score3 =sp.getInt("Category3", 0);
+	    int score4 =sp.getInt("Category4", 0);
+	    int score5 =sp.getInt("Category5", 0);
+	    int score6 =sp.getInt("Category6", 0);
+	    int score7 =sp.getInt("Category7", 0);
+	    int score8 =sp.getInt("Category8", 0);
+	    QuizDetails.setfinal_score(score1+score2+score3+score4+score5+score6+score7+score8);
+	    
     }
     
     @Override
@@ -505,7 +517,7 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
         @Override
         public void onBackPressed() {
            Log.d("CDA", "onBackPressed Called");
-           Intent back = new Intent(QuesFetch.this,Categories.class);
+           Intent back = new Intent(QuesFetch.this,ScoreActivity.class);
            calscore();
            startActivity(back);
         }

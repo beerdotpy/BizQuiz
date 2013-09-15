@@ -96,7 +96,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/answer"
-        android:layout_toRightOf="@+id/tv_score" />
+        android:layout_toRightOf="@+id/tv_score"
+        android:text="Loading Question" />
 
     <TextView
         android:id="@+id/score"

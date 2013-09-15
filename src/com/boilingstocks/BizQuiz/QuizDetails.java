@@ -83,6 +83,8 @@ static int getcategory(){
  static int getshuffle(){
 	 return shuffle;
  }
+ 
+ 
  static void shuffle(){
 	  
 	  Random rnd = new Random();
@@ -107,5 +109,6 @@ static int getcategory(){
 		  	return 0;
 	  }
   }
+  
   
 }

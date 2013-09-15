@@ -44,7 +44,7 @@ public class Statistics extends Activity {
     
      lv=(ListView) findViewById(R.id.listView1);
 
-    new Stats(Statistics.this).execute("check");    
+    new Stats(Statistics.this).execute("get top 10 scores");    
 
 	}
 
