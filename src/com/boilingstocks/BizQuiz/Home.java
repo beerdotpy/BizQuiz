@@ -114,7 +114,10 @@ public class Home extends Activity {
    			Intent intent2 = new Intent(this,Profile.class);
    			startActivity(intent2);
    			return true;
-  		
+   		case R.id.menu_archive:
+   			Intent intent3 = new Intent(this,ArchiveMonthsActivity.class);
+   			startActivity(intent3);
+   			return true;
  		     
    		default:
    			return super.onOptionsItemSelected(item);
@@ -138,13 +141,13 @@ public class Home extends Activity {
         	Log.d("Timer","3mins finish");
         	if(counter==1){
         		
-        		Intent register=new Intent(Home.this,ArchiveMonthsActivity.class);
+        		Intent register=new Intent(Home.this,Register.class);
     			startActivity(register);
     			
         	}else if(counter==2)
         	{
         		
-        		Intent categories=new Intent(Home.this,ArchiveMonthsActivity.class);
+        		Intent categories=new Intent(Home.this,Categories.class);
     			startActivity(categories);
     			
         	}

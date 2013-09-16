@@ -66,9 +66,9 @@ public class ArchiveMonthsActivity extends Activity {
 	    
 	    JSONObject json=new JSONObject();
 	    
-	    int[] array_id=new int[11];
-	    int[] array_year=new int[11];
-	    String[] array_month=new String[11];
+	    int[] array_id;
+	    int[] array_year;
+	    String[] array_month;
 	    
 	       
 	   public ArchiveMonthList(Context ctx) {
@@ -97,7 +97,11 @@ public class ArchiveMonthsActivity extends Activity {
 				jArray= json.getJSONArray("data");
 				System.out.println("*****JARRAY*****"+jArray.length());
 				
-				for(int i=0;i<=10;i++){
+				array_id=new int[jArray.length()];
+				array_year=new int[jArray.length()];
+				array_month=new String[jArray.length()];
+				
+				for(int i=0;i<jArray.length();i++){
 				
 				JSONObject json_data = jArray.getJSONObject(i);
                 
@@ -124,7 +128,7 @@ public class ArchiveMonthsActivity extends Activity {
 			
 			pDialog.dismiss();
 			
-			for(int i=0;i<=10;i++){
+			for(int i=0;i<jArray.length();i++){
 				Month month_list=new Month(); 
 				month_list.set_Id(array_id[i]);
 				month_list.set_Month(array_month[i]);
@@ -142,5 +146,13 @@ public class ArchiveMonthsActivity extends Activity {
 		
 	}
 	
+	@Override
+    public void onBackPressed() {
+       Log.d("CDA", "onBackPressed Called");
+       Intent back = new Intent(this,Categories.class);
+//       setIntent.addCategory(Intent.CATEGORY_HOME);
+//       setIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+       startActivity(back);
+    }
 	
 }

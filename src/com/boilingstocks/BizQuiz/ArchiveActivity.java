@@ -102,7 +102,7 @@ public class ArchiveActivity extends Activity{
 				jArray= json.getJSONArray("data");
 				System.out.println("*****JARRAY*****"+jArray.length());
 				
-				for(int i=0;i<=10;i++){
+				for(int i=0;i<jArray.length();i++){
 				
 				JSONObject json_data = jArray.getJSONObject(i);
                 
@@ -129,7 +129,7 @@ public class ArchiveActivity extends Activity{
 			
 			pDialog.dismiss();
 			
-			for(int i=0;i<=10;i++){
+			for(int i=0;i<jArray.length();i++){
 				ArchQues ques_list=new ArchQues(); 
 				ques_list.set_Question(array_question[i]);
 				ques_list.set_Answer(array_answer[i]);
@@ -145,6 +145,15 @@ public class ArchiveActivity extends Activity{
 		}
 		
 	}
+	
+	@Override
+    public void onBackPressed() {
+       Log.d("CDA", "onBackPressed Called");
+       Intent back = new Intent(this,ArchiveMonthsActivity.class);
+//       setIntent.addCategory(Intent.CATEGORY_HOME);
+//       setIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+       startActivity(back);
+    }
 	
 	
 }

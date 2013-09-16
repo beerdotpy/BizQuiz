@@ -221,6 +221,10 @@ public class Register extends Activity {
    			Intent intent2 = new Intent(this,Profile.class);
    			startActivity(intent2);
    			return true;
+   		case R.id.menu_archive:
+   			Intent intent3 = new Intent(this,ArchiveMonthsActivity.class);
+   			startActivity(intent3);
+   			return true;	
   		
  		     
    		default:

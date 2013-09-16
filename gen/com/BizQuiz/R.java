@@ -282,6 +282,7 @@ containing a value of this type.
         public static final int linearLayout1=0x7f050037;
         public static final int listView1=0x7f050039;
         public static final int menu_about=0x7f050053;
+        public static final int menu_archive=0x7f050058;
         public static final int menu_exit=0x7f050054;
         public static final int menu_feedback=0x7f050056;
         public static final int menu_profile=0x7f050055;

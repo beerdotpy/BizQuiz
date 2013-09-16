@@ -10,6 +10,7 @@
     <item android:id="@+id/menu_profile" android:orderInCategory="100" android:title="Profile"></item>
     <item android:id="@+id/menu_feedback" android:orderInCategory="100" android:title="Feedback"></item>
     <item android:id="@+id/menu_statistics" android:orderInCategory="100" android:title="Statistics"></item>
+    <item android:id="@+id/menu_archive" android:orderInCategory="100" android:title="Archive"></item>
     
 
 </menu>
