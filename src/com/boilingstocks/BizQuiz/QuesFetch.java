@@ -526,7 +526,10 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
         public boolean onTouchEvent(MotionEvent event) {
             InputMethodManager imm = (InputMethodManager)getSystemService(Context.
                                                             INPUT_METHOD_SERVICE);
-            imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+            if(imm != null)
+             {
+            	imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+             }
             return true;
         }
 
