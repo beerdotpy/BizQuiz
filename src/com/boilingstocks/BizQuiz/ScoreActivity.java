@@ -60,7 +60,7 @@ public class ScoreActivity extends Activity {
 		score=QuizDetails.getscore();
 		finalscore=QuizDetails.getfinal_score();
 		sp=this.getSharedPreferences("First_run", MODE_PRIVATE);
-	    username=sp.getString("Username", "hi");
+	    username=sp.getString("Username", " ");
 	    Log.d("usernme",username);
 	    
 	    new Updatescore(ScoreActivity.this).execute(username);

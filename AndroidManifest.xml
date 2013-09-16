@@ -46,7 +46,12 @@
             android:name="com.boilingstocks.BizQuiz.QuesFetch"></activity>
         <activity
             android:name="com.boilingstocks.BizQuiz.Categories"></activity>
+<<<<<<< HEAD
         <activity 
+=======
+        <activity android:name="ScoreActivity"></activity>
+        <activity
+>>>>>>> score activity added
             android:name="com.boilingstocks.BizQuiz.ScoreActivity"></activity>
         
         <meta-data android:value="@string/app_id" android:name="com.facebook.sdk.ApplicationId"/>
