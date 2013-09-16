@@ -4,7 +4,7 @@ public class Month {
 
 	int _Id;
 	String _Month;
-	String _Year;
+	int _Year;
 	/**
 	 * @return the _Id
 	 */
@@ -32,13 +32,13 @@ public class Month {
 	/**
 	 * @return the _Year
 	 */
-	public String get_Year() {
+	public int get_Year() {
 		return _Year;
 	}
 	/**
 	 * @param _Year the _Year to set
 	 */
-	public void set_Year(String _Year) {
+	public void set_Year(int _Year) {
 		this._Year = _Year;
 	}
 	

@@ -138,13 +138,13 @@ public class Home extends Activity {
         	Log.d("Timer","3mins finish");
         	if(counter==1){
         		
-        		Intent register=new Intent(Home.this,Register.class);
+        		Intent register=new Intent(Home.this,ArchiveMonthsActivity.class);
     			startActivity(register);
     			
         	}else if(counter==2)
         	{
         		
-        		Intent categories=new Intent(Home.this,Categories.class);
+        		Intent categories=new Intent(Home.this,ArchiveMonthsActivity.class);
     			startActivity(categories);
     			
         	}

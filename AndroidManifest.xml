@@ -41,11 +41,14 @@
             android:name="com.boilingstocks.BizQuiz.Register"></activity>
         <activity
             android:name="com.boilingstocks.BizQuiz.ValidateAnswer"></activity>
-        
+        <activity
+            android:name="com.boilingstocks.BizQuiz.ArchiveActivity"></activity>        
          <activity
             android:name="com.boilingstocks.BizQuiz.QuesFetch"></activity>
         <activity
             android:name="com.boilingstocks.BizQuiz.Categories"></activity>
+        <activity
+            android:name="com.boilingstocks.BizQuiz.ArchiveMonthsActivity"></activity>
 
          
 
