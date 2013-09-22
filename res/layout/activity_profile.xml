@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:background="@drawable/bqhomescreen2" >
 
     <EditText
         android:id="@+id/et_name"
@@ -10,25 +11,6 @@
         android:layout_alignBottom="@+id/tv_name"
         android:layout_alignParentRight="true"
         android:ems="10" />
-
-    <TextView
-        android:id="@+id/tv_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/tv_name"
-        android:layout_below="@+id/tv_name"
-        android:layout_marginTop="32dp"
-        android:text="Email"
-        android:textSize="18sp" />
-
-    <EditText
-        android:id="@+id/et_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/tv_email"
-        android:ems="10"
-        android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/et_city"
@@ -113,13 +95,52 @@
         android:text="Age"
         android:textSize="18sp" />
 
+    <TextView
+        android:id="@+id/tv_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_name"
+        android:layout_below="@+id/tv_name"
+        android:layout_marginTop="77dp"
+        android:text="Email"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/ed_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/et_name"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/et_name"
+        android:layout_marginTop="15dp"
+        android:ems="10"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv_email"
+        android:layout_alignBottom="@+id/tv_email"
+        android:layout_alignParentRight="true"
+        android:ems="10"
+        android:inputType="textEmailAddress" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ed_pass"
+        android:layout_alignLeft="@+id/tv_email"
+        android:text="Password"
+        android:textSize="18sp" />
+
     <Button
         android:id="@+id/profile_submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/et_age"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="23dp"
-        android:layout_toRightOf="@+id/tv_contact"
         android:text="Submit" />
 
 </RelativeLayout>

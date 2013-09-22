@@ -21,26 +21,28 @@ public class StatisticsRowAdapter extends BaseAdapter {
 	private ArrayList<ListData> myList = new ArrayList<ListData>();
 	private LayoutInflater inflater;
 	SharedPreferences sp;
-	int score1;
-	int score2;
-	int score3;
-	int score4;
-	int score5;
-	int score6;
-	int score7;
-	int score8;
+	int score[]=new int[8];
 	
 	String getuser(){
 	sp=context.getSharedPreferences("First_run",context.MODE_PRIVATE );
 	String user_name =sp.getString("Username", " ");
-	score1 =sp.getInt("Category1", 0);
-	score2 =sp.getInt("Category2", 0);
-	score3 =sp.getInt("Category3", 0);
-	score4 =sp.getInt("Category4", 0);
-	score5 =sp.getInt("Category5", 0);
-	score6 =sp.getInt("Category6", 0);
-	score7 =sp.getInt("Category7", 0);
-	score8 =sp.getInt("Category8", 0);
+	
+	    score[0] =sp.getInt("Category1", 0);
+	    score[1] =sp.getInt("Category2", 0);
+	    score[2] =sp.getInt("Category3", 0);
+	    score[3] =sp.getInt("Category4", 0);
+	    score[4] =sp.getInt("Category5", 0);
+	    score[5] =sp.getInt("Category6", 0);
+	    score[6] =sp.getInt("Category7", 0);
+	    score[7] =sp.getInt("Category8", 0);
+    
+    for(int i=0;i<8;i++){
+    	if(score[i]==-1){
+    		    		     
+    		score[i]=0;
+    	}
+    }
+	
 	return user_name;
 	}
 	
@@ -89,17 +91,22 @@ public class StatisticsRowAdapter extends BaseAdapter {
 		mViewHolder.individual_score.setVisibility(View.INVISIBLE);
 		
 		mViewHolder.u_name.setText(myList.get(position).getusername());
-		if(getuser().compareToIgnoreCase(myList.get(position).getusername())==0){
+		try{
+			if(getuser().compareToIgnoreCase(myList.get(position).getusername())==0){
+		
 			Log.d("check","check");
 			mViewHolder.individual_score.setVisibility(View.VISIBLE);
 			 
 			
-			mViewHolder.individual_score.setText(Integer.toString(score1)+","+Integer.toString(score2)+","+Integer.toString(score3)
-					                              +","+Integer.toString(score4)+","+Integer.toString(score5)+","+Integer.toString(score6)
-					                              +","+Integer.toString(score7)+","+Integer.toString(score8));	
+			mViewHolder.individual_score.setText(Integer.toString(score[0])+","+Integer.toString(score[1])+","+Integer.toString(score[2])
+					                              +","+Integer.toString(score[3])+","+Integer.toString(score[4])+","+Integer.toString(score[5])
+					                              +","+Integer.toString(score[6])+","+Integer.toString(score[7]));	
 			
 		}
 		
+		}catch(NullPointerException e){
+			e.printStackTrace();
+		}
 		
 		mViewHolder.scre.setText(Integer.toString(myList.get(position).getscore()));
 		

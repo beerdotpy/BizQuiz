@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/wallpaper" >
+    android:background="@drawable/bqhomescreen2" >
 
     <TextView
         android:id="@+id/tv_score"
@@ -11,7 +11,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="99dp"
-        android:text="About Us"
+        android:text="FAQs/Rules"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>

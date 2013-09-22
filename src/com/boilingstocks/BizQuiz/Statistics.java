@@ -80,7 +80,7 @@ public class Statistics extends Activity {
 		protected Boolean doInBackground(String... str) {
 			
 			
-			params.add(new BasicNameValuePair("check",str[0]));
+			
 			
 			json = jsonParser.makeHttpRequest(url, "GET", params);
 					

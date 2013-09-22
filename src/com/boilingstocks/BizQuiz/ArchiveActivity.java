@@ -17,10 +17,13 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.BizQuiz.R;
@@ -29,20 +32,18 @@ public class ArchiveActivity extends Activity{
 	ArrayList<ArchQues> archQuestions = new ArrayList<ArchQues>();
 	ArchQuesAdapter adapter;
 	ListView monthLV;
+	TextView archive_ans;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_archives);
+		archive_ans=(TextView) findViewById(R.id.archive_answer);
 		
 		int id=getIntent().getIntExtra("archiveId",-1);
 		Log.d("archive",Integer.toString(id));
-		/***
-		 * TODO 
-		 * PARSE YOUR JSON RESPONSE AND CREATE THE LIST.
-		 * 
-		 */
+		
 		
 		new ArchiveList(ArchiveActivity.this).execute(Integer.toString(id));
 		
@@ -54,7 +55,8 @@ public class ArchiveActivity extends Activity{
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 					long arg3) {
-				Toast.makeText(ArchiveActivity.this, archQuestions.get(arg2).get_Answer(), Toast.LENGTH_SHORT).show();
+				//Toast.makeText(ArchiveActivity.this, archQuestions.get(arg2).get_Answer(), Toast.LENGTH_SHORT).show();
+			archive_ans.setText(archQuestions.get(arg2).get_Answer());
 			}
 		});
 	}
@@ -155,5 +157,51 @@ public class ArchiveActivity extends Activity{
        startActivity(back);
     }
 	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+   		// Inflate the menu; this adds items to the action bar if it is present.
+   		getMenuInflater().inflate(R.menu.activity_home, menu);
+   		return true;
+   	}
+        
+
+      
+	public boolean onOptionsItemSelected(MenuItem item) {
+
+   		switch (item.getItemId()) {
+   		case R.id.menu_settings:
+   			startActivity(new Intent(this, Settings.class));
+   			return true;
+   		case R.id.menu_about:
+   			startActivity(new Intent(this, AboutUs.class));
+   			return true;
+   		case R.id.menu_exit:
+   			Intent intent = new Intent(Intent.ACTION_MAIN);
+   			intent.addCategory(Intent.CATEGORY_HOME);
+   			intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+   			startActivity(intent);
+   			return true;	
+   		case R.id.menu_profile:
+   			Intent intent2 = new Intent(this,Profile.class);
+   			startActivity(intent2);
+   			return true;
+   		case R.id.menu_feedback:
+   			Intent intent1=new Intent(this,Feedback.class);
+   			startActivity(intent1);
+   			return true;
+   		case R.id.menu_statistics:
+ 		     startActivity(new Intent(this,Statistics.class));
+ 		     return true;
+   		case R.id.menu_archive:
+   			Intent intent3 = new Intent(this,ArchiveMonthsActivity.class);
+   			startActivity(intent3);
+   			return true;	
+  		
+ 		     
+   		default:
+   			return super.onOptionsItemSelected(item);
+   		}
+    
+       }
 	
 }

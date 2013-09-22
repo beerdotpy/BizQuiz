@@ -27,6 +27,7 @@ import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Register extends Activity {
@@ -36,14 +37,18 @@ public class Register extends Activity {
 	EditText etcity;
 	EditText etage;
 	EditText etemail;
+	EditText etpass;
+	
 	String name;
 	String contact;
 	String email;
 	String city;
  	String age;	
+ 	String pass;
+ 	
     Button register; 
  	SharedPreferences sp;
- 	
+ 	TextView sign; 
 
  	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -55,8 +60,10 @@ public class Register extends Activity {
    etcity=(EditText) findViewById(R.id.edcity);
    etage=(EditText) findViewById(R.id.edage);
    etemail=(EditText) findViewById(R.id.edeamil);
-   register=(Button) findViewById(R.id.reg);
+   etpass=(EditText) findViewById(R.id.etpass);
    
+   register=(Button) findViewById(R.id.reg);
+   sign=(TextView) findViewById(R.id.signin);
    
 	register.setOnClickListener(new OnClickListener() {
 		
@@ -64,16 +71,25 @@ public class Register extends Activity {
 		public void onClick(View v) {
 			
 			name=etname.getText().toString();
+			pass=etpass.getText().toString();
 			contact=etcontact.getText().toString();
 			email=etemail.getText().toString();
 			city=etcity.getText().toString();
 		    age=etage.getText().toString();
 			
-		    new RegisterValidation(Register.this).execute(name,contact,email,city,age);
+		    new RegisterValidation(Register.this).execute(name,pass,contact,email,city,age);
 		}
 	});
 	
-	
+	sign.setOnClickListener(new OnClickListener() {
+		
+		@Override
+		public void onClick(View v) {
+			
+		Intent signin=new Intent(Register.this,Login.class);
+		startActivity(signin);
+		}
+	});
 	}
 	
 	class RegisterValidation extends AsyncTask<String, Void, Boolean> {
@@ -83,7 +99,7 @@ public class Register extends Activity {
 		JSONObject jsonObject = new JSONObject();
 		List<NameValuePair> params = new ArrayList<NameValuePair>();
 	    JSONParser jsonParser = new JSONParser();
-	    String url="http://practice.site11.com/login.php";
+	    String url="http://practice.site11.com/register.php";
 	    int status;
 		String uname;
 	    
@@ -105,10 +121,10 @@ public class Register extends Activity {
 		protected Boolean doInBackground(String... str) {
 			
             uname=str[0];
-            String uphone=str[1];
-            String uemail=str[2];
-            String ucity=str[3];
-            String uage=str[4];
+            String uphone=str[2];
+            String uemail=str[3];
+            String ucity=str[4];
+            String uage=str[5];
 			
 			Log.d("name",uname);
 			Log.d("phone",uphone);
@@ -117,6 +133,7 @@ public class Register extends Activity {
 			Log.d("age",uage);
 			
 			params.add(new BasicNameValuePair("name",uname));
+			params.add(new BasicNameValuePair("password",str[1]));
 			params.add(new BasicNameValuePair("contact",uphone));
 			params.add(new BasicNameValuePair("email",uemail));
 			params.add(new BasicNameValuePair("age",uage));
@@ -151,6 +168,7 @@ public class Register extends Activity {
 			    SharedPreferences.Editor editor = sp.edit();
 			    editor.putBoolean("Firstrun", false);
 			    editor.putString("Username",uname);
+			    editor.putString("Password", pass);
 			    editor.putString("Contact",contact);
 			    editor.putString("Email",email);
 			    editor.putString("Age",age);
@@ -217,10 +235,6 @@ public class Register extends Activity {
    		case R.id.menu_statistics:
  		     startActivity(new Intent(this,Statistics.class));
  		     return true;
-   		case R.id.menu_profile:
-   			Intent intent2 = new Intent(this,Profile.class);
-   			startActivity(intent2);
-   			return true;
    		case R.id.menu_archive:
    			Intent intent3 = new Intent(this,ArchiveMonthsActivity.class);
    			startActivity(intent3);
@@ -236,7 +250,7 @@ public class Register extends Activity {
 	@Override
     public void onBackPressed() {
        Log.d("CDA", "onBackPressed Called");
-       Intent back = new Intent(this,Categories.class);
+       Intent back = new Intent(this,Home.class);
 //       setIntent.addCategory(Intent.CATEGORY_HOME);
 //       setIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
        startActivity(back);

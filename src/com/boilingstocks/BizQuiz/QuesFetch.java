@@ -47,6 +47,7 @@ public class QuesFetch extends Activity {
 	TextView timer;
 	AlertDialog.Builder builder;
 	AlertDialog.Builder builder1;
+	AlertDialog.Builder builder_back;
 	Handler mHandler; 
 	Runnable mUpdateUITimerTask;
 	Context context;
@@ -54,12 +55,12 @@ public class QuesFetch extends Activity {
 	Button sell;
 	Button buy;
 	String category;         
-	TextView score;
 	TextView ques_stats;     // how much questions answered out of total question
 	int threshvalue;         //currently set to 50% 
 	int max_ques;            //maximum question in each category
-	boolean check=true;      //to check if activity is running first time 
+	boolean check=true;      //to check if activity is running first time for displaying the dialog box
 	SharedPreferences sp;
+	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -77,7 +78,7 @@ public class QuesFetch extends Activity {
        ans=(TextView) findViewById(R.id.ans);
        sell=(Button) findViewById(R.id.sell);
        buy=(Button) findViewById(R.id.buy);
-       score=(TextView) findViewById(R.id.score);
+       
        ques_stats=(TextView) findViewById(R.id.stats);
        
        QuizDetails.setshuffle(1);
@@ -149,13 +150,15 @@ public class QuesFetch extends Activity {
 		new Questionfetch(QuesFetch.this).execute(category);
 		sell.setVisibility(View.INVISIBLE);
 		buy.setVisibility(View.INVISIBLE);
-		
+				
 	}else if(catid==6){
 		
 		category="Category6";
 		new Questionfetch(QuesFetch.this).execute(category);
 		sell.setVisibility(View.INVISIBLE);
 		buy.setVisibility(View.INVISIBLE);
+		next.setVisibility(View.INVISIBLE);
+		previous.setVisibility(View.INVISIBLE);
 		
 	}else if(catid==7){
 		
@@ -343,8 +346,9 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
 		
       if(max_ques<QuizDetails.getqid()){
 			
-    	    calscore();
+    	    
 			Intent score=new Intent (QuesFetch.this,ScoreActivity.class);
+			score.putExtra("cat_name", category);
 			startActivity(score);
 		
 		}
@@ -354,8 +358,8 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
 		QuizDetails.setshuffle(0);
 		QuizDetails.set_maxques(max_ques);
 		tvquestion.setText(QuizDetails.getques());
-		score.setText("Score:"+Integer.toString(QuizDetails.getscore()));
-	    ques_stats.setText(Integer.toString(QuizDetails.getscore())+"/"+Integer.toString(QuizDetails.getqid()));
+		
+	    ques_stats.setText(Integer.toString(QuizDetails.getscore())+"/"+Integer.toString(QuizDetails.getqid()-1));
 		pDialog.dismiss();
 	   
 	}
@@ -424,23 +428,7 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
    
     }
     
-    void calscore(){
-    	
-      sp=QuesFetch.this.getSharedPreferences("First_run", MODE_PRIVATE);
-  	  SharedPreferences.Editor editor = sp.edit();
-  	  editor.putInt(category,QuizDetails.getscore());
-  	  editor.commit();
-  	    int score1 =sp.getInt("Category1", 0);
-	    int score2 =sp.getInt("Category2", 0);
-	    int score3 =sp.getInt("Category3", 0);
-	    int score4 =sp.getInt("Category4", 0);
-	    int score5 =sp.getInt("Category5", 0);
-	    int score6 =sp.getInt("Category6", 0);
-	    int score7 =sp.getInt("Category7", 0);
-	    int score8 =sp.getInt("Category8", 0);
-	    QuizDetails.setfinal_score(score1+score2+score3+score4+score5+score6+score7+score8);
-	    
-    }
+    
     
     @Override
 	protected void onResume(){
@@ -517,9 +505,32 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
         @Override
         public void onBackPressed() {
            Log.d("CDA", "onBackPressed Called");
-           Intent back = new Intent(QuesFetch.this,ScoreActivity.class);
-           calscore();
-           startActivity(back);
+           builder_back = new AlertDialog.Builder(context);
+   		builder_back.setMessage(
+   				"Are you sure you want to Quit? Your score won't be considered again.Press Back to Play again or Ok to Quit ")
+   				.setCancelable(true)
+   				.setOnCancelListener(new OnCancelListener() {
+   					
+   					public void onCancel(DialogInterface dialog) {
+   						// TODO Auto-generated method stub
+   						
+//   						Intent playconti=new Intent(QuesFetch.this,ScoreActivity.class);
+//   						calscore();
+//   						startActivity(playconti);
+   					}
+   				})
+   				.setPositiveButton("Ok",new DialogInterface.OnClickListener() {
+   					
+   					public void onClick(DialogInterface dialog, int which) {
+   						// TODO Auto-generated method stub
+   						
+   						mCountDown.cancel();
+   						Intent returnhome=new Intent(QuesFetch.this,ScoreActivity.class);
+   						returnhome.putExtra("cat_name", category);
+   			     		startActivity(returnhome);
+   					}
+   				})
+   				.show();
         }
         
         @Override

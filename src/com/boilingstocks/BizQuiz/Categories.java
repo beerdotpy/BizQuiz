@@ -5,6 +5,7 @@ import com.BizQuiz.R;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -23,11 +24,26 @@ public class Categories extends Activity {
 	Button cat6;
 	Button cat7;
 	Button cat8;
+	SharedPreferences sp;
+	 
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-       setContentView(R.layout.activity_categories);
+		sp=this.getSharedPreferences("First_run", MODE_PRIVATE);
+	       Boolean check=sp.getBoolean("Firstrun", true);
+	       
+	       Log.d("firstrun",Boolean.toString(check));
+	       if(check){
+
+	    	   Intent categories=new Intent(this,Register.class);
+				startActivity(categories); 
+	   
+	       }
+		
+		setContentView(R.layout.activity_categories);
+       
+       
               
        cat1=(Button) findViewById(R.id.category1);
        cat2=(Button) findViewById(R.id.category2);
@@ -39,6 +55,8 @@ public class Categories extends Activity {
        cat8=(Button) findViewById(R.id.category8);
        
        
+       
+       
        cat1.setOnClickListener(new OnClickListener() {
 	   	
 		@Override
@@ -47,6 +65,7 @@ public class Categories extends Activity {
 		  	Intent intent=new Intent(Categories.this,QuesFetch.class);
 		  	QuizDetails.setcategory(1);
 		  	startActivity(intent);
+		  	
 		}
 	});
 	
@@ -110,7 +129,7 @@ public class Categories extends Activity {
    		@Override
    		public void onClick(View v) {
    			// TODO Auto-generated method stub
-   		  	Intent intent=new Intent(Categories.this,QuesFetch.class);
+   		  	Intent intent=new Intent(Categories.this,Category7.class);
    		  	QuizDetails.setcategory(7);
    		  	startActivity(intent);
    		}
@@ -177,10 +196,10 @@ public class Categories extends Activity {
 	@Override
     public void onBackPressed() {
        Log.d("CDA", "onBackPressed Called");
-       Intent back = new Intent(Categories.this,Categories.class);
-//       setIntent.addCategory(Intent.CATEGORY_HOME);
-//       setIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-       startActivity(back);
+       Intent intent = new Intent(Intent.ACTION_MAIN);
+			intent.addCategory(Intent.CATEGORY_HOME);
+			intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+			startActivity(intent);
     }
     
 }

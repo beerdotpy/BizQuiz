@@ -10,17 +10,6 @@
     tools:context=".Categories" >
 
     <Button
-        android:id="@+id/category1"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="55dp"
-        android:layout_marginTop="74dp"
-        android:background="@drawable/q1" />
-
-    <Button
         android:id="@+id/category6"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
@@ -88,5 +77,16 @@
         android:layout_above="@+id/category3"
         android:layout_alignLeft="@+id/category8"
         android:background="@drawable/q2" />
+
+    <Button
+        android:id="@+id/category1"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="118dp"
+        android:layout_marginTop="132dp"
+        android:background="@drawable/q1" />
 
 </RelativeLayout>

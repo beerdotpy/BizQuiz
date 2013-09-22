@@ -2,19 +2,16 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/wallpaper" >
+    android:background="@drawable/bqhomescreen1" >
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="174dp"
-        android:text="WELCOME "
+        android:layout_centerVertical="true"
+        android:text="Welcome"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp"
-        android:typeface="serif" />
+        android:textSize="35sp" />
 
 </RelativeLayout>

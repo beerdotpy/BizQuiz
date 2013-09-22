@@ -72,6 +72,10 @@ static int getcategory(){
 	  return qid;
   }
   
+  static int getmax_ques(){
+	  return max_ques;
+  }
+  
   static int getscore(){
 	  return score;
   }

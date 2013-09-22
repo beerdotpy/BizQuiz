@@ -26,13 +26,13 @@ import android.widget.Button;
 public class Home extends Activity {
 	
 	SharedPreferences sp;
-	int counter=0;
+	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
        setContentView(R.layout.activity_home);
-       mCountDown.start();
+       
 		
 		
 		AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);                 
@@ -69,11 +69,12 @@ public class Home extends Activity {
        Log.d("firstrun",Boolean.toString(check));
        if(check){
 
-    	   counter=1;
+    	    mCountDown.start();
    
        }else{
  
-			counter=2;
+    	   Intent categories=new Intent(Home.this,Categories.class);
+			startActivity(categories);
 
        }
 	
@@ -139,18 +140,11 @@ public class Home extends Activity {
         public void onFinish()
         {   
         	Log.d("Timer","3mins finish");
-        	if(counter==1){
+        	
         		
         		Intent register=new Intent(Home.this,Register.class);
     			startActivity(register);
-    			
-        	}else if(counter==2)
-        	{
-        		
-        		Intent categories=new Intent(Home.this,Categories.class);
-    			startActivity(categories);
-    			
-        	}
+    		        	
         	}
         };
 

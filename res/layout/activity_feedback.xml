@@ -1,68 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-
-    <TextView
-        android:id="@+id/attempt_ques"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="77dp"
-        android:text="Username" />
-
-    <EditText
-        android:id="@+id/ed_username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/attempt_ques"
-        android:layout_alignBottom="@+id/attempt_ques"
-        android:layout_marginLeft="14dp"
-        android:layout_toRightOf="@+id/attempt_ques"
-        android:ems="10" >
-
-        <requestFocus />
-    </EditText>
-
-    <EditText
-        android:id="@+id/ed_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/t1"
-        android:layout_alignBottom="@+id/t1"
-        android:layout_alignLeft="@+id/ed_username"
-        android:ems="10" />
-
-    <Spinner
-        android:id="@+id/spinner1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/ed_email"
-        android:layout_marginTop="26dp"
-        android:entries="@array/type_feedback"
-        android:prompt="@string/feedback" />
-
-    <EditText
-        android:id="@+id/ed_about"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/spinner1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="31dp"
-        android:ems="10"
-        android:inputType="textMultiLine" />
-
-    <Button
-        android:id="@+id/fd_submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ed_about"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="39dp"
-        android:text="Submit" />
+    android:layout_height="match_parent"
+    android:background="@drawable/bqhomescreen2" >
 
     <TextView
         android:id="@+id/tv1"
@@ -71,16 +11,94 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:text="FeedBack"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:text="Reach Us"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:typeface="serif" />
+
+    <Button
+        android:id="@+id/fd_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/tv1"
+        android:layout_marginBottom="17dp"
+        android:text="Submit" />
+
+    <TextView
+        android:id="@+id/badge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ed_about"
+        android:layout_alignParentLeft="true"
+        android:text="Content"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/ed_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:ems="10" />
 
     <TextView
         android:id="@+id/t1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ed_email"
         android:layout_alignLeft="@+id/attempt_ques"
-        android:layout_below="@+id/ed_username"
-        android:layout_marginTop="29dp"
-        android:text="Email" />
+        android:text="Email"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/ed_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ed_email"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="14dp"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/attempt_ques"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ed_username"
+        android:layout_alignParentLeft="true"
+        android:text="Username"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/ed_about"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/fd_submit"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="23dp"
+        android:ems="10"
+        android:inputType="textMultiLine" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Website link and Facebook Link"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:typeface="serif" />
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ed_about"
+        android:layout_centerHorizontal="true"
+        android:entries="@array/type_feedback"
+        android:prompt="@string/feedback" />
 
 </RelativeLayout>

@@ -10,17 +10,6 @@
     tools:context=".Categories" >
 
     <Button
-        android:id="@+id/category1"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="55dp"
-        android:layout_marginTop="74dp"
-        android:background="@drawable/q1" />
-
-    <Button
         android:id="@+id/category6"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
@@ -51,6 +40,16 @@
         android:background="@drawable/q4" />
 
     <Button
+        android:id="@+id/category2"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/category1"
+        android:layout_alignBottom="@+id/category1"
+        android:layout_alignRight="@+id/category8"
+        android:background="@drawable/q7" />
+
+    <Button
         android:id="@+id/category5"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
@@ -67,7 +66,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/category3"
         android:layout_alignTop="@+id/category8"
-        android:background="@drawable/q7" />
+        android:background="@drawable/q2" />
 
     <Button
         android:id="@+id/category8"
@@ -81,12 +80,14 @@
         android:background="@drawable/q1" />
 
     <Button
-        android:id="@+id/category2"
+        android:id="@+id/category1"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/category3"
-        android:layout_alignLeft="@+id/category8"
-        android:background="@drawable/q2" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="58dp"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/q1" />
 
 </RelativeLayout>

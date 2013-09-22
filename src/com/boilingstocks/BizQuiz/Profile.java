@@ -40,18 +40,21 @@ public class Profile extends Activity {
 	String user_contact;
 	String user_city;
 	String user_age;
+	String user_pass;
 	
 	String new_name;
 	String new_email;
 	String new_contact;
 	String new_age;
 	String new_city;
+	String new_pass;
 	
 	EditText ed1;
 	EditText ed2;
 	EditText ed3;
 	EditText ed4;
 	EditText ed5;
+	EditText ed6;
 	
 	SharedPreferences shared;
 	
@@ -64,13 +67,17 @@ public class Profile extends Activity {
 	
 	shared=this.getSharedPreferences("First_run", MODE_PRIVATE);
     user_name=shared.getString("Username", "");
+    
     user_email=shared.getString("Email", "");
     user_contact=shared.getString("Contact", "");
     user_age=shared.getString("Age", "");
     user_city=shared.getString("City", "");
+	user_pass=shared.getString("Password", "");
 	
 	ed1=(EditText) findViewById(R.id.et_name);
 	ed1.setHint(user_name);
+	ed6=(EditText) findViewById(R.id.ed_pass);
+	ed6.setHint(user_pass);
 	ed2=(EditText) findViewById(R.id.et_email);
 	ed2.setHint(user_email);
 	ed3=(EditText) findViewById(R.id.et_contact);
@@ -91,6 +98,7 @@ public class Profile extends Activity {
 			new_contact=ed3.getText().toString();
 			new_age=ed5.getText().toString();
 			new_city=ed4.getText().toString();					
+			new_pass=ed6.getText().toString();
 			
 			new ProfileUpdate(Profile.this).execute();
 		}
@@ -143,6 +151,9 @@ public class Profile extends Activity {
 			if(new_city.matches("")){
 				new_city=user_city;
 			}
+			if(new_pass.matches("")){
+				new_pass=user_pass;
+			}
 			
 			params.add(new BasicNameValuePair("username",new_name));
 			params.add(new BasicNameValuePair("useremail",new_email));
@@ -150,6 +161,7 @@ public class Profile extends Activity {
 			params.add(new BasicNameValuePair("userage",new_age));
 			params.add(new BasicNameValuePair("usercity",new_city));
 			params.add(new BasicNameValuePair("old_name",user_name));
+			params.add(new BasicNameValuePair("userpass",new_pass));
 			
 			
 			jsonObject = jsonParser.makeHttpRequest(url, "GET", params);
@@ -175,6 +187,7 @@ public class Profile extends Activity {
 			shared = context.getSharedPreferences("First_run", MODE_PRIVATE);
 		    SharedPreferences.Editor editor = shared.edit();
 		    editor.putString("Username",new_name);
+		    editor.putString("Password",new_pass);
 		    editor.putString("Contact",new_contact);
 		    editor.putString("Email",new_email);
 		    editor.putString("Age",new_age);

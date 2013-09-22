@@ -27,43 +27,6 @@
         android:textSize="18sp" />
 
     <Button
-        android:id="@+id/previous"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="74dp"
-        android:layout_marginLeft="18dp"
-        android:text="Previous" />
-
-    <Button
-        android:id="@+id/category2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/previous"
-        android:layout_alignBottom="@+id/previous"
-        android:layout_alignRight="@+id/timer"
-        android:text="Next" />
-
-    <Button
-        android:id="@+id/sell"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/buy"
-        android:layout_alignBottom="@+id/buy"
-        android:layout_alignRight="@+id/previous"
-        android:text="Sell" />
-
-    <Button
-        android:id="@+id/buy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/category2"
-        android:layout_marginBottom="23dp"
-        android:layout_toLeftOf="@+id/timer"
-        android:text="Buy" />
-
-    <Button
         android:id="@+id/submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -94,16 +57,6 @@
         android:typeface="serif" />
 
     <TextView
-        android:id="@+id/question"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/tv_score"
-        android:layout_toRightOf="@+id/tv_score"
-        android:text="Loading Question"
-        android:textSize="14sp"
-        android:typeface="serif" />
-
-    <TextView
         android:id="@+id/stats"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -126,12 +79,52 @@
         android:id="@+id/answer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/sell"
-        android:layout_marginBottom="42dp"
-        android:layout_toRightOf="@+id/tv_score"
-        android:ems="10" >
+        android:layout_alignLeft="@+id/question"
+        android:layout_centerVertical="true"
+        android:ems="10" />
 
-        <requestFocus />
-    </EditText>
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tv_score"
+        android:layout_centerHorizontal="true"
+        android:text="Loading Question"
+        android:textSize="14sp"
+        android:typeface="serif" />
+
+    <Button
+        android:id="@+id/sell"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/submit"
+        android:layout_alignBottom="@+id/submit"
+        android:layout_toLeftOf="@+id/answer"
+        android:text="Sell" />
+
+    <Button
+        android:id="@+id/buy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/category2"
+        android:layout_marginBottom="29dp"
+        android:layout_toRightOf="@+id/question"
+        android:text="Buy" />
+
+    <Button
+        android:id="@+id/category2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/timer"
+        android:text="Next" />
+
+    <Button
+        android:id="@+id/previous"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buy"
+        android:layout_toLeftOf="@+id/submit"
+        android:text="Previous" />
 
 </RelativeLayout>

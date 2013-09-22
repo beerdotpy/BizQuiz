@@ -43,10 +43,13 @@ public class ScoreActivity extends Activity {
 	ProgressDialog pDialog;
 
 	int score ;
-	int finalscore;
+	int finalscore=0;
 	BQParse parse;
 	String username;
     SharedPreferences sp;   
+	String category_name;
+	TextView badge;
+	int[] user_score=new int[8];
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -54,17 +57,61 @@ public class ScoreActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		parse = new BQParse(ScoreActivity.this);
 		setUpParse();
+		
 		setContentView(R.layout.activity_scores);
+		badge=(TextView) findViewById(R.id.badge);
+		badge.setVisibility(View.GONE);
+		category_name=getIntent().getStringExtra("cat_name");
+		Log.d("catname",category_name);
+		
+		sp=this.getSharedPreferences("First_run", MODE_PRIVATE);
+		Boolean first_attempt=sp.getBoolean(category_name+"_run", true);
+		int first_time_score=sp.getInt(category_name,-1);
+		username=sp.getString("Username", " ");
+	    
+		Log.d("usernme",username);
+	    
+	   if(first_attempt && first_time_score==-1){
+	        	
+	    	      if(QuizDetails.getscore()==QuizDetails.getmax_ques()){
+	    	    	  badge.setVisibility(View.VISIBLE); 
+	    	    	  badge.setText("Congratulations! You scored"+ QuizDetails.getscore()/QuizDetails.getmax_ques()+".Badge awarded."); 
+	    	      }
+	    	  	  SharedPreferences.Editor editor = sp.edit();
+	    	  	  editor.putInt(category_name,QuizDetails.getscore());  //stores the score of the particular category
+	    	  	  editor.putBoolean(category_name+"_run",false);  //score will be calculated only first time
+	    	  	  editor.commit();
+	    	 
+	    	  	    user_score[0] =sp.getInt("Category1", 0);
+	    	  	    user_score[1] =sp.getInt("Category2", 0);
+	    	  	    user_score[2] =sp.getInt("Category3", 0);
+	    	  	    user_score[3] =sp.getInt("Category4", 0);
+	    	  	    user_score[4] =sp.getInt("Category5", 0);
+	    	  	    user_score[5] =sp.getInt("Category6", 0);
+	    	  	    user_score[6] =sp.getInt("Category7", 0);
+	    	  	    user_score[7] =sp.getInt("Category8", 0);
+	    		    
+	    		    for(int i=0;i<8;i++){
+	    		    	if(user_score[i]==-1){
+	    		    		    		     
+	    		    		user_score[i]=0;
+	    		    	}
+	    		    	
+	    		    	finalscore=finalscore+user_score[i];
+	    		    }
+	    		   	    		    	     	
+	  	  new Updatescore(ScoreActivity.this).execute(username,category_name,Integer.toString(QuizDetails.getscore()),
+	  			  Integer.toString(finalscore));
+	    
+	    }else{
+	    	Log.d("Attempt","SOrry Second attempt");
+	    }
 		
 		TextView tvScore = (TextView) findViewById(R.id.tv_score);
-		score=QuizDetails.getscore();
-		finalscore=QuizDetails.getfinal_score();
-		sp=this.getSharedPreferences("First_run", MODE_PRIVATE);
-	    username=sp.getString("Username", " ");
-	    Log.d("usernme",username);
+		score=QuizDetails.getscore();   
 	    
-	    new Updatescore(ScoreActivity.this).execute(username);
 		tvScore.setText("Score : "+score);
+		
 		
 		Button shareButton = (Button) findViewById(R.id.bt_share);
 		shareButton.setOnClickListener(new OnClickListener() {
@@ -209,7 +256,9 @@ public class ScoreActivity extends Activity {
             Log.d("username",str[0]);
 			
 			params.add(new BasicNameValuePair("username",str[0]));
-			params.add(new BasicNameValuePair("score",Integer.toString(finalscore)));
+			params.add(new BasicNameValuePair("Category_name",str[1]));
+			params.add(new BasicNameValuePair("Category_score",str[2]));
+			params.add(new BasicNameValuePair("final_score",str[3]));
 			
 			
 			jsonObject = jsonParser.makeHttpRequest(url, "GET", params);
