@@ -20,16 +20,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="27dp"
+        android:layout_marginLeft="17dp"
         android:layout_marginTop="19dp"
         android:text="TextView"
         android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/individual_score"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/scre"
-        android:layout_below="@+id/user_name" />
 
 </RelativeLayout>

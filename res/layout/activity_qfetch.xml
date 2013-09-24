@@ -15,17 +15,6 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:typeface="serif" />
 
-    <TextView
-        android:id="@+id/timer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginRight="17dp"
-        android:layout_marginTop="19dp"
-        android:text="3:00"
-        android:textSize="18sp" />
-
     <Button
         android:id="@+id/previous"
         android:layout_width="wrap_content"
@@ -42,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/previous"
         android:layout_alignBottom="@+id/previous"
-        android:layout_alignRight="@+id/timer"
+        android:layout_alignRight="@+id/answer"
         android:text="Next" />
 
     <Button
@@ -59,8 +48,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/category2"
+        android:layout_alignRight="@+id/answer"
         android:layout_marginBottom="23dp"
-        android:layout_toLeftOf="@+id/timer"
         android:text="Buy" />
 
     <Button
@@ -73,21 +62,10 @@
         android:text="Submit" />
 
     <TextView
-        android:id="@+id/badge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/timer"
-        android:layout_toRightOf="@+id/sell"
-        android:text="BizQuiz"
-        android:textSize="24sp"
-        android:typeface="serif" />
-
-    <TextView
         android:id="@+id/tv_score"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/stats"
         android:layout_marginTop="66dp"
         android:text="Question:"
         android:textAppearance="?android:attr/textAppearanceMedium"
@@ -103,25 +81,6 @@
         android:textSize="14sp"
         android:typeface="serif" />
 
-    <TextView
-        android:id="@+id/stats"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/badge"
-        android:layout_alignBottom="@+id/badge"
-        android:layout_alignLeft="@+id/previous" />
-
-    <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/stats"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/timerstrip"
-        android:src="@drawable/timerstrip" />
-
     <EditText
         android:id="@+id/answer"
         android:layout_width="wrap_content"
@@ -133,5 +92,48 @@
 
         <requestFocus />
     </EditText>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/timerstrip"
+        android:paddingTop="20dp" >
+
+        <TextView
+            android:id="@+id/heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:text="BizQuiz"
+            android:textColor="#ffffff"
+            android:textSize="24sp"
+            android:typeface="serif" />
+
+        <TextView
+            android:id="@+id/stats"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="20dp"
+            android:textColor="#ffffff" />
+
+        <TextView
+            android:id="@+id/timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/stats"
+            android:layout_alignBottom="@+id/stats"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="22dp"
+            android:text="3:00"
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
 
 </RelativeLayout>

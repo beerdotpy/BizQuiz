@@ -8,6 +8,7 @@ public class ListData {
 	
 	private String username;
 	private int score;
+	private String cat_name;
 	SharedPreferences sp;
 	Context ctx;
 	
@@ -33,6 +34,12 @@ public class ListData {
 	public void setscore(int scre) {
 		this.score = scre;
 	}
-    	
+    public void setcatname(String name){
+    	cat_name=name;
+    }
+	String getcatname(){	
+		return cat_name;
+	}	
+	
 	
 }

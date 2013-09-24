@@ -17,14 +17,20 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.AdapterView.OnItemClickListener;
 
 public class Statistics extends Activity {
 	
@@ -33,6 +39,9 @@ public class Statistics extends Activity {
 	ListView lv;
 	private ArrayList<ListData> myList = new ArrayList<ListData>();
 	StatisticsRowAdapter adapter;
+	int[] score_array=new int[11];
+    String[] user_array=new String[11];
+    SharedPreferences sp;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -41,11 +50,30 @@ public class Statistics extends Activity {
 	super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_statistics);
     
+    sp=this.getSharedPreferences("First_run",this.MODE_PRIVATE );
+	final String user_name =sp.getString("Username", " ");
     
      lv=(ListView) findViewById(R.id.listView1);
 
     new Stats(Statistics.this).execute("get top 10 scores");    
 
+    lv.setOnItemClickListener(new OnItemClickListener() {
+
+		@Override
+		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+				long arg3) {
+			
+			
+			if(myList.get(arg2).getusername().compareToIgnoreCase(user_name)==0)
+	{
+		Intent individual_score=new Intent(Statistics.this,User_Category_Score.class);
+		startActivity(individual_score);
+	}
+
+		}
+	});
+    
+    
 	}
 
 	class Stats extends AsyncTask<String, Void, Boolean> {
@@ -58,8 +86,7 @@ public class Statistics extends Activity {
 	    
 	    JSONObject json=new JSONObject();
 	    
-	    int[] score_array=new int[11];
-	    String[] user_array=new String[11];
+	    
 	    
 	       
 	   public Stats(Context ctx) {

@@ -78,7 +78,7 @@
         android:layout_marginLeft="67dp"
         android:layout_marginTop="20dp"
         android:layout_toRightOf="@+id/category7"
-        android:background="@drawable/q1" />
+        android:background="@drawable/q8" />
 
     <Button
         android:id="@+id/category2"
