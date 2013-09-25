@@ -2,15 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bqhomescreen2"
     android:orientation="vertical" >
 
-    <ListView
-        android:id="@+id/lv_score"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/tv_monthText"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/bqhomescreen2" >
-
-    </ListView>
+        android:text="September , 2013"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:typeface="serif" />
 
 </LinearLayout>

@@ -30,6 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/linearLayout1" >
+
     </ListView>
 
 </RelativeLayout>

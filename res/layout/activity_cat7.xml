@@ -24,27 +24,6 @@
             android:textColor="#ffffff"
             android:textSize="24sp"
             android:typeface="serif" />
-
-        <TextView
-            android:id="@+id/stats"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="20dp"
-            android:textColor="#ffffff" />
-
-        <TextView
-            android:id="@+id/timer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/stats"
-            android:layout_alignBottom="@+id/stats"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="22dp"
-            android:text="3:00"
-            android:textColor="#ffffff"
-            android:textSize="18sp" />
     </RelativeLayout>
 
     <TextView
@@ -54,7 +33,9 @@
         android:layout_alignTop="@+id/textView2"
         android:layout_marginLeft="18dp"
         android:layout_toRightOf="@+id/textView2"
-        android:text="Loading Fact" />
+        android:text="Loading Fact"
+        android:textSize="20sp"
+        android:typeface="serif" />
 
     <Button
         android:id="@+id/cat7_next"
@@ -84,6 +65,8 @@
         android:layout_below="@+id/relativeLayout1"
         android:layout_marginTop="51dp"
         android:text="FACT:"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="20sp"
+        android:typeface="serif" />
 
 </RelativeLayout>

@@ -8,9 +8,7 @@
     <ListView
         android:id="@+id/lv_score"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bqhomescreen2" >
-
+        android:layout_height="wrap_content" >
     </ListView>
 
 </LinearLayout>

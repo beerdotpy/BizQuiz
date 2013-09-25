@@ -40,7 +40,8 @@
                 android:id="@+id/category2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/q2" />
+                android:background="@drawable/q2"
+                android:layout_marginLeft="30dp" />
 
         </TableRow>
 
@@ -66,7 +67,8 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/q4" />
+                android:background="@drawable/q4" 
+                android:layout_marginLeft="30dp"/>
         </TableRow>
 
         <TableRow
@@ -91,7 +93,8 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/q6" />
+                android:background="@drawable/q6" 
+                android:layout_marginLeft="30dp"/>
         </TableRow>
 
         <TableRow
@@ -116,7 +119,8 @@
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/q8" />
+                android:background="@drawable/q8"
+                android:layout_marginLeft="30dp" />
         </TableRow>
     </TableLayout>
 

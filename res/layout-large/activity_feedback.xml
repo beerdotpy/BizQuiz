@@ -15,6 +15,15 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:typeface="serif" />
 
+    <Button
+        android:id="@+id/fd_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/tv1"
+        android:layout_marginBottom="17dp"
+        android:text="Submit" />
+
     <TextView
         android:id="@+id/badge"
         android:layout_width="wrap_content"
@@ -83,20 +92,12 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:typeface="serif" />
 
-    <Button
-        android:id="@+id/fd_submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/tv1"
-        android:text="Submit" />
-
     <Spinner
         android:id="@+id/spinner1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/ed_email"
+        android:layout_above="@+id/ed_about"
+        android:layout_centerHorizontal="true"
         android:entries="@array/type_feedback"
         android:prompt="@string/feedback" />
 

@@ -51,7 +51,7 @@ public class QuesFetch extends Activity {
 	Handler mHandler; 
 	Runnable mUpdateUITimerTask;
 	Context context;
-	TextView ans;
+	
 	Button sell;
 	Button buy;
 	String category;         
@@ -75,7 +75,7 @@ public class QuesFetch extends Activity {
        tvquestion=(TextView) findViewById(R.id.question);
        etanswer=(EditText) findViewById(R.id.answer);
        timer=(TextView) findViewById(R.id.timer);
-       ans=(TextView) findViewById(R.id.ans);
+       
        sell=(Button) findViewById(R.id.sell);
        buy=(Button) findViewById(R.id.buy);
        
@@ -173,7 +173,7 @@ public class QuesFetch extends Activity {
 		new Questionfetch(QuesFetch.this).execute(category);
 		
 		etanswer.setVisibility(View.INVISIBLE);
-		ans.setVisibility(View.INVISIBLE);
+		
 		submit.setVisibility(View.INVISIBLE);
 		
 	}
