@@ -33,7 +33,7 @@ public class Home extends Activity {
 		super.onCreate(savedInstanceState);
        setContentView(R.layout.activity_home);
        
-		
+		//h
 		
 		AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);                 
 	     
@@ -42,8 +42,8 @@ public class Home extends Activity {
 	       Calendar cal_alarm = Calendar.getInstance();       
 	       Calendar cal_now=Calendar.getInstance();
 	       //---sets the time for the alarm to trigger---      
-	       cal_alarm.set(Calendar.HOUR, 06);
-	       cal_alarm.set(Calendar.MINUTE, 00);
+	       cal_alarm.set(Calendar.HOUR, 21);
+	       cal_alarm.set(Calendar.MINUTE, 12);
 	       cal_alarm.set(Calendar.SECOND, 00);
 	       if(cal_alarm.before(cal_now)){//if its in the past increment
 	           cal_alarm.add(Calendar.DATE,1);
@@ -111,10 +111,6 @@ public class Home extends Activity {
    		case R.id.menu_statistics:
  		     startActivity(new Intent(this,Statistics.class));
  		     return true;
-   		case R.id.menu_profile:
-   			Intent intent2 = new Intent(this,Profile.class);
-   			startActivity(intent2);
-   			return true;
    		case R.id.menu_archive:
    			Intent intent3 = new Intent(this,ArchiveMonthsActivity.class);
    			startActivity(intent3);

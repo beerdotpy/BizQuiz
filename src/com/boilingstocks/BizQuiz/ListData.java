@@ -37,7 +37,7 @@ public class ListData {
     public void setcatname(String name){
     	cat_name=name;
     }
-	String getcatname(){	
+	public String getcatname(){	
 		return cat_name;
 	}	
 	

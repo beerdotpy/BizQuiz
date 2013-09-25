@@ -182,10 +182,6 @@ public class Categories extends Activity {
    		case R.id.menu_statistics:
   		     startActivity(new Intent(this,Statistics.class));
   		     return true;
-   		case R.id.menu_profile:
-   			Intent intent2 = new Intent(Categories.this,Profile.class);
-   			startActivity(intent2);
-   			return true;
   		     
    		default:
    			return super.onOptionsItemSelected(item);

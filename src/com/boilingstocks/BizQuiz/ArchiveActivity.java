@@ -33,6 +33,7 @@ public class ArchiveActivity extends Activity{
 	ArchQuesAdapter adapter;
 	ListView monthLV;
 	TextView archive_ans;
+	String cat_name;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -44,11 +45,12 @@ public class ArchiveActivity extends Activity{
 		int id=getIntent().getIntExtra("archiveId",-1);
 		Log.d("archive",Integer.toString(id));
 		
+		cat_name=getIntent().getStringExtra("catname");
+		Log.d("category_name",cat_name);
 		
-		new ArchiveList(ArchiveActivity.this).execute(Integer.toString(id));
 		
 		monthLV = (ListView) findViewById(R.id.archiveListView);
-		
+		new ArchiveList(ArchiveActivity.this).execute(Integer.toString(id),cat_name);
 		
 		monthLV.setOnItemClickListener(new OnItemClickListener() {
 
@@ -74,8 +76,11 @@ public class ArchiveActivity extends Activity{
 	    
 	    JSONObject json=new JSONObject();
 	    
-	    String[] array_question=new String[11];
-	    String[] array_answer=new String[11];
+	    String[] array_id;	      
+	    String[] array_question;
+	    String[] temp_question;
+	    String[] array_answer;
+	    String[] temp_answer;
 	    
 	       
 	   public ArchiveList(Context ctx) {
@@ -102,12 +107,20 @@ public class ArchiveActivity extends Activity{
 					
 			try {
 				jArray= json.getJSONArray("data");
+				
+				array_id=new String[jArray.length()];
+				array_question=new String[jArray.length()];
+				array_answer=new String[jArray.length()];
+				temp_question=new String[jArray.length()];
+				temp_answer=new String[jArray.length()];
+				
 				System.out.println("*****JARRAY*****"+jArray.length());
 				
 				for(int i=0;i<jArray.length();i++){
 				
 				JSONObject json_data = jArray.getJSONObject(i);
                 
+				array_id[i]=json_data.getString("id");
 				array_question[i]=json_data.getString("question");
 				array_answer[i]=json_data.getString("answer");
 				
@@ -131,13 +144,26 @@ public class ArchiveActivity extends Activity{
 			
 			pDialog.dismiss();
 			
-			for(int i=0;i<jArray.length();i++){
-				ArchQues ques_list=new ArchQues(); 
-				ques_list.set_Question(array_question[i]);
-				ques_list.set_Answer(array_answer[i]);
-				archQuestions.add(ques_list);
-
+			for(int i=0,j=0;i<jArray.length();i++){
+				
+				if(cat_name.compareToIgnoreCase(array_id[i])==0)
+				{	
+					
+					temp_question[j]=array_question[i];
+					temp_answer[j]=array_answer[i];
+					j++;
+				}
 			}
+					
+			for(int k=0;k<jArray.length();k++){		
+				ArchQues ques_list=new ArchQues();
+				ques_list.set_Question(temp_question[k]);
+				ques_list.set_Answer(temp_answer[k]);
+				archQuestions.add(ques_list);
+				
+				}
+
+			
 			
 			adapter = new ArchQuesAdapter(ArchiveActivity.this, archQuestions);
 			
@@ -151,7 +177,7 @@ public class ArchiveActivity extends Activity{
 	@Override
     public void onBackPressed() {
        Log.d("CDA", "onBackPressed Called");
-       Intent back = new Intent(this,ArchiveMonthsActivity.class);
+       Intent back = new Intent(this,ArchiveCategory.class);
 //       setIntent.addCategory(Intent.CATEGORY_HOME);
 //       setIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
        startActivity(back);
@@ -181,10 +207,6 @@ public class ArchiveActivity extends Activity{
    			intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
    			startActivity(intent);
    			return true;	
-   		case R.id.menu_profile:
-   			Intent intent2 = new Intent(this,Profile.class);
-   			startActivity(intent2);
-   			return true;
    		case R.id.menu_feedback:
    			Intent intent1=new Intent(this,Feedback.class);
    			startActivity(intent1);

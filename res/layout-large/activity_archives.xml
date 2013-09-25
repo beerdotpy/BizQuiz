@@ -4,17 +4,20 @@
     android:layout_height="match_parent"
     android:background="@drawable/bqhomescreen3"
     android:orientation="vertical" >
-        
+
     <ListView
         android:id="@+id/archiveListView"
-        android:layout_width="match_parent"
-        android:layout_height="418dp" >
+        android:layout_width="wrap_content"
+        android:layout_height="418dp"
+        android:layout_above="@+id/relativeLayout1" >
     </ListView>
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/archiveListView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
         android:background="@drawable/timerstrip" >
 
         <TextView
@@ -26,7 +29,6 @@
             android:text="Answer"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="#ffffff" />
-
     </RelativeLayout>
 
 </RelativeLayout>

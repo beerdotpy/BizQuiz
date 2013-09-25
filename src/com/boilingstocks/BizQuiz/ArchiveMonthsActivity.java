@@ -34,11 +34,6 @@ public class ArchiveMonthsActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_months);
-		/***
-		 * TODO 
-		 * PARSE YOUR JSON RESPONSE AND CREATE THE LIST.
-		 * 
-		 */
 		
 		monthLV = (ListView) findViewById(R.id.monthListView);
 		new ArchiveMonthList(ArchiveMonthsActivity.this).execute("status");
@@ -48,7 +43,7 @@ public class ArchiveMonthsActivity extends Activity {
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 					long arg3) {
-				Intent archPageIntent = new Intent(ArchiveMonthsActivity.this,ArchiveActivity.class);
+				Intent archPageIntent = new Intent(ArchiveMonthsActivity.this,ArchiveCategory.class);
 				archPageIntent.putExtra("archiveId", monthList.get(arg2)._Id);
 				startActivity(archPageIntent);
 			}
@@ -181,10 +176,6 @@ public class ArchiveMonthsActivity extends Activity {
    			intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
    			startActivity(intent);
    			return true;	
-   		case R.id.menu_profile:
-   			Intent intent2 = new Intent(this,Profile.class);
-   			startActivity(intent2);
-   			return true;
    		case R.id.menu_feedback:
    			Intent intent1=new Intent(this,Feedback.class);
    			startActivity(intent1);

@@ -23,6 +23,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -113,7 +114,7 @@ public class ScoreActivity extends Activity {
 		tvScore.setText("Score : "+score);
 		
 		
-		Button shareButton = (Button) findViewById(R.id.bt_share);
+		ImageButton shareButton = (ImageButton) findViewById(R.id.bt_share);
 		shareButton.setOnClickListener(new OnClickListener() {
 			
 			@Override
@@ -333,10 +334,6 @@ public class ScoreActivity extends Activity {
    		case R.id.menu_statistics:
  		     startActivity(new Intent(this,Statistics.class));
  		     return true;
-   		case R.id.menu_profile:
-   			Intent intent2 = new Intent(this,Profile.class);
-   			startActivity(intent2);
-   			return true;
    		case R.id.menu_archive:
    			Intent intent3 = new Intent(this,ArchiveMonthsActivity.class);
    			startActivity(intent3);

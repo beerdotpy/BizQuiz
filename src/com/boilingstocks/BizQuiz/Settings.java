@@ -2,11 +2,14 @@ package com.boilingstocks.BizQuiz;
 
 
 
+import java.util.prefs.Preferences;
+
 import com.BizQuiz.R;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.preference.Preference;
+import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -21,6 +24,20 @@ public class Settings extends PreferenceActivity {
 		addPreferencesFromResource(R.xml.prefs);
 		
 		
+	
+		
+		Preference pref=findPreference("profile");
+		pref.setOnPreferenceClickListener(new OnPreferenceClickListener() {
+			
+			@Override
+			public boolean onPreferenceClick(Preference preference) {
+				// TODO Auto-generated method stub
+				Intent launch=new Intent(Settings.this,Profile.class);
+				startActivity(launch);
+				
+				return true;
+			}
+		});
 
 	
 	}
@@ -56,10 +73,6 @@ public class Settings extends PreferenceActivity {
    		case R.id.menu_statistics:
  		     startActivity(new Intent(this,Statistics.class));
  		     return true;
-   		case R.id.menu_profile:
-   			Intent intent2 = new Intent(this,Profile.class);
-   			startActivity(intent2);
-   			return true;
    		case R.id.menu_archive:
    			Intent intent3 = new Intent(this,ArchiveMonthsActivity.class);
    			startActivity(intent3);

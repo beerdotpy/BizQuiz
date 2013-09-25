@@ -26,6 +26,8 @@
         <activity
             android:name="com.boilingstocks.BizQuiz.Show"></activity>
         <activity
+            android:name="com.boilingstocks.BizQuiz.ArchiveCategory"></activity>
+        <activity
             android:name="com.boilingstocks.BizQuiz.User_Category_Score"></activity>
         <activity
             android:name="com.boilingstocks.BizQuiz.Login"></activity>

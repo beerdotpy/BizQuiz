@@ -12,7 +12,7 @@
         android:title="Settings"/>
      
     <item android:id="@+id/menu_exit" android:orderInCategory="100" android:title="Exit"></item>
-    <item android:id="@+id/menu_profile" android:orderInCategory="100" android:title="Profile"></item>
+    
     
     
     

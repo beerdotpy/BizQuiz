@@ -21,7 +21,9 @@ public class DisplayNotification extends Activity {
 	
 
         SharedPreferences sp;
-		sp = PreferenceManager.getDefaultSharedPreferences(this);
+        
+		
+        sp = PreferenceManager.getDefaultSharedPreferences(this);
 		boolean notify = sp.getBoolean("notify", false);
 		
 		
@@ -37,8 +39,7 @@ public class DisplayNotification extends Activity {
  
         if(notify){
         	
-        NotificationManager nm = (NotificationManager)
-            getSystemService(NOTIFICATION_SERVICE);
+        NotificationManager nm = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);;
         
         NotificationCompat.Builder builder=
         		new NotificationCompat.Builder(this)
@@ -49,6 +50,7 @@ public class DisplayNotification extends Activity {
         nm.notify(notifID, builder.build());
         
         }
+        
         
         finish();
 	}
