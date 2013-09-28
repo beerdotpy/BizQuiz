@@ -22,7 +22,11 @@
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/tv1"
         android:layout_marginBottom="17dp"
-        android:text="Submit" />
+        android:background="#2f1c05"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="Submit"
+        android:textColor="#ffffff" />
 
     <TextView
         android:id="@+id/badge"

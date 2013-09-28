@@ -43,7 +43,11 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/t3"
         android:layout_alignParentBottom="true"
-        android:text="Register" />
+        android:background="#2f1c05"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="Register"
+        android:textColor="#ffffff" />
 
     <TextView
         android:id="@+id/t3"

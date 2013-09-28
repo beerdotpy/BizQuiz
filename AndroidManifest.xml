@@ -32,7 +32,10 @@
         <activity
             android:name="com.boilingstocks.BizQuiz.Login"></activity>
         <activity
-            android:name="com.boilingstocks.BizQuiz.Settings"></activity>
+            android:name="com.boilingstocks.BizQuiz.Settings"
+            android:theme="@style/PreferencesTheme">
+            
+        </activity>
         <activity
             android:name="com.boilingstocks.BizQuiz.Profile"></activity>
         <activity

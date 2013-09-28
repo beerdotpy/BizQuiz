@@ -12,7 +12,11 @@
         android:layout_alignParentLeft="true"
         android:layout_marginBottom="74dp"
         android:layout_marginLeft="18dp"
-        android:text="Previous" />
+        android:background="#2f1c05"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="Previous"
+        android:textColor="#ffffff" />
 
     <RelativeLayout
         android:id="@+id/relativeLayout1"
@@ -76,16 +80,11 @@
         android:layout_alignBottom="@+id/previous"
         android:layout_alignParentRight="true"
         android:layout_marginRight="17dp"
-        android:text="Next" />
-
-    <Button
-        android:id="@+id/buy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/category2"
-        android:layout_alignLeft="@+id/category2"
-        android:layout_marginBottom="20dp"
-        android:text="Buy" />
+        android:background="#2f1c05"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:text="Next"
+        android:textColor="#ffffff" />
 
     <Button
         android:id="@+id/sell"
@@ -94,7 +93,11 @@
         android:layout_alignBaseline="@+id/buy"
         android:layout_alignBottom="@+id/buy"
         android:layout_alignLeft="@+id/previous"
-        android:text="Sell" />
+        android:background="#2f1c05"
+        android:paddingLeft="29dp"
+        android:paddingRight="29dp"
+        android:text="Sell"
+        android:textColor="#ffffff" />
 
     <Button
         android:id="@+id/submit"
@@ -102,7 +105,11 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/answer"
         android:layout_centerHorizontal="true"
-        android:text="Submit" />
+        android:background="#2f1c05"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="Submit"
+        android:textColor="#ffffff" />
 
     <EditText
         android:id="@+id/answer"
@@ -113,5 +120,18 @@
         android:layout_marginBottom="42dp"
         android:ems="10"
         android:hint="Answer" />
+
+    <Button
+        android:id="@+id/buy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/category2"
+        android:layout_alignLeft="@+id/category2"
+        android:layout_marginBottom="23dp"
+        android:background="#2f1c05"
+        android:paddingLeft="27dp"
+        android:paddingRight="27dp"
+        android:text="Buy"
+        android:textColor="#ffffff" />
 
 </RelativeLayout>

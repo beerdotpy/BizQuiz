@@ -245,7 +245,7 @@ containing a value of this type.
         public static final int badge=0x7f05001a;
         public static final int bt_login=0x7f050023;
         public static final int bt_share=0x7f05004b;
-        public static final int buy=0x7f05003a;
+        public static final int buy=0x7f05003b;
         public static final int cat7_next=0x7f05000a;
         public static final int cat7_prev=0x7f05000b;
         public static final int category1=0x7f05000d;
@@ -285,11 +285,11 @@ containing a value of this type.
         public static final int edcontact=0x7f050041;
         public static final int edeamil=0x7f050043;
         public static final int edname=0x7f05003f;
-        public static final int et_age=0x7f050030;
-        public static final int et_city=0x7f050033;
-        public static final int et_contact=0x7f05002d;
-        public static final int et_email=0x7f05002b;
-        public static final int et_name=0x7f050029;
+        public static final int et_age=0x7f050032;
+        public static final int et_city=0x7f050035;
+        public static final int et_contact=0x7f05002f;
+        public static final int et_email=0x7f05002d;
+        public static final int et_name=0x7f05002b;
         public static final int etpass=0x7f050040;
         public static final int fact=0x7f050008;
         public static final int fd_submit=0x7f050019;
@@ -308,15 +308,15 @@ containing a value of this type.
         public static final int normal=0x7f050001;
         public static final int picker_subtitle=0x7f050060;
         public static final int previous=0x7f050036;
-        public static final int profile=0x7f050035;
-        public static final int profile_submit=0x7f050034;
+        public static final int profile=0x7f050028;
+        public static final int profile_submit=0x7f050027;
         public static final int question=0x7f050039;
         public static final int reg=0x7f050049;
         public static final int relativeLayout1=0x7f050006;
         public static final int score=0x7f05003e;
         public static final int scre=0x7f050065;
         public static final int search_box=0x7f05005f;
-        public static final int sell=0x7f05003b;
+        public static final int sell=0x7f05003a;
         public static final int signin=0x7f05004a;
         public static final int small=0x7f050000;
         public static final int spinner1=0x7f050020;
@@ -325,13 +325,13 @@ containing a value of this type.
         public static final int t1=0x7f05001d;
         public static final int t2=0x7f050042;
         public static final int t3=0x7f050046;
-        public static final int tableLayout1=0x7f050027;
+        public static final int tableLayout1=0x7f050029;
         public static final int tableRow1=0x7f05000c;
         public static final int tableRow2=0x7f05000f;
         public static final int tableRow3=0x7f050012;
         public static final int tableRow4=0x7f050015;
-        public static final int tableRow5=0x7f05002e;
-        public static final int tableRow6=0x7f050031;
+        public static final int tableRow5=0x7f050030;
+        public static final int tableRow6=0x7f050033;
         public static final int tableRow7=0x7f050048;
         public static final int textView1=0x7f050021;
         public static final int textView2=0x7f050009;
@@ -339,12 +339,12 @@ containing a value of this type.
         public static final int timer=0x7f050038;
         public static final int tv1=0x7f050018;
         public static final int tv2=0x7f050044;
-        public static final int tv_age=0x7f05002f;
-        public static final int tv_city=0x7f050032;
-        public static final int tv_contact=0x7f05002c;
-        public static final int tv_email=0x7f05002a;
+        public static final int tv_age=0x7f050031;
+        public static final int tv_city=0x7f050034;
+        public static final int tv_contact=0x7f05002e;
+        public static final int tv_email=0x7f05002c;
         public static final int tv_monthText=0x7f050064;
-        public static final int tv_name=0x7f050028;
+        public static final int tv_name=0x7f05002a;
         public static final int tv_score=0x7f050003;
         public static final int user_name=0x7f050066;
     }
@@ -443,6 +443,7 @@ containing a value of this type.
  All customizations that are NOT specific to a particular API-level can go here. 
          */
         public static final int AppTheme=0x7f090003;
+        public static final int PreferencesTheme=0x7f090004;
         public static final int com_facebook_loginview_default_style=0x7f090000;
         public static final int com_facebook_loginview_silver_style=0x7f090001;
     }

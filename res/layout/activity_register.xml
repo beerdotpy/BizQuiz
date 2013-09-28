@@ -160,7 +160,11 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/tableLayout1"
         android:layout_marginLeft="22dp"
-        android:text="Register" />
+        android:background="#2f1c05"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="Register"
+        android:textColor="#ffffff" />
 
     <TextView
         android:id="@+id/signin"

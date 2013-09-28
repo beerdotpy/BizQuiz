@@ -33,7 +33,7 @@ public class Home extends Activity {
 		super.onCreate(savedInstanceState);
        setContentView(R.layout.activity_home);
        
-		//h
+      
 		
 		AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);                 
 	     

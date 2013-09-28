@@ -22,7 +22,11 @@
         android:layout_below="@+id/ed_pass"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="58dp"
-        android:text="Login" />
+        android:background="#2f1c05"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Login"
+        android:textColor="#ffffff" />
 
     <TextView
         android:id="@+id/textView3"

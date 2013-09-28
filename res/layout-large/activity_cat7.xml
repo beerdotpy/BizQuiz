@@ -45,7 +45,11 @@
         android:layout_alignParentRight="true"
         android:layout_marginBottom="116dp"
         android:layout_marginRight="23dp"
-        android:text="Next" />
+        android:background="#2f1c05"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:text="Next"
+        android:textColor="#ffffff" />
 
     <Button
         android:id="@+id/cat7_prev"
@@ -55,7 +59,11 @@
         android:layout_alignBottom="@+id/cat7_next"
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="22dp"
-        android:text="Previous" />
+        android:background="#2f1c05"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:text="Previous"
+        android:textColor="#ffffff" />
 
     <TextView
         android:id="@+id/textView2"

@@ -56,7 +56,7 @@ public class QuesFetch extends Activity {
 	Button buy;
 	String category;         
 	TextView ques_stats;     // how much questions answered out of total question
-	int threshvalue;         //currently set to 50% 
+	int threshvalue;         //currently set to 50% if length is less than 10 else set to 75%
 	int max_ques;            //maximum question in each category
 	boolean check=true;      //to check if activity is running first time for displaying the dialog box
 	SharedPreferences sp;
@@ -159,13 +159,6 @@ public class QuesFetch extends Activity {
 		buy.setVisibility(View.INVISIBLE);
 		next.setVisibility(View.INVISIBLE);
 		previous.setVisibility(View.INVISIBLE);
-		
-	}else if(catid==7){
-		
-		category="Category7";
-		new Questionfetch(QuesFetch.this).execute(category);
-		sell.setVisibility(View.INVISIBLE);
-		buy.setVisibility(View.INVISIBLE);
 		
 	}else if(catid==8){
 		
@@ -376,10 +369,10 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
 	    pDialog.show();
 	
 	    int length=QuizDetails.getans().length();
-	    threshvalue=length/2+1;
+	   // threshvalue=length/2+1;
 	    
-	    Log.d("ThreshValue",Integer.toString(threshvalue));
-	    Boolean check=compareanswer(threshvalue,useranswer);
+	    //Log.d("ThreshValue",Integer.toString(threshvalue));
+	    Boolean check=compareanswer(useranswer,length);
 	      
 	    if(check){
 	  
@@ -403,10 +396,24 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
 
      }
 	
-    Boolean compareanswer(int threshval,String ans){
+    Boolean compareanswer(String ans,int length){
+    	
+    	if(length>10){
+    		
+    		threshvalue=(length*3)/4;
+    	}else{
+    		threshvalue=length/2;
+    	}
+    	
+    	Log.d("threshvalue",Integer.toString(threshvalue)); 	  	
+    	
     	int counter = 0;
+    	
     	ans=ans.toLowerCase();
+    	ans=ans.replaceAll("//s+","");
+    	
     	String correctans=QuizDetails.getans().toLowerCase();
+    	correctans=correctans.replaceAll("//s+", "");
     	
     	for(int i=0;i<correctans.length();i++){		
     try{		
@@ -419,7 +426,7 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
     	}
     	
     	
-    	     if(threshval<=counter){
+    	     if(threshvalue<=counter){
     	    	      return true;
     	     }else
     	     {

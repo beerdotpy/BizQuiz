@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!--
         Base application theme, dependent on API level. This theme is replaced
@@ -16,5 +16,11 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
+    
+    <style name="PreferencesTheme">
+    <item name="android:windowBackground">@drawable/bqhomescreen2</item>
+    <item name="android:textColor">#000000</item>
+    
+</style>
 
 </resources>

@@ -32,17 +32,6 @@
         android:textSize="18sp" />
 
     <TextView
-        android:id="@+id/profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/et_name"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="18dp"
-        android:text="Profile"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textSize="32sp" />
-
-    <TextView
         android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -139,9 +128,25 @@
         android:id="@+id/profile_submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/et_age"
         android:layout_alignParentBottom="true"
-        android:text="Submit" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="138dp"
+        android:background="#2f1c05"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Submit"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:id="@+id/profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="27dp"
+        android:layout_toLeftOf="@+id/et_name"
+        android:text="Profile"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="32sp" />
 
 </RelativeLayout>
     

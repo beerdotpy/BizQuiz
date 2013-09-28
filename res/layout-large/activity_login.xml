@@ -32,19 +32,11 @@
         android:layout_below="@+id/ed_pass"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="58dp"
-        android:text="Login" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="44dp"
-        android:layout_toLeftOf="@+id/ed_login"
-        android:text="LOGIN"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="35sp"
-        android:typeface="serif" />
+        android:background="#2f1c05"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="Login"
+        android:textColor="#ffffff" />
 
     <TextView
         android:id="@+id/textView1"
@@ -65,5 +57,17 @@
         android:layout_alignTop="@+id/textView1"
         android:ems="10"
         android:hint="Enter username" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/bt_login"
+        android:layout_marginTop="77dp"
+        android:text="LOGIN"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="35sp"
+        android:typeface="serif" />
 
 </RelativeLayout>

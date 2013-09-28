@@ -35,7 +35,11 @@
         android:layout_below="@+id/ed_pass"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="58dp"
-        android:text="Login" />
+        android:background="#2f1c05"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="Login"
+        android:textColor="#ffffff" />
 
     <EditText
         android:id="@+id/ed_pass"
