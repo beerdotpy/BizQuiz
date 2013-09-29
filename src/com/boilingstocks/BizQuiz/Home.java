@@ -27,7 +27,7 @@ public class Home extends Activity {
 	
 	SharedPreferences sp;
 	
-	//
+	//////
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -37,25 +37,29 @@ public class Home extends Activity {
        SharedPreferences.Editor editor = sp.edit();
        boolean clear_prefs=sp.getBoolean("clear_prefrences", true);
        
+            
        Calendar c = Calendar.getInstance();   // this takes current date
-       int date_of_month=c.get(Calendar.DAY_OF_MONTH);
-
-       if(date_of_month==1 && clear_prefs ){
+       int month_of_year=c.get(Calendar.MONTH);
+       Log.d("month",Integer.toString(month_of_year));
+       
+       if(sp.getInt("Month_of_year", -1)!=month_of_year){
+       	editor.putBoolean("clear_prefrences", true);
+       	editor.commit();
+       }
+       
+       if(clear_prefs){
     	
     	   this.getSharedPreferences("First_run", MODE_PRIVATE).edit().clear().commit();
     	   Log.d("prefrences","cleared");
     	   System.out.println(c.getTime()); 
     	   
     	   editor.putBoolean("clear_prefrences", false);
+    	   editor.putInt("Month_of_year", month_of_year);
     	   editor.commit();
     	   
-          }else if(date_of_month>1){
-        	  
-        	  editor.putBoolean("clear_prefrences", true);
-        	  Log.d("prefrences_reset","cleared");
-        	  editor.commit();
           }
-          
+       
+       
 		
 		AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);                 
 	     
