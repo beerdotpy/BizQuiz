@@ -1,7 +1,9 @@
 package com.boilingstocks.BizQuiz;
 
+import java.io.IOException;
 import java.sql.Array;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Map;
 
@@ -63,13 +65,15 @@ public class Statistics extends Activity {
 		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 				long arg3) {
 			
-			
+			try{
 			if(myList.get(arg2).getusername().compareToIgnoreCase(user_name)==0)
 	{
 		Intent individual_score=new Intent(Statistics.this,User_Category_Score.class);
 		startActivity(individual_score);
 	}
-
+			}catch(NullPointerException e){
+				e.printStackTrace();
+			}
 		}
 	});
     

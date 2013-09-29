@@ -27,13 +27,26 @@ public class Home extends Activity {
 	
 	SharedPreferences sp;
 	
-	
+	//
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
        setContentView(R.layout.activity_home);
        
-      
+       
+       
+//       Calendar c = Calendar.getInstance();   // this takes current date
+//       int date_of_month=c.get(Calendar.DAY_OF_MONTH);
+//       Date d=new Date();
+//       d=c.getTime();
+//       
+//       if(date_of_month==1){
+//    	
+//    	   this.getSharedPreferences("First_run", MODE_PRIVATE).edit().clear().commit();
+//    	   Log.d("prefrences","cleared");
+//    	   System.out.println(c.getTime());   
+//       }
+          
 		
 		AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);                 
 	     
@@ -42,8 +55,8 @@ public class Home extends Activity {
 	       Calendar cal_alarm = Calendar.getInstance();       
 	       Calendar cal_now=Calendar.getInstance();
 	       //---sets the time for the alarm to trigger---      
-	       cal_alarm.set(Calendar.HOUR, 21);
-	       cal_alarm.set(Calendar.MINUTE, 12);
+	       cal_alarm.set(Calendar.HOUR_OF_DAY, 17);
+	       cal_alarm.set(Calendar.MINUTE, 00);
 	       cal_alarm.set(Calendar.SECOND, 00);
 	       if(cal_alarm.before(cal_now)){//if its in the past increment
 	           cal_alarm.add(Calendar.DATE,1);

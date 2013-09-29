@@ -10,6 +10,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.BizQuiz.R;
+import com.BizQuiz.R.id;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -30,9 +31,8 @@ public class ArchiveCategory extends Activity {
 	ListView catLV;
 	CategoryRowAdapter adapter;	
 	ArrayList<ListData> cat_list = new ArrayList<ListData>();
-	String[] category_name={"Category1","Category2","Category3","Category4","Category5","Category6"};
-	int M_id;	
 	
+	int M_id;	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +40,12 @@ public class ArchiveCategory extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_months);
 		
+		String[] category_name={getResources().getString(R.string.Category1),
+                getResources().getString(R.string.Category2),
+                getResources().getString(R.string.Category3),
+                getResources().getString(R.string.Category4),
+                getResources().getString(R.string.Category5),
+                getResources().getString(R.string.Category6)};
 		 M_id=getIntent().getIntExtra("archiveId",-1);
 		
 		catLV = (ListView) findViewById(R.id.monthListView);	

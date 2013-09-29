@@ -67,7 +67,6 @@ public class Profile extends Activity {
 	
 	shared=this.getSharedPreferences("First_run", MODE_PRIVATE);
     user_name=shared.getString("Username", "");
-    
     user_email=shared.getString("Email", "");
     user_contact=shared.getString("Contact", "");
     user_age=shared.getString("Age", "");

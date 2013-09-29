@@ -15,7 +15,7 @@ public class User_Category_Score extends Activity {
 	ArrayList<ListData> my_score_list = new ArrayList<ListData>();
 	ScoreRowAdapter adapter;
 	int score[]=new int[8];
-	String name[]={"Category1","Category2","Category3","Category4","Category5","Category6","Category7","Category8"};
+	
 	SharedPreferences sp;
 	
 	@Override
@@ -24,6 +24,15 @@ public class User_Category_Score extends Activity {
 	
 	super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_user_score);
+    
+    String[] name={getResources().getString(R.string.Category1),
+            getResources().getString(R.string.Category2),
+            getResources().getString(R.string.Category3),
+            getResources().getString(R.string.Category4),
+            getResources().getString(R.string.Category5),
+            getResources().getString(R.string.Category6),
+            getResources().getString(R.string.Category7),
+            getResources().getString(R.string.Category8)};
     
     sp=this.getSharedPreferences("First_run",this.MODE_PRIVATE );
     score[0] =sp.getInt("Category1", 0);

@@ -383,6 +383,17 @@ containing a value of this type.
         public static final int activity_home=0x7f0b0000;
     }
     public static final class string {
+        public static final int Category1=0x7f060020;
+        public static final int Category2=0x7f060021;
+        public static final int Category3=0x7f060022;
+        public static final int Category4=0x7f060023;
+        public static final int Category5=0x7f060024;
+        public static final int Category6=0x7f060025;
+        public static final int Category7=0x7f060026;
+        public static final int Category8=0x7f060027;
+        public static final int DialogBox_back=0x7f06002a;
+        public static final int DialogBox_end=0x7f060029;
+        public static final int DialogBox_start=0x7f060028;
         public static final int action_settings=0x7f06001a;
         public static final int app_id=0x7f06001f;
         public static final int app_name=0x7f060019;

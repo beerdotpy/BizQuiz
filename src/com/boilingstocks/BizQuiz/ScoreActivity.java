@@ -28,6 +28,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.BizQuiz.R;
+import com.BizQuiz.R.id;
 import com.facebook.FacebookRequestError;
 import com.facebook.HttpMethod;
 import com.facebook.Request;
@@ -70,16 +71,30 @@ public class ScoreActivity extends Activity {
 		int first_time_score=sp.getInt(category_name,-1);
 		username=sp.getString("Username", " ");
 	    
+		TextView tvScore = (TextView) findViewById(R.id.tv_score);
+		score=QuizDetails.getscore();   
+	    
+		tvScore.setText("Score : "+score);
 		Log.d("usernme",username);
 	    
-	   if(first_attempt && first_time_score==-1){
+	   if(first_attempt && first_time_score==-1 || category_name.compareToIgnoreCase(getResources().getString(R.string.Category6))==0){
 	        	
 	    	      if(QuizDetails.getscore()==QuizDetails.getmax_ques()){
 	    	    	  badge.setVisibility(View.VISIBLE); 
 	    	    	  badge.setText("Congratulations! You scored"+ QuizDetails.getscore()/QuizDetails.getmax_ques()+".Badge awarded."); 
 	    	      }
 	    	  	  SharedPreferences.Editor editor = sp.edit();
-	    	  	  editor.putInt(category_name,QuizDetails.getscore());  //stores the score of the particular category
+	    	  	  if(category_name.compareToIgnoreCase(getResources().getString(R.string.Category6))==0){
+	    	  		  
+	    	  		  int temp=sp.getInt("Category6", 0);
+	    	  		  if(temp==-1){
+	    	  			  temp=0;
+	    	  		  }
+	    	  		  editor.putInt(category_name,QuizDetails.getscore()+temp);
+	    	  		  QuizDetails.set_score(temp+QuizDetails.getscore());
+	    	  	  }else{
+	    	  	   editor.putInt(category_name,QuizDetails.getscore());  //stores the score of the particular category
+	    	  	  }
 	    	  	  editor.putBoolean(category_name+"_run",false);  //score will be calculated only first time
 	    	  	  editor.commit();
 	    	 
@@ -108,10 +123,7 @@ public class ScoreActivity extends Activity {
 	    	Log.d("Attempt","SOrry Second attempt");
 	    }
 		
-		TextView tvScore = (TextView) findViewById(R.id.tv_score);
-		score=QuizDetails.getscore();   
-	    
-		tvScore.setText("Score : "+score);
+		
 		
 		
 		ImageButton shareButton = (ImageButton) findViewById(R.id.bt_share);

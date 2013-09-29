@@ -90,9 +90,7 @@ public class QuesFetch extends Activity {
 
 	   
 	   builder1 = new AlertDialog.Builder(context);
-		builder1.setMessage("Info about the Quiz"+
-				" For each correct answer +1 point is awarded.Quiz has a time limit of 3min "+
-				"Press Back to Quit or Ok to Play")
+		builder1.setMessage(getResources().getString(R.string.DialogBox_start))
 				.setCancelable(true)
 				.setOnCancelListener(new OnCancelListener() {
 					
@@ -118,42 +116,42 @@ public class QuesFetch extends Activity {
 	   
 	if(catid==1)
 	{
-		category="Category1";
+		category=getResources().getString(R.string.Category1);
 		new Questionfetch(QuesFetch.this).execute(category);
 		sell.setVisibility(View.INVISIBLE);
 		buy.setVisibility(View.INVISIBLE);
 		
 	}else if(catid==2)
 	{
-		category="Category2";
+		category=getResources().getString(R.string.Category2);
 		new Questionfetch(QuesFetch.this).execute(category);
 		sell.setVisibility(View.INVISIBLE);
 		buy.setVisibility(View.INVISIBLE);
 		
 	}else if(catid==3){
 		
-		category="Category3";
+		category=getResources().getString(R.string.Category3);
 		new Questionfetch(QuesFetch.this).execute(category);
 		sell.setVisibility(View.INVISIBLE);
 		buy.setVisibility(View.INVISIBLE);
 		
 	}else if(catid==4){
 		
-		category="Category4";
+		category=getResources().getString(R.string.Category4);
 		new Questionfetch(QuesFetch.this).execute(category);
 		sell.setVisibility(View.INVISIBLE);
 		buy.setVisibility(View.INVISIBLE);
 		
 	}else if(catid==5){
 		
-		category="Category5";
+		category=getResources().getString(R.string.Category5);
 		new Questionfetch(QuesFetch.this).execute(category);
 		sell.setVisibility(View.INVISIBLE);
 		buy.setVisibility(View.INVISIBLE);
 				
 	}else if(catid==6){
 		
-		category="Category6";
+		category=getResources().getString(R.string.Category6);
 		new Questionfetch(QuesFetch.this).execute(category);
 		sell.setVisibility(View.INVISIBLE);
 		buy.setVisibility(View.INVISIBLE);
@@ -162,7 +160,7 @@ public class QuesFetch extends Activity {
 		
 	}else if(catid==8){
 		
-		category="Category8";
+		category=getResources().getString(R.string.Category8);
 		new Questionfetch(QuesFetch.this).execute(category);
 		
 		etanswer.setVisibility(View.INVISIBLE);
@@ -484,7 +482,7 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
         	Log.d("Timer","3mins finish");
         	builder = new AlertDialog.Builder(context);
     		builder.setMessage(
-    				"Sorry your time is over.Press Ok to play again and Back to Quit")
+    				getResources().getString(R.string.DialogBox_end))
     				.setCancelable(true)
     				.setOnCancelListener(new OnCancelListener() {
     					
@@ -514,7 +512,7 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
            Log.d("CDA", "onBackPressed Called");
            builder_back = new AlertDialog.Builder(context);
    		builder_back.setMessage(
-   				"Are you sure you want to Quit? Your score won't be considered again.Press Back to Play again or Ok to Quit ")
+   				getResources().getString(R.string.DialogBox_back))
    				.setCancelable(true)
    				.setOnCancelListener(new OnCancelListener() {
    					
