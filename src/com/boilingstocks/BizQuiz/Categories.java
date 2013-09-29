@@ -1,5 +1,7 @@
 package com.boilingstocks.BizQuiz;
 
+import java.util.Calendar;
+
 import com.BizQuiz.R;
 
 import android.os.Bundle;
@@ -120,7 +122,10 @@ public class Categories extends Activity {
    			// TODO Auto-generated method stub
    		  	Intent intent=new Intent(Categories.this,QuesFetch.class);
    		  	QuizDetails.setcategory(6);
-   		  	startActivity(intent);
+   		    Calendar c = Calendar.getInstance();   // this takes current date
+            int date_of_month=c.get(Calendar.DAY_OF_MONTH);
+   		    QuizDetails.setdayofmonth(date_of_month);
+            startActivity(intent);
    		}
    	});
        

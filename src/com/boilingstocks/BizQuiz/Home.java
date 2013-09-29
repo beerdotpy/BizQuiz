@@ -33,19 +33,25 @@ public class Home extends Activity {
 		super.onCreate(savedInstanceState);
        setContentView(R.layout.activity_home);
        
+       sp=this.getSharedPreferences("First_run", MODE_PRIVATE);
+       SharedPreferences.Editor editor = sp.edit();
+       boolean clear_prefs=sp.getBoolean("clear_prefrences", true);
        
-       
-//       Calendar c = Calendar.getInstance();   // this takes current date
-//       int date_of_month=c.get(Calendar.DAY_OF_MONTH);
-//       Date d=new Date();
-//       d=c.getTime();
-//       
-//       if(date_of_month==1){
-//    	
-//    	   this.getSharedPreferences("First_run", MODE_PRIVATE).edit().clear().commit();
-//    	   Log.d("prefrences","cleared");
-//    	   System.out.println(c.getTime());   
-//       }
+       Calendar c = Calendar.getInstance();   // this takes current date
+       int date_of_month=c.get(Calendar.DAY_OF_MONTH);
+
+       if(date_of_month==1 && clear_prefs ){
+    	
+    	   this.getSharedPreferences("First_run", MODE_PRIVATE).edit().clear().commit();
+    	   Log.d("prefrences","cleared");
+    	   System.out.println(c.getTime()); 
+    	   
+    	   editor.putBoolean("clear_prefrences", false);
+    	   editor.commit();
+          }else if(date_of_month>1){
+        	  editor.putBoolean("clear_prefrences", true);
+        	  editor.commit();
+          }
           
 		
 		AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);                 
@@ -76,7 +82,7 @@ public class Home extends Activity {
 
 	       
 
-       sp=this.getSharedPreferences("First_run", MODE_PRIVATE);
+       
        Boolean check=sp.getBoolean("Firstrun", true);
        
        Log.d("firstrun",Boolean.toString(check));

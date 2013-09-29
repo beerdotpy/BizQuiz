@@ -19,7 +19,7 @@ public class QuizDetails {
     static int shuffle=0;
     static int final_score=0;
     static int[] arr={1,2,3,4,5};
-        
+    static int day_of_month;    
     
   static void setcategory(int cat){
 	  category=cat;
@@ -88,6 +88,12 @@ static int getcategory(){
 	 return shuffle;
  }
  
+ static void setdayofmonth(int d){
+	 day_of_month=d;
+	  }
+ static int getday(){
+	 return day_of_month;
+ }
  
  static void shuffle(){
 	  

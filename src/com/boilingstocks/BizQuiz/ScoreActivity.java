@@ -67,8 +67,11 @@ public class ScoreActivity extends Activity {
 		Log.d("catname",category_name);
 		
 		sp=this.getSharedPreferences("First_run", MODE_PRIVATE);
+		SharedPreferences.Editor editor = sp.edit();
 		Boolean first_attempt=sp.getBoolean(category_name+"_run", true);
 		int first_time_score=sp.getInt(category_name,-1);
+		boolean first_time_score_cat7=sp.getBoolean(Integer.toString(QuizDetails.getday()), true);
+		
 		username=sp.getString("Username", " ");
 	    
 		TextView tvScore = (TextView) findViewById(R.id.tv_score);
@@ -77,14 +80,16 @@ public class ScoreActivity extends Activity {
 		tvScore.setText("Score : "+score);
 		Log.d("usernme",username);
 	    
-	   if(first_attempt && first_time_score==-1 || category_name.compareToIgnoreCase(getResources().getString(R.string.Category6))==0){
+	   if((first_attempt && first_time_score==-1) || (category_name.compareToIgnoreCase(getResources().getString(R.string.Category6))==0 && first_time_score_cat7)){
 	        	
 	    	      if(QuizDetails.getscore()==QuizDetails.getmax_ques()){
 	    	    	  badge.setVisibility(View.VISIBLE); 
 	    	    	  badge.setText("Congratulations! You scored"+ QuizDetails.getscore()/QuizDetails.getmax_ques()+".Badge awarded."); 
 	    	      }
-	    	  	  SharedPreferences.Editor editor = sp.edit();
+	    	      	    	  	  
 	    	  	  if(category_name.compareToIgnoreCase(getResources().getString(R.string.Category6))==0){
+	    	  		  
+	    	  		  editor.putBoolean(Integer.toString(QuizDetails.getday()),false);
 	    	  		  
 	    	  		  int temp=sp.getInt("Category6", 0);
 	    	  		  if(temp==-1){
@@ -92,8 +97,11 @@ public class ScoreActivity extends Activity {
 	    	  		  }
 	    	  		  editor.putInt(category_name,QuizDetails.getscore()+temp);
 	    	  		  QuizDetails.set_score(temp+QuizDetails.getscore());
+	    	  		  
 	    	  	  }else{
+	    	  		  
 	    	  	   editor.putInt(category_name,QuizDetails.getscore());  //stores the score of the particular category
+	    	  	  
 	    	  	  }
 	    	  	  editor.putBoolean(category_name+"_run",false);  //score will be calculated only first time
 	    	  	  editor.commit();
