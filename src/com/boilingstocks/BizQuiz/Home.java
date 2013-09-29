@@ -48,8 +48,11 @@ public class Home extends Activity {
     	   
     	   editor.putBoolean("clear_prefrences", false);
     	   editor.commit();
+    	   
           }else if(date_of_month>1){
+        	  
         	  editor.putBoolean("clear_prefrences", true);
+        	  Log.d("prefrences_reset","cleared");
         	  editor.commit();
           }
           
@@ -85,7 +88,7 @@ public class Home extends Activity {
        
        Boolean check=sp.getBoolean("Firstrun", true);
        
-       Log.d("firstrun",Boolean.toString(check));
+       Log.d("firstrun_home",Boolean.toString(check));
        if(check){
 
     	    mCountDown.start();
@@ -113,27 +116,33 @@ public class Home extends Activity {
    		switch (item.getItemId()) {
    		case R.id.menu_settings:
    			startActivity(new Intent(this, Settings.class));
+   			finish();
    			return true;
    		case R.id.menu_about:
    			startActivity(new Intent(this, AboutUs.class));
+   			finish();
    			return true;
    		case R.id.menu_exit:
    			Intent intent = new Intent(Intent.ACTION_MAIN);
    			intent.addCategory(Intent.CATEGORY_HOME);
-   			intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+   			finish();
    			startActivity(intent);
    			return true;	
    		case R.id.menu_feedback:
    			Intent intent1=new Intent(this,Feedback.class);
+   			finish();
    			startActivity(intent1);
    			return true;
    		case R.id.menu_statistics:
  		     startActivity(new Intent(this,Statistics.class));
+ 		     finish();
  		     return true;
    		case R.id.menu_archive:
    			Intent intent3 = new Intent(this,ArchiveMonthsActivity.class);
+   			finish();
    			startActivity(intent3);
-   			return true;
+   			return true;	
+  		
  		     
    		default:
    			return super.onOptionsItemSelected(item);

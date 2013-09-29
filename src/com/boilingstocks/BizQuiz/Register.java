@@ -176,8 +176,9 @@ public class Register extends Activity {
 			    editor.commit();	    
 			    
 			  Intent intent=new Intent(context,Categories.class);
-  			    context.startActivity(intent);
-  			    
+  			   
+			  context.startActivity(intent);
+			  finish();  
   			
   			    
   		   }
@@ -185,10 +186,12 @@ public class Register extends Activity {
   			   Toast.makeText(context, "Registeration Failed.Username alreday exist.Please try different username",
   					   Toast.LENGTH_LONG).show();
   			   context.startActivity(new Intent(context,Register.class));
+  			   finish();
             }else{
             	Toast.makeText(context, "Registeration Failed.Please try again",
    					   Toast.LENGTH_LONG).show();
    			   context.startActivity(new Intent(context,Home.class));
+   			   finish();
             }
 		   
 		}
@@ -218,25 +221,30 @@ public class Register extends Activity {
    		switch (item.getItemId()) {
    		case R.id.menu_settings:
    			startActivity(new Intent(this, Settings.class));
+   			finish();
    			return true;
    		case R.id.menu_about:
    			startActivity(new Intent(this, AboutUs.class));
+   			finish();
    			return true;
    		case R.id.menu_exit:
    			Intent intent = new Intent(Intent.ACTION_MAIN);
    			intent.addCategory(Intent.CATEGORY_HOME);
-   			intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+   			finish();
    			startActivity(intent);
    			return true;	
    		case R.id.menu_feedback:
    			Intent intent1=new Intent(this,Feedback.class);
+   			finish();
    			startActivity(intent1);
    			return true;
    		case R.id.menu_statistics:
  		     startActivity(new Intent(this,Statistics.class));
+ 		     finish();
  		     return true;
    		case R.id.menu_archive:
    			Intent intent3 = new Intent(this,ArchiveMonthsActivity.class);
+   			finish();
    			startActivity(intent3);
    			return true;	
   		
