@@ -86,7 +86,7 @@ public class Statistics extends Activity {
 		ProgressDialog pDialog;
 		List<NameValuePair> params = new ArrayList<NameValuePair>();
 	    JSONParser jsonParser = new JSONParser();
-	    String url="http://practice.site11.com/statistics.php";
+	    String url="http://bizquiz.in/BizQuiz/Statistics.php";
 	    
 	    JSONObject json=new JSONObject();
 	    

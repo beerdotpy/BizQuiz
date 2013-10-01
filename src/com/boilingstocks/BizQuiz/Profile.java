@@ -112,7 +112,7 @@ public class Profile extends Activity {
 		JSONObject jsonObject = new JSONObject();
 		List<NameValuePair> params = new ArrayList<NameValuePair>();
 	    JSONParser jsonParser = new JSONParser();
-	    String url="http://practice.site11.com/UpdateProfile.php";
+	    String url="http://bizquiz.in/BizQuiz/UpdateProfile.php";
 	    int status;
 	    
 	       

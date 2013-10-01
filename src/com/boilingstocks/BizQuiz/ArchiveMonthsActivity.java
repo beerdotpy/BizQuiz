@@ -59,7 +59,7 @@ public class ArchiveMonthsActivity extends Activity {
 		List<NameValuePair> params = new ArrayList<NameValuePair>();
 	    JSONParser jsonParser = new JSONParser();
 	    JSONArray jArray=new JSONArray();
-	    String url="http://practice.site11.com/ArchiveMonths.php";
+	    String url="http://bizquiz.in/BizQuiz/ArchiveMonths.php";
 	    
 	    JSONObject json=new JSONObject();
 	    

@@ -46,7 +46,9 @@ public class ArchiveCategory extends Activity {
                 getResources().getString(R.string.Category4),
                 getResources().getString(R.string.Category5),
                 getResources().getString(R.string.Category6)};
-		 M_id=getIntent().getIntExtra("archiveId",-1);
+		
+		M_id=getIntent().getIntExtra("archiveId",-1);
+		 Log.d("archiveId",Integer.toString(M_id));
 		
 		catLV = (ListView) findViewById(R.id.monthListView);	
 	

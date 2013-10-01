@@ -73,7 +73,7 @@ public class Feedback extends Activity {
 		JSONObject jsonObject = new JSONObject();
 		List<NameValuePair> params = new ArrayList<NameValuePair>();
 	    JSONParser jsonParser = new JSONParser();
-	    String url="http://practice.site11.com/feedback.php";
+	    String url="http://bizquiz.in/BizQuiz/Feedback.php";
 	    int status;
 		
 	    

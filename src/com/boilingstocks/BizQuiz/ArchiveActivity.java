@@ -72,7 +72,7 @@ public class ArchiveActivity extends Activity{
 		List<NameValuePair> params = new ArrayList<NameValuePair>();
 	    JSONParser jsonParser = new JSONParser();
 	    JSONArray jArray=new JSONArray();
-	    String url="http://practice.site11.com/archive.php";
+	    String url="http://bizquiz.in/BizQuiz/Archive.php";
 	    
 	    JSONObject json=new JSONObject();
 	    
@@ -177,7 +177,7 @@ public class ArchiveActivity extends Activity{
 	@Override
     public void onBackPressed() {
        Log.d("CDA", "onBackPressed Called");
-       Intent back = new Intent(this,ArchiveCategory.class);
+       Intent back = new Intent(this,ArchiveMonthsActivity.class);
 //       setIntent.addCategory(Intent.CATEGORY_HOME);
 //       setIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
        startActivity(back);
