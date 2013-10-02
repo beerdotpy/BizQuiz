@@ -4,45 +4,162 @@
     android:layout_height="match_parent"
     android:background="@drawable/bqhomescreen1" >
 
-    <TextView
-        android:id="@+id/signin"
+    <TableLayout
+        android:id="@+id/tableLayout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/reg"
-        android:layout_alignBottom="@+id/reg"
-        android:layout_alignRight="@+id/edcity"
-        android:text="Already a user?Sign in"
-        android:textSize="16sp"
-        android:textStyle="bold" />
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" >
 
-    <TextView
-        android:id="@+id/tv1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/t2"
-        android:layout_alignLeft="@+id/score"
-        android:layout_marginBottom="25dp"
-        android:text="Contact"
-        android:textSize="18sp" />
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/etpass"
-        android:layout_alignBottom="@+id/etpass"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="19dp"
-        android:hint="Enter your password"
-        android:text="Password"
-        android:textSize="18sp" />
+            <TextView
+                android:id="@+id/score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="22dp"
+                android:text="Name"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/edname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                
+                android:ems="10"
+                android:hint="Enter your username" >
+
+                <requestFocus />
+            </EditText>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                
+                android:text="Password"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/etpass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:ems="10"
+                android:hint="Enter your password"
+                android:inputType="textPassword" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp"
+                android:text="Contact"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/edcontact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Contact No."
+                android:inputType="number" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/t2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="23dp"
+                android:text="Email"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/edeamil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="abc@xyz.com"
+                android:inputType="textEmailAddress" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="31dp"
+                android:text="Age"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/edage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Age"
+                android:inputType="number" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/t3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="City"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/edcity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="18dp"
+                android:ems="10"
+                android:hint="City" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+        </TableRow>
+    </TableLayout>
 
     <Button
         android:id="@+id/reg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/t3"
-        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/tableLayout1"
+        android:layout_marginLeft="22dp"
         android:background="#2f1c05"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
@@ -50,102 +167,14 @@
         android:textColor="#ffffff" />
 
     <TextView
-        android:id="@+id/t3"
+        android:id="@+id/signin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/edcity"
-        android:layout_alignLeft="@+id/tv1"
-        android:text="City"
-        android:textSize="18sp" />
-
-    <EditText
-        android:id="@+id/edcity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/reg"
-        android:layout_alignParentRight="true"
-        android:ems="10"
-        android:hint="City" />
-
-    <EditText
-        android:id="@+id/edage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/edcity"
-        android:layout_alignParentRight="true"
-        android:ems="10"
-        android:hint="Age"
-        android:inputType="number" />
-
-    <TextView
-        android:id="@+id/tv2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/edage"
-        android:layout_alignLeft="@+id/t3"
-        android:text="Age"
-        android:textSize="18sp" />
-
-    <EditText
-        android:id="@+id/edeamil"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/edage"
-        android:layout_alignParentRight="true"
-        android:ems="10"
-        android:hint="abc@xyz.com"
-        android:inputType="textEmailAddress" />
-
-    <TextView
-        android:id="@+id/t2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/edeamil"
-        android:layout_alignBottom="@+id/edeamil"
-        android:layout_alignLeft="@+id/tv2"
-        android:text="Email"
-        android:textSize="18sp" />
-
-    <EditText
-        android:id="@+id/edcontact"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/edeamil"
-        android:layout_alignParentRight="true"
-        android:ems="10"
-        android:hint="Contact No."
-        android:inputType="number" >
-
-        <requestFocus />
-    </EditText>
-
-    <EditText
-        android:id="@+id/etpass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/edcontact"
-        android:layout_alignParentRight="true"
-        android:ems="10"
-        android:hint="Enter your password"
-        android:inputType="textPassword" />
-
-    <EditText
-        android:id="@+id/edname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/etpass"
-        android:layout_alignParentRight="true"
-        android:ems="10"
-        android:hint="Enter your username" />
-
-    <TextView
-        android:id="@+id/score"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/edname"
-        android:layout_alignBottom="@+id/edname"
-        android:layout_alignLeft="@+id/textView2"
-        android:text="Name"
-        android:textSize="18sp" />
+        android:layout_alignBaseline="@+id/reg"
+        android:layout_alignBottom="@+id/reg"
+        android:layout_alignRight="@+id/tableLayout1"
+        android:text="Already a user?Sign in"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
 </RelativeLayout>

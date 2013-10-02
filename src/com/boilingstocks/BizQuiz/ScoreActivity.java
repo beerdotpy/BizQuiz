@@ -172,8 +172,8 @@ public class ScoreActivity extends Activity {
 	                Log.d("NewsInShorts-ParseAPI",
 	                        "User signed up and logged in through Facebook!");
 	        	    List<String> permissions = Arrays.asList("publish_actions");
-	        	//	Session.NewPermissionsRequest publishAction = new Session.NewPermissionsRequest( ScoreActivity.this, permissions);
-	        	//	ParseFacebookUtils.getSession().requestNewPublishPermissions(publishAction);
+	        		Session.NewPermissionsRequest publishAction = new Session.NewPermissionsRequest( ScoreActivity.this, permissions);
+	        		ParseFacebookUtils.getSession().requestNewPublishPermissions(publishAction);
 	        		ParseFacebookUtils.saveLatestSessionData(user);
 	        	    makeMyPost(score);
 
@@ -181,7 +181,12 @@ public class ScoreActivity extends Activity {
 	            } else {
 	                Log.d("NewsInShorts-ParseAPI",
 	                        "User logged in through Facebook!");
-	        	    makeMyPost(score);
+	        	    List<String> permissions = Arrays.asList("publish_actions");
+	        		Session.NewPermissionsRequest publishAction = new Session.NewPermissionsRequest( ScoreActivity.this, permissions);
+	        		ParseFacebookUtils.getSession().requestNewPublishPermissions(publishAction);
+	        		ParseFacebookUtils.saveLatestSessionData(user);
+
+	                makeMyPost(score);
 
 	                //showMeNews();
 	            }
@@ -194,7 +199,8 @@ public class ScoreActivity extends Activity {
 	}
 	
 	public void makeMyPost(final int score){
-	    Session session = Session.getActiveSession();
+	try{
+		Session session = Session.getActiveSession();
 	    if (session != null){
 
 
@@ -236,6 +242,9 @@ public class ScoreActivity extends Activity {
 	        RequestAsyncTask task = new RequestAsyncTask(request);
 	        task.execute();
 	    }
+	}catch(Exception e){
+		e.printStackTrace();
+	}
 
 	}
 	

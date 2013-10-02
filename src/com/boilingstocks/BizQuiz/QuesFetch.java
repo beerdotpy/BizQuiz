@@ -474,7 +474,7 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
         	Log.d("Timer","time for 3mins");
         	mHandler.post(mUpdateUITimerTask);
         	            
-        	        }
+        }
 
         @Override
         public void onFinish()
