@@ -86,6 +86,7 @@ public class QuesFetch extends Activity {
        QuizDetails.set_score(0);
    	   catid=QuizDetails.getcategory();
    	   
+   	   
 	   Log.d("id + questionNo.",Integer.toString(catid)+"+"+Integer.toString(QuizDetails.getqid()));
 
 	   
@@ -170,7 +171,8 @@ public class QuesFetch extends Activity {
 	}
 
 	
-		previous.setEnabled(false);
+		previous.setVisibility(View.INVISIBLE);
+		next.setVisibility(View.INVISIBLE);
 	
   previous.setOnClickListener(new OnClickListener() {
 	
