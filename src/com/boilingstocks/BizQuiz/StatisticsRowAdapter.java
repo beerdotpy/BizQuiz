@@ -75,18 +75,25 @@ public class StatisticsRowAdapter extends BaseAdapter {
 		mViewHolder.u_name = (TextView) convertView.findViewById(R.id.user_name);
 		mViewHolder.scre = (TextView) convertView.findViewById(R.id.scre);
 		
-//		if(myList.get(position).getusername().compareToIgnoreCase(return_username())==0){
-//			
-////		String temp=return_username();
-////		SpannableString spanString = new SpannableString(temp);
-////		spanString.setSpan(new UnderlineSpan(), 0, spanString.length(), 0);
-////		mViewHolder.u_name.setText(myList.get(position).getusername());
-//		
-//		}
+		Log.d("username",return_username());
+		Log.d("list_username",myList.get(position).getusername());
+		
+		if(myList.get(position).getusername().compareToIgnoreCase(return_username())==0){
+			
+		String temp=return_username();
+		SpannableString spanString = new SpannableString(temp);
+		spanString.setSpan(new UnderlineSpan(), 0, spanString.length(), 0);
+		mViewHolder.u_name.setText(spanString);
+		
+		String temp_score=Integer.toString(myList.get(position).getscore());
+		SpannableString spanString_score = new SpannableString(temp_score);
+		spanString_score.setSpan(new UnderlineSpan(), 0, spanString_score.length(), 0);
+		mViewHolder.scre.setText(spanString_score);
+		}else{
 		
 		mViewHolder.u_name.setText(myList.get(position).getusername());		
 		mViewHolder.scre.setText(Integer.toString(myList.get(position).getscore()));
-		
+		}
 		return convertView;
 	}
 	

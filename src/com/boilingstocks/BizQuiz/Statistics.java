@@ -86,7 +86,7 @@ public class Statistics extends Activity {
 		ProgressDialog pDialog;
 		List<NameValuePair> params = new ArrayList<NameValuePair>();
 	    JSONParser jsonParser = new JSONParser();
-	    String url="http://practice.site11.com/statistics.php";
+	    String url="http://bizquiz.in/BizQuiz/Statistics.php";
 	    
 	    JSONObject json=new JSONObject();
 	    
@@ -119,7 +119,7 @@ public class Statistics extends Activity {
 				jArray= json.getJSONArray("data");
 				System.out.println("*****JARRAY*****"+jArray.length());
 				
-				for(int i=0;i<=10;i++){
+				for(int i=0;i<jArray.length();i++){
 				
 				JSONObject json_data = jArray.getJSONObject(i);
                 
@@ -145,7 +145,7 @@ public class Statistics extends Activity {
 			
 			pDialog.dismiss();
 			
-			for(int i=0;i<=10;i++){
+			for(int i=0;i<jArray.length();i++){
 				ListData myListData = new ListData(); 
 				myListData.setscore(score_array[i]);
 				myListData.setusername(user_array[i]);

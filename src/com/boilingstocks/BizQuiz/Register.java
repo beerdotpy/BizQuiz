@@ -99,7 +99,7 @@ public class Register extends Activity {
 		JSONObject jsonObject = new JSONObject();
 		List<NameValuePair> params = new ArrayList<NameValuePair>();
 	    JSONParser jsonParser = new JSONParser();
-	    String url="http://practice.site11.com/register.php";
+	    String url="http://bizquiz.in/BizQuiz/Register.php";
 	    int status;
 		String uname;
 	    

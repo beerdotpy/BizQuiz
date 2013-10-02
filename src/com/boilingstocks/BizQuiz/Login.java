@@ -70,7 +70,7 @@ public class Login extends Activity {
 		JSONObject jsonObject = new JSONObject();
 		List<NameValuePair> params = new ArrayList<NameValuePair>();
 	    JSONParser jsonParser = new JSONParser();
-	    String url="http://practice.site11.com/loginvalidation.php";
+	    String url="http://bizquiz.in/BizQuiz/LoginValidate.php";
 	    int status;
 	    String uphone;
         String uemail;

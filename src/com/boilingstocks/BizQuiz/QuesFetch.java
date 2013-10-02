@@ -273,7 +273,7 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
 	JSONObject jsonObject = new JSONObject();
 	List<NameValuePair> params = new ArrayList<NameValuePair>();
     JSONParser jsonParser = new JSONParser();
-    String url="http://practice.site11.com/questionfetch.php";
+    String url="http://bizquiz.in/BizQuiz/QuesFetch.php";
     String nameofcat;
     String question;
     String qanswer;

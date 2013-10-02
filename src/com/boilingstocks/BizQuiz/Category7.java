@@ -81,7 +81,7 @@ public class Category7 extends Activity {
 		ProgressDialog pDialog;
 		List<NameValuePair> params = new ArrayList<NameValuePair>();
 	    JSONParser jsonParser = new JSONParser();
-	    String url="http://practice.site11.com/Category7.php";
+	    String url="http://bizquiz.in/BizQuiz/Category7.php";
 	    
 	    JSONObject json=new JSONObject();       
 	       
