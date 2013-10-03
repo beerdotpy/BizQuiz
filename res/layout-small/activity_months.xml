@@ -9,7 +9,8 @@
         android:id="@+id/monthListView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bqhomescreen2" >
+        android:background="@drawable/bqhomescreen2"
+        android:cacheColorHint="@android:color/transparent" >
 
     </ListView>
     
