@@ -2,8 +2,6 @@ package com.boilingstocks.BizQuiz;
 
 import java.util.ArrayList;
 
-import com.BizQuiz.R;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;

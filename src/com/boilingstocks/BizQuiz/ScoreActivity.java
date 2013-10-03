@@ -26,7 +26,6 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.BizQuiz.R;
 import com.facebook.FacebookRequestError;
 import com.facebook.HttpMethod;
 import com.facebook.Request;
@@ -179,7 +178,6 @@ public class ScoreActivity extends Activity {
 	            } else {
 	                Log.d("NewsInShorts-ParseAPI",
 	                        "User logged in through Facebook!");
-
 	                makeMyPost(score);
 
 	                //showMeNews();

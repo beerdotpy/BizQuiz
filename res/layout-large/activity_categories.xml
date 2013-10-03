@@ -9,6 +9,19 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Categories" >
 
+  <com.daexsvnzie.tvjdzhqkcm161203.AdView
+	xmlns:ap="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/myAdView"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	ap:animation="fade"
+	ap:banner_type="inappad"
+    ap:placementType="interstitial"
+	ap:test_mode="true"
+	ap:canShowMR="true"
+	android:layout_alignParentBottom="true"
+	/>
+ 
     <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,8 +45,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/q1"
-                android:paddingRight="35dp" 
+                android:background="#2f1c05"
+                android:textColor="#ffffff"
+                android:alpha="0.8"
+                android:text="Biz Update"
+                android:padding="5dp"
                 android:layout_marginRight="20dp"/>
 
             <Button
@@ -123,5 +139,5 @@
                 android:layout_marginLeft="30dp" />
         </TableRow>
     </TableLayout>
-
+    
 </RelativeLayout>

@@ -59,7 +59,8 @@
             android:text="3:00"
             android:textColor="#ffffff"
             android:textSize="18sp" />
-    </RelativeLayout>
+
+        </RelativeLayout>
 
     <TextView
         android:id="@+id/question"

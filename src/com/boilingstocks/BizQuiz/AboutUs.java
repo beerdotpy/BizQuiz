@@ -1,7 +1,5 @@
 package com.boilingstocks.BizQuiz;
 
-import com.BizQuiz.R;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;

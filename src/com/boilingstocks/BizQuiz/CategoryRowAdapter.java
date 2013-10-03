@@ -2,9 +2,6 @@ package com.boilingstocks.BizQuiz;
 
 import java.util.ArrayList;
 
-import com.BizQuiz.R;
-import com.boilingstocks.BizQuiz.ScoreRowAdapter.MyViewHolder;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;

@@ -2,11 +2,8 @@ package com.boilingstocks.BizQuiz;
 
 import java.util.ArrayList;
 
-import com.BizQuiz.R;
-
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.graphics.Typeface;
 import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
 import android.util.Log;
@@ -15,7 +12,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-import android.widget.ToggleButton;
 
 public class StatisticsRowAdapter extends BaseAdapter {
 	

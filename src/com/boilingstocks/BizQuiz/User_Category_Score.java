@@ -2,8 +2,6 @@ package com.boilingstocks.BizQuiz;
 
 import java.util.ArrayList;
 
-import com.BizQuiz.R;
-
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;

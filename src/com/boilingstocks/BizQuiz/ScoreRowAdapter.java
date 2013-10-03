@@ -2,11 +2,7 @@ package com.boilingstocks.BizQuiz;
 
 import java.util.ArrayList;
 
-import com.BizQuiz.R;
-import com.boilingstocks.BizQuiz.StatisticsRowAdapter.MyViewHolder;
-
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

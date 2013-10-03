@@ -2,10 +2,6 @@ package com.boilingstocks.BizQuiz;
 
 
 
-import java.util.prefs.Preferences;
-
-import com.BizQuiz.R;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.preference.Preference;

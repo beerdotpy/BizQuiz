@@ -8,9 +8,6 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.BizQuiz.R;
-import com.boilingstocks.BizQuiz.QuesFetch.Questionfetch;
-
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;

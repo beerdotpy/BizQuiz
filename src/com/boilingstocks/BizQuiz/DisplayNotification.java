@@ -1,7 +1,5 @@
 package com.boilingstocks.BizQuiz;
 
-import com.BizQuiz.R;
-
 import android.app.Activity;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -10,7 +8,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.NotificationCompat;
-import android.util.Log;
 
 
 public class DisplayNotification extends Activity {	 

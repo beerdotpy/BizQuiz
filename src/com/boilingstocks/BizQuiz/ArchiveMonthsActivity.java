@@ -23,8 +23,6 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
-import com.BizQuiz.R;
-
 public class ArchiveMonthsActivity extends Activity {
 
 	ArrayList<Month> monthList = new ArrayList<Month>();

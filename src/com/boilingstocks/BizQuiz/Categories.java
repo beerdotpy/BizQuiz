@@ -2,19 +2,18 @@ package com.boilingstocks.BizQuiz;
 
 import java.util.Calendar;
 
-import com.BizQuiz.R;
-
-import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.CheckBox;
+
+import com.daexsvnzie.tvjdzhqkcm161203.AirPlay;
 
 public class Categories extends Activity {
 
@@ -28,7 +27,7 @@ public class Categories extends Activity {
 	Button cat8;
 	SharedPreferences sp;
 	 
-	
+	private AirPlay airPlay; //Declare AirPlay here
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -44,7 +43,12 @@ public class Categories extends Activity {
 	       }
 		
 		setContentView(R.layout.activity_categories);
-       
+	     if(airPlay==null)
+	     {
+	    	 airPlay=new AirPlay(Categories.this, null, false);
+	    	 airPlay.showRichMediaInterstitialAd();
+	     }
+
        
               
        cat1=(Button) findViewById(R.id.category1);
