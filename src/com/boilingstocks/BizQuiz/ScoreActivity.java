@@ -22,13 +22,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.BizQuiz.R;
-import com.BizQuiz.R.id;
 import com.facebook.FacebookRequestError;
 import com.facebook.HttpMethod;
 import com.facebook.Request;
@@ -181,10 +179,6 @@ public class ScoreActivity extends Activity {
 	            } else {
 	                Log.d("NewsInShorts-ParseAPI",
 	                        "User logged in through Facebook!");
-	        	    List<String> permissions = Arrays.asList("publish_actions");
-	        		Session.NewPermissionsRequest publishAction = new Session.NewPermissionsRequest( ScoreActivity.this, permissions);
-	        		ParseFacebookUtils.getSession().requestNewPublishPermissions(publishAction);
-	        		ParseFacebookUtils.saveLatestSessionData(user);
 
 	                makeMyPost(score);
 
