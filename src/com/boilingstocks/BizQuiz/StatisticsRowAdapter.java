@@ -76,15 +76,19 @@ public class StatisticsRowAdapter extends BaseAdapter {
 		
 		if(myList.get(position).getusername().compareToIgnoreCase(return_username())==0){
 			
-		String temp=return_username();
-		SpannableString spanString = new SpannableString(temp);
-		spanString.setSpan(new UnderlineSpan(), 0, spanString.length(), 0);
-		mViewHolder.u_name.setText(spanString);
-		
-		String temp_score=Integer.toString(myList.get(position).getscore());
-		SpannableString spanString_score = new SpannableString(temp_score);
-		spanString_score.setSpan(new UnderlineSpan(), 0, spanString_score.length(), 0);
-		mViewHolder.scre.setText(spanString_score);
+//		String temp=return_username();
+//		SpannableString spanString = new SpannableString(temp);
+//		spanString.setSpan(new UnderlineSpan(), 0, spanString.length(), 0);
+//		mViewHolder.u_name.setText(spanString);
+//		
+//		String temp_score=Integer.toString(myList.get(position).getscore());
+//		SpannableString spanString_score = new SpannableString(temp_score);
+//		spanString_score.setSpan(new UnderlineSpan(), 0, spanString_score.length(), 0);
+//		mViewHolder.scre.setText(spanString_score);
+			
+			convertView.setBackgroundColor(R.drawable.rectskin);
+			mViewHolder.u_name.setText(myList.get(position).getusername());		
+			mViewHolder.scre.setText(Integer.toString(myList.get(position).getscore()));
 		}else{
 		
 		mViewHolder.u_name.setText(myList.get(position).getusername());		

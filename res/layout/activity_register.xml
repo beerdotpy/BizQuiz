@@ -160,7 +160,7 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/tableLayout1"
         android:layout_marginLeft="22dp"
-        android:background="#2f1c05"
+        android:background="@drawable/button_bg"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:text="Register"
