@@ -8,8 +8,6 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".Categories" >
-
-    
   <com.daexsvnzie.tvjdzhqkcm161203.AdView
 	xmlns:ap="http://schemas.android.com/apk/res-auto"
 	android:id="@+id/myAdView"
@@ -22,7 +20,7 @@
 	ap:canShowMR="true"
 	android:layout_alignParentBottom="true"
 	/>
-     
+ 
     <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -45,20 +43,29 @@
                 android:id="@+id/category1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:alpha="0.8"
+                android:background="@drawable/button_bg"
+                android:padding="5dp"
+                android:text="Biz Update"
+                android:textColor="#ffffff"
+                android:textSize="14sp"
+                android:typeface="sans" />
+
+            <Button
+                android:id="@+id/category2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/button_bg"
                 android:textColor="#ffffff"
                 android:alpha="0.8"
-                android:text="Biz Update"
-                android:padding="5dp"
-                android:layout_marginRight="20dp"/>
-
-            <Button
-                android:id="@+id/category2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/q2"
-                android:layout_marginLeft="30dp" />
+                android:text="Brandology"
+                android:padding="5dp"                
+                android:layout_marginRight="20dp" 
+                android:textSize="14sp"
+                android:typeface="sans" />
 
         </TableRow>
 
@@ -73,19 +80,31 @@
 
             <Button
                 android:id="@+id/category3"
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/q3"
-                android:layout_marginRight="20dp" />
+                android:layout_weight="1"
+                android:background="@drawable/button_bg"
+                android:textColor="#ffffff"
+                android:alpha="0.8"
+                android:text="WhatDFact"
+                android:padding="5dp"                
+                android:layout_marginRight="20dp" 
+                android:textSize="14sp"
+                android:typeface="sans" />
 
             <Button
                 android:id="@+id/category4"
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
+               android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/q4" 
-                android:layout_marginLeft="30dp"/>
+                android:layout_weight="1"
+                android:background="@drawable/button_bg"
+                android:textColor="#ffffff"
+                android:alpha="0.8"
+                android:text="Bizness.inc"
+                android:padding="5dp"                
+                android:layout_marginRight="20dp"
+                android:textSize="14sp"
+                android:typeface="sans" />
         </TableRow>
 
         <TableRow
@@ -99,19 +118,31 @@
 
             <Button
                 android:id="@+id/category5"
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/q5"
-                android:layout_marginRight="20dp" />
+                android:layout_weight="1"
+                android:background="@drawable/button_bg"
+                android:textColor="#ffffff"
+                android:alpha="0.8"
+                android:text="CryptiClues"
+                android:padding="5dp"                
+                android:layout_marginRight="20dp"
+                android:textSize="14sp"
+                android:typeface="sans"  />
 
             <Button
                 android:id="@+id/category6"
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/q6" 
-                android:layout_marginLeft="30dp"/>
+                android:layout_weight="1"
+                android:background="@drawable/button_bg"
+                android:textColor="#ffffff"
+                android:alpha="0.8"
+                android:text="Q ofthDay"
+                android:padding="5dp"                
+                android:layout_marginRight="20dp"
+                android:textSize="14sp"
+                android:typeface="sans" />
         </TableRow>
 
         <TableRow
@@ -125,22 +156,33 @@
 
             <Button
                 android:id="@+id/category7"
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/q7" 
-                android:layout_marginRight="20dp"/>
+                android:layout_weight="1"
+                android:background="@drawable/button_bg"
+                android:textColor="#ffffff"
+                android:alpha="0.8"
+                android:text="Biz Jargons"
+                android:padding="5dp"                
+                android:layout_marginRight="20dp"
+                android:textSize="14sp"
+                android:typeface="sans" />
 
             <Button
                 android:id="@+id/category8"
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/q8"
-                android:layout_marginLeft="30dp" />
+                android:layout_weight="1"
+                android:background="@drawable/button_bg"
+                android:textColor="#ffffff"
+                android:alpha="0.8"
+                android:text="Hot Stocks"
+                android:padding="5dp"                
+                android:layout_marginRight="20dp"
+                android:textSize="14sp"
+                android:typeface="sans"  />
         </TableRow>
     </TableLayout>
 
-
-    
+   
 </RelativeLayout>
