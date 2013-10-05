@@ -17,7 +17,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingLeft="90dp"
-            android:text="Top 10 Scorers"
+            android:text="Wall of Fame"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textSize="25sp"
             android:typeface="serif" />

@@ -10,9 +10,12 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.DialogInterface.OnCancelListener;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -31,12 +34,35 @@ public class Category7 extends Activity {
 	Button cat7_next;
 	String[] array_fact;
 	int index=0;
-
+	AlertDialog.Builder builder;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
        setContentView(R.layout.activity_cat7);
+       
+       
+       builder = new AlertDialog.Builder(this);
+   	builder.setMessage(""+"\n Time: 3minutes")
+   			.setCancelable(true)
+   			.setOnCancelListener(new OnCancelListener() {
+   				
+   				public void onCancel(DialogInterface dialog) {
+   					// TODO Auto-generated method stub
+   					
+   					Intent returnhome=new Intent(Category7.this,Categories.class);
+   					startActivity(returnhome);
+   					
+   				}
+   			})
+   			.setPositiveButton("Start",new DialogInterface.OnClickListener() {
+   				
+   				public void onClick(DialogInterface dialog, int which) {
+   					// TODO Auto-generated method stub	
+   					
+   				}
+   			})
+   			.show();
        
        fact=(TextView) findViewById(R.id.fact);
        cat7_prev=(Button) findViewById(R.id.cat7_prev);

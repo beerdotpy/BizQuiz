@@ -9,9 +9,9 @@
         android:key="notify_type">
         
   <CheckBoxPreference
-       android:title="Notification Pop-up"
+       android:title="Receive Notifications"
        android:defaultValue="true"
-       android:summary="This option if selected will give notification in notification bar once in a day."
+       android:summary=""
        android:key="notify" />
   
   </PreferenceCategory>
@@ -20,8 +20,8 @@
         android:key="profile_type">
         
   <Preference
-       android:title="Edit Profile"
-       android:summary="Tap to edit profile"
+       android:title="Press to Edit Profile"
+       android:summary=""
        android:key="profile" />
   
   </PreferenceCategory> 

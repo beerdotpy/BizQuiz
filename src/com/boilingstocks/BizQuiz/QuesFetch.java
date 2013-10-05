@@ -36,6 +36,7 @@ public class QuesFetch extends Activity {
   
 	int qid; 
 	int catid;
+	
 	Button previous;
 	Button submit;
 	Button next;
@@ -48,10 +49,11 @@ public class QuesFetch extends Activity {
 	Handler mHandler; 
 	Runnable mUpdateUITimerTask;
 	Context context;
-	
 	Button sell;
 	Button buy;
-	String category;         
+	
+	String category;
+	String dialog_start;
 	TextView ques_stats;     // how much questions answered out of total question
 	int threshvalue;         //currently set to 50% if length is less than 10 else set to 75%
 	int max_ques;            //maximum question in each category
@@ -85,36 +87,12 @@ public class QuesFetch extends Activity {
    	   
    	   
 	   Log.d("id + questionNo.",Integer.toString(catid)+"+"+Integer.toString(QuizDetails.getqid()));
-
-	   
-	   builder1 = new AlertDialog.Builder(context);
-		builder1.setMessage(getResources().getString(R.string.DialogBox_start))
-				.setCancelable(true)
-				.setOnCancelListener(new OnCancelListener() {
-					
-					public void onCancel(DialogInterface dialog) {
-						// TODO Auto-generated method stub
-						
-						Intent returnhome=new Intent(QuesFetch.this,Categories.class);
-						startActivity(returnhome);
-						
-					}
-				})
-				.setPositiveButton("Ok",new DialogInterface.OnClickListener() {
-					
-					public void onClick(DialogInterface dialog, int which) {
-						// TODO Auto-generated method stub	
-						mCountDown.start();
-					}
-				})
-				.show();   
-	  
-	   
 	   timer.setText(2+":"+59);
 	   
 	if(catid==1)
 	{
 		category=getResources().getString(R.string.Category1);
+		dialog_start=getResources().getString(R.string.BizUpdate);
 		new Questionfetch(QuesFetch.this).execute(category);
 		sell.setVisibility(View.INVISIBLE);
 		buy.setVisibility(View.INVISIBLE);
@@ -122,6 +100,7 @@ public class QuesFetch extends Activity {
 	}else if(catid==2)
 	{
 		category=getResources().getString(R.string.Category2);
+		dialog_start=getResources().getString(R.string.Brandology);
 		new Questionfetch(QuesFetch.this).execute(category);
 		sell.setVisibility(View.INVISIBLE);
 		buy.setVisibility(View.INVISIBLE);
@@ -129,6 +108,7 @@ public class QuesFetch extends Activity {
 	}else if(catid==3){
 		
 		category=getResources().getString(R.string.Category3);
+		dialog_start=getResources().getString(R.string.WhatDFact);
 		new Questionfetch(QuesFetch.this).execute(category);
 		sell.setVisibility(View.INVISIBLE);
 		buy.setVisibility(View.INVISIBLE);
@@ -136,6 +116,7 @@ public class QuesFetch extends Activity {
 	}else if(catid==4){
 		
 		category=getResources().getString(R.string.Category4);
+		dialog_start=getResources().getString(R.string.Bizness_inc);
 		new Questionfetch(QuesFetch.this).execute(category);
 		sell.setVisibility(View.INVISIBLE);
 		buy.setVisibility(View.INVISIBLE);
@@ -143,6 +124,7 @@ public class QuesFetch extends Activity {
 	}else if(catid==5){
 		
 		category=getResources().getString(R.string.Category5);
+		dialog_start=getResources().getString(R.string.CryptiClues);
 		new Questionfetch(QuesFetch.this).execute(category);
 		sell.setVisibility(View.INVISIBLE);
 		buy.setVisibility(View.INVISIBLE);
@@ -150,6 +132,7 @@ public class QuesFetch extends Activity {
 	}else if(catid==6){
 		
 		category=getResources().getString(R.string.Category6);
+		dialog_start="";
 		new Questionfetch(QuesFetch.this).execute(category);
 		sell.setVisibility(View.INVISIBLE);
 		buy.setVisibility(View.INVISIBLE);
@@ -159,14 +142,35 @@ public class QuesFetch extends Activity {
 	}else if(catid==8){
 		
 		category=getResources().getString(R.string.Category8);
+		dialog_start=getResources().getString(R.string.HotStocks);
 		new Questionfetch(QuesFetch.this).execute(category);
 		
 		etanswer.setVisibility(View.INVISIBLE);
-		
 		submit.setVisibility(View.INVISIBLE);
 		
 	}
 
+	builder1 = new AlertDialog.Builder(context);
+	builder1.setMessage(dialog_start+"\n Time: 3minutes")
+			.setCancelable(true)
+			.setOnCancelListener(new OnCancelListener() {
+				
+				public void onCancel(DialogInterface dialog) {
+					// TODO Auto-generated method stub
+					
+					Intent returnhome=new Intent(QuesFetch.this,Categories.class);
+					startActivity(returnhome);
+					
+				}
+			})
+			.setPositiveButton("Start",new DialogInterface.OnClickListener() {
+				
+				public void onClick(DialogInterface dialog, int which) {
+					// TODO Auto-generated method stub	
+					mCountDown.start();
+				}
+			})
+			.show();   
 	
 		previous.setVisibility(View.INVISIBLE);
 		next.setVisibility(View.INVISIBLE);
@@ -221,7 +225,7 @@ public class QuesFetch extends Activity {
 			if(QuizDetails.getans().equalsIgnoreCase("Sell"))
 			{
 				QuizDetails.setqid(QuizDetails.getqid()+1);
-	  	        Toast.makeText(QuesFetch.this, "Correct Answer", Toast.LENGTH_LONG).show();
+	  	        Toast.makeText(QuesFetch.this, "Right! \nAnswer is: Sell ", Toast.LENGTH_LONG).show();
 	  	        QuizDetails.set_score(QuizDetails.getscore()+1);
 	  	        
 	  	        
@@ -229,7 +233,7 @@ public class QuesFetch extends Activity {
 			}else{
 				
 				 QuizDetails.setqid(QuizDetails.getqid()+1);
-	  	         Toast.makeText(QuesFetch.this, "Incorrect Answer.Correct Answer is "+QuizDetails.getans(), Toast.LENGTH_LONG).show();
+	  	         Toast.makeText(QuesFetch.this, "Wrong \nAnswer is: Sell", Toast.LENGTH_LONG).show();
 	  	        	  	        
 	  	        new Questionfetch(QuesFetch.this).execute(category);
 			
@@ -246,7 +250,7 @@ public class QuesFetch extends Activity {
 			if(QuizDetails.getans().equalsIgnoreCase("Buy"))
 			{
 				QuizDetails.setqid(QuizDetails.getqid()+1);
-	  	        Toast.makeText(QuesFetch.this, "Correct Answer", Toast.LENGTH_LONG).show();
+	  	        Toast.makeText(QuesFetch.this, "Right! \nAnswer is: Buy ", Toast.LENGTH_LONG).show();
 	  	        QuizDetails.set_score(QuizDetails.getscore()+1);
 	  	        
 	  	        
@@ -254,7 +258,7 @@ public class QuesFetch extends Activity {
 			}else{
 				
 				 QuizDetails.setqid(QuizDetails.getqid()+1);
-	  	         Toast.makeText(QuesFetch.this, "Incorrect Answer.Correct Answer is "+QuizDetails.getans(), Toast.LENGTH_LONG).show();
+	  	         Toast.makeText(QuesFetch.this, "Wrong! \nAnswer is: Buy "+QuizDetails.getans(), Toast.LENGTH_LONG).show();
 	  	        	  	        
 	  	        new Questionfetch(QuesFetch.this).execute(category);
 			
@@ -374,7 +378,7 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
 	    if(check){
 	  
 	  	        QuizDetails.setqid(QuizDetails.getqid()+1);
-	  	        Toast.makeText(this, "Correct Answer", Toast.LENGTH_LONG).show();
+	  	        Toast.makeText(this, "Right ! \nAnswer is: "+QuizDetails.getans(), Toast.LENGTH_LONG).show();
 	  	        QuizDetails.set_score(QuizDetails.getscore()+1);
 	  	        pDialog.dismiss();
 	  	        
@@ -384,7 +388,7 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
 
 		
 		          QuizDetails.setqid(QuizDetails.getqid()+1);
-	  	          Toast.makeText(this, "Incorrect Answer.Correct Answer is "+QuizDetails.getans(), Toast.LENGTH_LONG).show();
+	  	          Toast.makeText(this, "Wrong. \nAnswer is: "+QuizDetails.getans(), Toast.LENGTH_LONG).show();
 	  	        pDialog.dismiss();
 	  	        
 	  	        new Questionfetch(QuesFetch.this).execute(category);

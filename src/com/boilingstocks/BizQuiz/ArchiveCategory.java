@@ -25,7 +25,7 @@ public class ArchiveCategory extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_months);
+		setContentView(R.layout.activity_category_archive);
 		
 		String[] category_name={getResources().getString(R.string.Category1),
                 getResources().getString(R.string.Category2),
@@ -37,7 +37,7 @@ public class ArchiveCategory extends Activity {
 		M_id=getIntent().getIntExtra("archiveId",-1);
 		 Log.d("archiveId",Integer.toString(M_id));
 		
-		catLV = (ListView) findViewById(R.id.monthListView);	
+		catLV = (ListView) findViewById(R.id.catListView);	
 	
 		for(int i=0;i<6;i++){
 			ListData list=new ListData();

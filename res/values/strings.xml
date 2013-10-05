@@ -31,4 +31,14 @@
 				Press Back to Quit or OK to Play</string>
     <string name="DialogBox_end">Sorry your time is over.Press OK to play again and Back to Quit</string>
     <string name="DialogBox_back">Are you sure you want to Quit? Your score wont be considered again.Press Back to Play again or OK to Quit </string>
+    
+    <string name="BizUpdate">Covering recent developments in the corporate world.</string>
+    <string name="Brandology">The study of the world of Brands.</string>
+    <string name="WhatDFact">Identify the company/brand from the given facts about it.</string>
+    <string name="Bizness.inc">Anything and everything under the sun, what we call Business.</string>
+    <string name="CryptiClues">Identify the company/brand from the given clues about it.</string>
+    <string name="HotStocks">Based on the given news, take a call, whether to buy or sell the stock.</string>
+    
+    
+    
 </resources>
