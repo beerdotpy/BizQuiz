@@ -87,7 +87,7 @@ public class StatisticsRowAdapter extends BaseAdapter {
 //		spanString_score.setSpan(new UnderlineSpan(), 0, spanString_score.length(), 0);
 //		mViewHolder.scre.setText(spanString_score);
 			
-			convertView.setBackgroundColor(R.drawable.rectskin);
+			convertView.setBackgroundColor(Color.parseColor("#FFDBB8"));
 			mViewHolder.u_name.setText(myList.get(position).getusername());		
 			mViewHolder.scre.setText(Integer.toString(myList.get(position).getscore()));
 		}else{

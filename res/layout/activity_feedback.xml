@@ -148,6 +148,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="2dp"
+            android:textAlignment="center"
             android:text="Suggestions and critical reviews are welcome!"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -157,6 +158,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="4dp"
+            android:textAlignment="center"
             android:text="Submit a question, and we’ll share it with the quizzing community"
             android:textAppearance="?android:attr/textAppearanceMedium" />
     </LinearLayout>
@@ -176,6 +178,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:layout_marginTop="4dp"
+            android:textAlignment="center"
             android:text="‘For more quizzing action, visit us at:"
             android:textSize="16dp" />
 
@@ -185,6 +188,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="100dp"
             android:text="www.bizquiz.in "
+            android:textAlignment="center"
             android:textSize="18dp" />
 
         <TextView
