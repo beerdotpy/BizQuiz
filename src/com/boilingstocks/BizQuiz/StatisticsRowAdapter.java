@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.text.SpannableString;
 import android.text.style.UnderlineSpan;
 import android.util.Log;
@@ -91,6 +92,7 @@ public class StatisticsRowAdapter extends BaseAdapter {
 			mViewHolder.scre.setText(Integer.toString(myList.get(position).getscore()));
 		}else{
 		
+			convertView.setBackgroundColor(Color.TRANSPARENT);	
 		mViewHolder.u_name.setText(myList.get(position).getusername());		
 		mViewHolder.scre.setText(Integer.toString(myList.get(position).getscore()));
 		}

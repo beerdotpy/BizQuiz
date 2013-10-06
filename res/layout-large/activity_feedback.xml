@@ -4,101 +4,197 @@
     android:layout_height="match_parent"
     android:background="@drawable/bqhomescreen2" >
 
-    <TextView
-        android:id="@+id/tv1"
+    <TableLayout
+        android:id="@+id/tableLayout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="130dp" >
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/attempt_ques"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Username"
+                android:textSize="16sp"
+                android:layout_marginTop="2dp" />
+
+            <EditText
+                android:id="@+id/ed_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="14dp"
+                android:ems="10" 
+                android:layout_marginTop="2dp"/>
+            
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/t1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:textSize="16sp" 
+                android:layout_marginTop="2dp"/>
+
+            <EditText
+                android:id="@+id/ed_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10" 
+                android:layout_marginTop="2dp"/>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" 
+                android:layout_marginTop="2dp"/>
+
+            <Spinner
+                android:id="@+id/spinner1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" 
+                android:entries="@array/type_feedback"
+                android:prompt="@string/feedback"
+                android:background="#FFDBB8"
+                android:layout_weight="1"
+                android:layout_marginTop="2dp"/>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/badge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Content"
+                android:textAppearance="?android:attr/textAppearanceMedium" 
+                android:layout_marginTop="2dp"/>
+
+            <EditText
+                android:id="@+id/ed_about"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                
+                android:ems="10"
+                android:inputType="textMultiLine" 
+                android:layout_marginTop="2dp"/>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="" 
+                />
+
+            <Button
+                android:id="@+id/fd_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="0dp"
+                android:background="@drawable/button_bg"
+                android:text="Thank You!"
+                android:textColor="#ffffff"
+                />
+        </TableRow>
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:text="Reach Us"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:typeface="serif" />
+        android:orientation="vertical" >
 
-    <Button
-        android:id="@+id/fd_submit"
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:text="Reach Us"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="2dp"
+            android:text="Suggestions and critical reviews are welcome!"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="4dp"
+            android:text="Submit a question, and we’ll share it with the quizzing community"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/tv1"
-        android:layout_marginBottom="17dp"
-        android:text="Submit" />
-
-    <TextView
-        android:id="@+id/badge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/ed_about"
         android:layout_alignParentLeft="true"
-        android:text="Content"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:layout_below="@+id/tableLayout1"
+        android:orientation="vertical" >
 
-    <EditText
-        android:id="@+id/ed_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:ems="10" />
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="4dp"
+            android:text="‘For more quizzing action, visit us at:"
+            android:textSize="16dp" />
 
-    <TextView
-        android:id="@+id/t1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/ed_email"
-        android:layout_alignLeft="@+id/attempt_ques"
-        android:text="Email"
-        android:textSize="16sp" />
+        <TextView
+            android:id="@+id/site_link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:text="www.bizquiz.in "
+            android:textSize="18dp" />
 
-    <EditText
-        android:id="@+id/ed_username"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/ed_email"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="14dp"
-        android:ems="10" />
+        <TextView
+            android:id="@+id/facebook_link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="On Facebook: www.facebook.com/www.bizquiz.in " 
+            android:textSize="18dp"
+            android:layout_marginLeft="10dp" />
+        
 
-    <TextView
-        android:id="@+id/attempt_ques"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/ed_username"
-        android:layout_alignParentLeft="true"
-        android:text="Username"
-        android:textSize="16sp" />
-
-    <EditText
-        android:id="@+id/ed_about"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/fd_submit"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="23dp"
-        android:ems="10"
-        android:inputType="textMultiLine" >
-
-        <requestFocus />
-    </EditText>
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tv1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:text="Website link and Facebook Link"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:typeface="serif" />
-
-    <Spinner
-        android:id="@+id/spinner1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/ed_about"
-        android:layout_centerHorizontal="true"
-        android:entries="@array/type_feedback"
-        android:prompt="@string/feedback" />
+    </LinearLayout>
 
 </RelativeLayout>

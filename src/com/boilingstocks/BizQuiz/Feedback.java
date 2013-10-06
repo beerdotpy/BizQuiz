@@ -11,8 +11,11 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.style.UnderlineSpan;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -23,6 +26,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Feedback extends Activity {
@@ -32,6 +36,8 @@ public class Feedback extends Activity {
 	EditText feedback;
 	Button submit;
 	Spinner sp;
+	TextView fb_link;
+	TextView site_link;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +49,44 @@ public class Feedback extends Activity {
    feedback=(EditText) findViewById(R.id.ed_about);
    submit=(Button) findViewById(R.id.fd_submit);
    sp=(Spinner) findViewById(R.id.spinner1);
+   fb_link=(TextView) findViewById(R.id.facebook_link);
+   site_link=(TextView) findViewById(R.id.site_link);
+   
+   
+    String temp="www.bizquiz.in";
+	SpannableString spanString = new SpannableString(temp);
+	spanString.setSpan(new UnderlineSpan(), 0, spanString.length(), 0);
+	site_link.setText(spanString);
+	
+	String temp1="On Facebook: www.facebook.com/www.bizquiz.in";
+	SpannableString spanString1 = new SpannableString(temp1);
+	spanString1.setSpan(new UnderlineSpan(), 13, spanString1.length(), 0);
+	fb_link.setText(spanString1);
+		
+   
+   site_link.setOnClickListener(new OnClickListener() {
+	
+	@Override
+	public void onClick(View v) {
+   
+		Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.bizquiz.in"));
+		startActivity(browserIntent);
+      
+		
+	}
+});
+   
+   fb_link.setOnClickListener(new OnClickListener() {
+		
+		@Override
+		public void onClick(View v) {
+	   
+			Intent browserIntent1 = new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.facebook.com/www.bizquiz.in"));
+			startActivity(browserIntent1);
+		
+			
+		}
+	});
    
 	submit.setOnClickListener(new OnClickListener() {
 		
