@@ -1,9 +1,11 @@
 package com.boilingstocks.BizQuiz;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -12,13 +14,13 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class ArchiveCategory extends Activity {
 	
 	ListView catLV;
 	CategoryRowAdapter adapter;	
 	ArrayList<ListData> cat_list = new ArrayList<ListData>();
-	
 	int M_id;	
 	
 	@Override
@@ -26,6 +28,8 @@ public class ArchiveCategory extends Activity {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_category_archive);
+		
+		
 		
 		String[] category_name={getResources().getString(R.string.Category1),
                 getResources().getString(R.string.Category2),
@@ -38,6 +42,8 @@ public class ArchiveCategory extends Activity {
 		 Log.d("archiveId",Integer.toString(M_id));
 		
 		catLV = (ListView) findViewById(R.id.catListView);	
+		
+		catLV.setCacheColorHint(Color.TRANSPARENT);
 	
 		for(int i=0;i<6;i++){
 			ListData list=new ListData();

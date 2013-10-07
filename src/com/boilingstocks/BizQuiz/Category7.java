@@ -34,7 +34,8 @@ public class Category7 extends Activity {
 	Button cat7_next;
 	String[] array_fact;
 	int index=0;
-	AlertDialog.Builder builder;
+	TextView name_of_quiz;
+	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -42,32 +43,13 @@ public class Category7 extends Activity {
        setContentView(R.layout.activity_cat7);
        
        
-       builder = new AlertDialog.Builder(this);
-   	builder.setMessage(""+"\n Time: 3minutes")
-   			.setCancelable(true)
-   			.setOnCancelListener(new OnCancelListener() {
-   				
-   				public void onCancel(DialogInterface dialog) {
-   					// TODO Auto-generated method stub
-   					
-   					Intent returnhome=new Intent(Category7.this,Categories.class);
-   					startActivity(returnhome);
-   					
-   				}
-   			})
-   			.setPositiveButton("Start",new DialogInterface.OnClickListener() {
-   				
-   				public void onClick(DialogInterface dialog, int which) {
-   					// TODO Auto-generated method stub	
-   					
-   				}
-   			})
-   			.show();
-       
+      
+       name_of_quiz=(TextView) findViewById(R.id.heading);
        fact=(TextView) findViewById(R.id.fact);
        cat7_prev=(Button) findViewById(R.id.cat7_prev);
        cat7_next=(Button) findViewById(R.id.cat7_next);
        
+       name_of_quiz.setText("Biz Jargons");
        new Facts(Category7.this).execute("status");
        
        

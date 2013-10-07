@@ -70,8 +70,10 @@
         android:layout_marginTop="54dp"
         android:layout_toRightOf="@+id/textView2"
         android:text="LOGIN"
+        android:textAlignment="center"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="35sp"
-        android:typeface="serif" />
+        android:typeface="serif" 
+        />
 
 </RelativeLayout>

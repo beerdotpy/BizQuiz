@@ -19,10 +19,20 @@
         android:id="@+id/bt_share"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tv_score"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="27dp"
+        android:layout_centerVertical="true"
         android:src="@drawable/com_facebook_logo" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bt_share"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:text="Share on Facebook"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
         android:id="@+id/badge"
@@ -30,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/bt_share"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="79dp"
+        android:layout_marginTop="48dp"
         android:text="Badge"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:typeface="serif" />

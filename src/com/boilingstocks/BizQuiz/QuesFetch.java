@@ -55,10 +55,12 @@ public class QuesFetch extends Activity {
 	String category;
 	String dialog_start;
 	TextView ques_stats;     // how much questions answered out of total question
+	TextView name_of_quiz;
 	int threshvalue;         //currently set to 50% if length is less than 10 else set to 75%
 	int max_ques;            //maximum question in each category
 	boolean check=true;      //to check if activity is running first time for displaying the dialog box
 	SharedPreferences sp;
+	
 	
 	
 	@Override
@@ -74,6 +76,7 @@ public class QuesFetch extends Activity {
        tvquestion=(TextView) findViewById(R.id.question);
        etanswer=(EditText) findViewById(R.id.answer);
        timer=(TextView) findViewById(R.id.timer);
+       name_of_quiz=(TextView) findViewById(R.id.heading);
        
        sell=(Button) findViewById(R.id.sell);
        buy=(Button) findViewById(R.id.buy);
@@ -92,6 +95,7 @@ public class QuesFetch extends Activity {
 	if(catid==1)
 	{
 		category=getResources().getString(R.string.Category1);
+		name_of_quiz.setText(category);
 		dialog_start=getResources().getString(R.string.BizUpdate);
 		new Questionfetch(QuesFetch.this).execute(category);
 		sell.setVisibility(View.INVISIBLE);
@@ -100,6 +104,7 @@ public class QuesFetch extends Activity {
 	}else if(catid==2)
 	{
 		category=getResources().getString(R.string.Category2);
+		name_of_quiz.setText(category);
 		dialog_start=getResources().getString(R.string.Brandology);
 		new Questionfetch(QuesFetch.this).execute(category);
 		sell.setVisibility(View.INVISIBLE);
@@ -108,6 +113,7 @@ public class QuesFetch extends Activity {
 	}else if(catid==3){
 		
 		category=getResources().getString(R.string.Category3);
+		name_of_quiz.setText(category);
 		dialog_start=getResources().getString(R.string.WhatDFact);
 		new Questionfetch(QuesFetch.this).execute(category);
 		sell.setVisibility(View.INVISIBLE);
@@ -116,6 +122,7 @@ public class QuesFetch extends Activity {
 	}else if(catid==4){
 		
 		category=getResources().getString(R.string.Category4);
+		name_of_quiz.setText(category);
 		dialog_start=getResources().getString(R.string.Bizness_inc);
 		new Questionfetch(QuesFetch.this).execute(category);
 		sell.setVisibility(View.INVISIBLE);
@@ -124,6 +131,7 @@ public class QuesFetch extends Activity {
 	}else if(catid==5){
 		
 		category=getResources().getString(R.string.Category5);
+		name_of_quiz.setText(category);
 		dialog_start=getResources().getString(R.string.CryptiClues);
 		new Questionfetch(QuesFetch.this).execute(category);
 		sell.setVisibility(View.INVISIBLE);
@@ -132,16 +140,18 @@ public class QuesFetch extends Activity {
 	}else if(catid==6){
 		
 		category=getResources().getString(R.string.Category6);
-		dialog_start="";
+		name_of_quiz.setText(category);
 		new Questionfetch(QuesFetch.this).execute(category);
 		sell.setVisibility(View.INVISIBLE);
 		buy.setVisibility(View.INVISIBLE);
 		next.setVisibility(View.INVISIBLE);
 		previous.setVisibility(View.INVISIBLE);
+		timer.setVisibility(View.INVISIBLE);
 		
 	}else if(catid==8){
 		
 		category=getResources().getString(R.string.Category8);
+		name_of_quiz.setText(category);
 		dialog_start=getResources().getString(R.string.HotStocks);
 		new Questionfetch(QuesFetch.this).execute(category);
 		
@@ -150,6 +160,8 @@ public class QuesFetch extends Activity {
 		
 	}
 
+	if(catid!=6){
+		
 	builder1 = new AlertDialog.Builder(context);
 	builder1.setMessage(dialog_start+"\n Time: 3minutes")
 			.setCancelable(true)
@@ -172,6 +184,7 @@ public class QuesFetch extends Activity {
 			})
 			.show();   
 	
+	}
 		previous.setVisibility(View.INVISIBLE);
 		next.setVisibility(View.INVISIBLE);
 	

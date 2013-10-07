@@ -156,7 +156,7 @@ public class Feedback extends Activity {
 		protected void onPostExecute(Boolean b){
 			
 			pDialog.dismiss();
-			Toast.makeText(context, "ThankYou for your valuable feedback ", Toast.LENGTH_LONG).show();
+			Toast.makeText(context, "Thank You!  ", Toast.LENGTH_LONG).show();
 		   Intent intent=new Intent(Feedback.this,Categories.class);
 		   startActivity(intent);
 		   }

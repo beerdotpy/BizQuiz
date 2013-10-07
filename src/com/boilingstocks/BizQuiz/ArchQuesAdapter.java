@@ -46,7 +46,7 @@ public class ArchQuesAdapter extends BaseAdapter {
 		
 		if(convertView == null){
 			
-			convertView = inflater.inflate(R.layout.month_row_layout, null);
+			convertView = inflater.inflate(R.layout.ques_row_layout, null);
 			myViewHolder = new MyViewHolder();
 			convertView.setTag(myViewHolder);
 		}else{
@@ -54,7 +54,7 @@ public class ArchQuesAdapter extends BaseAdapter {
 			myViewHolder = (MyViewHolder) convertView.getTag();
 		}
 		
-		myViewHolder.myArchQuesTextView = (TextView) convertView.findViewById(R.id.tv_monthText);
+		myViewHolder.myArchQuesTextView = (TextView) convertView.findViewById(R.id.tv_quesText);
 		myViewHolder.myArchQuesTextView.setText(archQuestions.get(position).get_Question());
 		
 		return convertView;

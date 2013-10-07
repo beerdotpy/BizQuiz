@@ -1,6 +1,7 @@
 package com.boilingstocks.BizQuiz;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import org.apache.http.NameValuePair;
@@ -20,6 +21,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
@@ -33,6 +35,7 @@ public class Statistics extends Activity {
 	int[] score_array=new int[11];
     String[] user_array=new String[11];
     SharedPreferences sp;
+	TextView month_name;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +48,41 @@ public class Statistics extends Activity {
 	final String user_name =sp.getString("Username", " ");
     
      lv=(ListView) findViewById(R.id.listView1);
+     
+     month_name=(TextView) findViewById(R.id.month_name);
+		Calendar c = Calendar.getInstance();   // this takes current date
+	       int month_of_year=c.get(Calendar.MONTH);
+	       
+	       
+	     switch(month_of_year){
+	     
+	     case 0: month_name.setText("January");
+	             break;
+	     case 1: month_name.setText("February");
+	             break;
+	     case 2: month_name.setText("March");
+	             break;
+	     case 3: month_name.setText("April");
+	             break;
+	     case 4: month_name.setText("May");
+	             break;
+	     case 5: month_name.setText("June");
+	             break;
+	     case 6: month_name.setText("July");
+	             break;
+	     case 7: month_name.setText("August");
+	             break;
+	     case 8: month_name.setText("September");
+	             break; 
+	     case 9: month_name.setText("October");
+	             break;
+	     case 10: month_name.setText("November");
+	             break;
+	     case 11: month_name.setText("December");
+	              break;
+	     	     
+	     default: month_name.setText("");
+	     }
 
     new Stats(Statistics.this).execute("get top 10 scores");    
 
