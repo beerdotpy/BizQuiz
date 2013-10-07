@@ -8,20 +8,34 @@
         android:id="@+id/linearLayout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
+		android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true" >
 
         <TextView
             android:id="@+id/textView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="90dp"
-            android:text="Top 10 Scorers"
+            android:text="Wall of Fame"
+            android:textAlignment="center"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:textSize="25sp"
             android:typeface="serif" />
+    </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:layout_centerHorizontal="true"
+        android:layout_below="@+id/linearLayout1"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/month_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
     </LinearLayout>
 
     <ListView
@@ -29,7 +43,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/linearLayout1" >
+        android:layout_below="@+id/linearLayout2" >
     </ListView>
 
 </RelativeLayout>

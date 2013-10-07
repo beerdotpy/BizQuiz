@@ -36,7 +36,7 @@
                 android:id="@+id/category1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
+                android:layout_marginRight="10dp"
                 android:layout_weight="1"
                 android:alpha="0.8"
                 android:background="@drawable/button_bg"
@@ -56,7 +56,7 @@
                 android:alpha="0.8"
                 android:text="Brandology"
                 android:padding="5dp"                
-                android:layout_marginRight="20dp" 
+                android:layout_marginLeft="10dp" 
                 android:textSize="14sp"
                 android:typeface="sans" />
 
@@ -81,7 +81,7 @@
                 android:alpha="0.8"
                 android:text="WhatDFact"
                 android:padding="5dp"                
-                android:layout_marginRight="20dp" 
+                android:layout_marginRight="10dp" 
                 android:textSize="14sp"
                 android:typeface="sans" />
 
@@ -95,7 +95,7 @@
                 android:alpha="0.8"
                 android:text="Bizness.inc"
                 android:padding="5dp"                
-                android:layout_marginRight="20dp"
+                android:layout_marginLeft="10dp" 
                 android:textSize="14sp"
                 android:typeface="sans" />
         </TableRow>
@@ -119,7 +119,7 @@
                 android:alpha="0.8"
                 android:text="CryptiClues"
                 android:padding="5dp"                
-                android:layout_marginRight="20dp"
+                android:layout_marginRight="10dp"
                 android:textSize="14sp"
                 android:typeface="sans"  />
 
@@ -133,7 +133,7 @@
                 android:alpha="0.8"
                 android:text="Q oftheDay"
                 android:padding="5dp"                
-                android:layout_marginRight="20dp"
+                android:layout_marginLeft="10dp" 
                 android:textSize="14sp"
                 android:typeface="sans" />
         </TableRow>
@@ -157,7 +157,7 @@
                 android:alpha="0.8"
                 android:text="Biz Jargons"
                 android:padding="5dp"                
-                android:layout_marginRight="20dp"
+                android:layout_marginRight="10dp"
                 android:textSize="14sp"
                 android:typeface="sans" />
 
@@ -171,7 +171,7 @@
                 android:alpha="0.8"
                 android:text="Hot Stocks"
                 android:padding="5dp"                
-                android:layout_marginRight="20dp"
+                android:layout_marginLeft="10dp" 
                 android:textSize="14sp"
                 android:typeface="sans"  />
         </TableRow>
