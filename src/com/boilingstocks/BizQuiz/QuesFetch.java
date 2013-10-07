@@ -475,6 +475,7 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
 	protected void onPause(){
 		mHandler.removeCallbacks(mUpdateUITimerTask);
 		mCountDown.cancel();
+		finish();
 		super.onPause();
 		
 		
