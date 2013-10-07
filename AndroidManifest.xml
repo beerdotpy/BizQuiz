@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.boilingstocks.BizQuiz"
+    package="in.bizquiz.app"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -17,9 +17,10 @@
         android:allowBackup="true"
         android:icon="@drawable/bqicon"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme" 
+        >
         <activity
-            android:name="com.boilingstocks.BizQuiz.Home"
+            android:name="in.bizquiz.app.Home"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,45 +29,46 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.boilingstocks.BizQuiz.Show"></activity>
+            android:name="in.bizquiz.app.Show"></activity>
         <activity
-            android:name="com.boilingstocks.BizQuiz.ArchiveCategory"></activity>
+            android:name="in.bizquiz.app.ArchiveCategory"></activity>
         <activity
-            android:name="com.boilingstocks.BizQuiz.User_Category_Score"></activity>
+            android:name="in.bizquiz.app.User_Category_Score"></activity>
         <activity
-            android:name="com.boilingstocks.BizQuiz.Login"></activity>
+            android:name="in.bizquiz.app.Login"></activity>
         <activity
-            android:name="com.boilingstocks.BizQuiz.Settings"
+            android:name="in.bizquiz.app.Settings"
             android:theme="@style/PreferencesTheme">
             
         </activity>
         <activity
-            android:name="com.boilingstocks.BizQuiz.Profile"></activity>
+            android:name="in.bizquiz.app.Profile"></activity>
         <activity
-            android:name="com.boilingstocks.BizQuiz.Statistics"></activity>
+            android:name="in.bizquiz.app.Statistics"></activity>
         <activity
-            android:name="com.boilingstocks.BizQuiz.Feedback"></activity>
+            android:name="in.bizquiz.app.Feedback"></activity>
         <activity
-            android:name="com.boilingstocks.BizQuiz.AboutUs"></activity>
+            android:name="in.bizquiz.app.AboutUs"></activity>
         <activity
-            android:name="com.boilingstocks.BizQuiz.DisplayNotification"></activity>
+            android:name="in.bizquiz.app.DisplayNotification"></activity>
         <activity
-            android:name="com.boilingstocks.BizQuiz.Register"></activity>
+            android:name="in.bizquiz.app.Register"></activity>
         <activity
-            android:name="com.boilingstocks.BizQuiz.ValidateAnswer"></activity>
+            android:name="in.bizquiz.app.ValidateAnswer"></activity>
         <activity
-            android:name="com.boilingstocks.BizQuiz.ArchiveActivity"></activity>        
+            android:name="in.bizquiz.app.ArchiveActivity"></activity>        
          <activity
-            android:name="com.boilingstocks.BizQuiz.QuesFetch"></activity>
+            android:name="in.bizquiz.app.QuesFetch"
+            android:windowSoftInputMode="adjustPan"/>
         <activity
-            android:name="com.boilingstocks.BizQuiz.Categories"></activity>
+            android:name="in.bizquiz.app.Categories"></activity>
         <activity
-            android:name="com.boilingstocks.BizQuiz.ArchiveMonthsActivity"></activity>
+            android:name="in.bizquiz.app.ArchiveMonthsActivity"></activity>
         <activity
-            android:name="com.boilingstocks.BizQuiz.Category7"></activity>
+            android:name="in.bizquiz.app.Category7"></activity>
          
 
-        <activity android:name="com.boilingstocks.BizQuiz.ScoreActivity"></activity>
+        <activity android:name="in.bizquiz.app.ScoreActivity"></activity>
          
         <meta-data android:value="@string/app_id" android:name="com.facebook.sdk.ApplicationId"/>
         <activity android:name="com.facebook.LoginActivity"
