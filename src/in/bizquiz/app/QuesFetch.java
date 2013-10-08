@@ -1,6 +1,7 @@
 package in.bizquiz.app;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import org.apache.http.NameValuePair;
@@ -51,7 +52,6 @@ public class QuesFetch extends Activity {
 	Context context;
 	Button sell;
 	Button buy;
-	
 	String category;
 	String dialog_start;
 	TextView ques_stats;     // how much questions answered out of total question
@@ -61,7 +61,8 @@ public class QuesFetch extends Activity {
 	boolean check=true;      //to check if activity is running first time for displaying the dialog box
 	SharedPreferences sp;
 	
-	
+	int month_id;
+	int day_of_month;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -88,6 +89,40 @@ public class QuesFetch extends Activity {
        QuizDetails.set_score(0);
    	   catid=QuizDetails.getcategory();
    	   
+   	Calendar c = Calendar.getInstance();   // this takes current date
+    day_of_month=c.get(Calendar.DAY_OF_MONTH);
+    int month=c.get(Calendar.MONTH);
+    Log.d("day_of_month",Integer.toString(day_of_month));
+    
+    switch(month){
+	     
+	     case 0: month_id=4;
+	             break;
+	     case 1: month_id=5;
+	             break;
+	     case 2: month_id=6;
+	             break;
+	     case 3: month_id=7;
+	             break;
+	     case 4: month_id=8;
+	             break;
+	     case 5: month_id=9;
+	             break;
+	     case 6: month_id=10;
+	             break;
+	     case 7: month_id=11;
+	             break;
+	     case 8: month_id=12;
+	             break; 
+	     case 9: month_id=1;
+	             break;
+	     case 10: month_id=2;
+	             break;
+	     case 11: month_id=3;
+	              break;
+	     	     
+	     default: month_id=0;
+	     }
    	   
 	   Log.d("id + questionNo.",Integer.toString(catid)+"+"+Integer.toString(QuizDetails.getqid()));
 	   timer.setText(2+":"+59);
@@ -328,6 +363,8 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
 		params.add(new BasicNameValuePair("selectedcat",nameofcat));
 		params.add(new BasicNameValuePair("QuestionNO",Integer.toString(QuizDetails.getqid())));
 		params.add(new BasicNameValuePair("shuffle",Integer.toString(QuizDetails.getshuffle())));
+		params.add(new BasicNameValuePair("month_id",Integer.toString(month_id)));
+		params.add(new BasicNameValuePair("day_of_month",Integer.toString(day_of_month)));
 		
 		jsonObject = jsonParser.makeHttpRequest(url, "GET", params);
 		

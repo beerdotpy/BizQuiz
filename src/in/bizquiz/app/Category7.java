@@ -1,6 +1,7 @@
 package in.bizquiz.app;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import org.apache.http.NameValuePair;
@@ -31,6 +32,7 @@ public class Category7 extends Activity {
 	Button cat7_next;
 	String[] array_fact;
 	int index=0;
+	int month_id;
 	TextView name_of_quiz;
 	
 	
@@ -40,14 +42,49 @@ public class Category7 extends Activity {
        setContentView(R.layout.activity_cat7);
        
        
-      
+       Calendar c = Calendar.getInstance();   // this takes current date
+       int day_of_month=c.get(Calendar.DAY_OF_MONTH);
+       int month=c.get(Calendar.MONTH);
+       Log.d("day_of_month",Integer.toString(day_of_month));
+       
+       switch(month){
+	     
+	     case 0: month_id=4;
+	             break;
+	     case 1: month_id=5;
+	             break;
+	     case 2: month_id=6;
+	             break;
+	     case 3: month_id=7;
+	             break;
+	     case 4: month_id=8;
+	             break;
+	     case 5: month_id=9;
+	             break;
+	     case 6: month_id=10;
+	             break;
+	     case 7: month_id=11;
+	             break;
+	     case 8: month_id=12;
+	             break; 
+	     case 9: month_id=1;
+	             break;
+	     case 10: month_id=2;
+	             break;
+	     case 11: month_id=3;
+	              break;
+	     	     
+	     default: month_id=0;
+	     }
+
+       
        name_of_quiz=(TextView) findViewById(R.id.heading);
        fact=(TextView) findViewById(R.id.fact);
        cat7_prev=(Button) findViewById(R.id.cat7_prev);
        cat7_next=(Button) findViewById(R.id.cat7_next);
        
        name_of_quiz.setText("Biz Jargons");
-       new Facts(Category7.this).execute("status");
+       new Facts(Category7.this).execute(Integer.toString(day_of_month));
        
        
        if(index==0){
@@ -106,7 +143,8 @@ public class Category7 extends Activity {
 		protected Boolean doInBackground(String... str) {
 			
 			
-			params.add(new BasicNameValuePair("check",str[0]));
+			params.add(new BasicNameValuePair("day_of_month",str[0]));
+			params.add(new BasicNameValuePair("month_id",Integer.toString(month_id)));
 			
 			json = jsonParser.makeHttpRequest(url, "GET", params);
 					
@@ -116,11 +154,11 @@ public class Category7 extends Activity {
 				
 				array_fact=new String[jArray.length()];
 				
-				for(int i=0;i<jArray.length();i++){
+				for(int i=jArray.length()-1,j=0;i>=0;i--,j++){
 				
 				JSONObject json_data = jArray.getJSONObject(i);
                 
-				array_fact[i]=json_data.getString("Fact");
+				array_fact[j]=json_data.getString("Fact");
 								
 				Log.i("log_tag","fact"+json_data.getString("Fact"));
                   

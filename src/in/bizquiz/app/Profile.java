@@ -179,26 +179,27 @@ public class Profile extends Activity {
 			pDialog.dismiss();
 		
 			
-			shared = context.getSharedPreferences("First_run", MODE_PRIVATE);
-		    SharedPreferences.Editor editor = shared.edit();
-		    editor.putString("Username",new_name);
-		    editor.putString("Password",new_pass);
-		    editor.putString("Contact",new_contact);
-		    editor.putString("Email",new_email);
-		    editor.putString("Age",new_age);
-		    editor.putString("City",new_city);
-		    editor.commit();	
-			
 			if(status==1){
 				
 				Toast.makeText(Profile.this, "Profile Succefully updated", Toast.LENGTH_LONG).show();
+				shared = context.getSharedPreferences("First_run", MODE_PRIVATE);
+			    SharedPreferences.Editor editor = shared.edit();
+			    editor.putString("Username",new_name);
+			    editor.putString("Password",new_pass);
+			    editor.putString("Contact",new_contact);
+			    editor.putString("Email",new_email);
+			    editor.putString("Age",new_age);
+			    editor.putString("City",new_city);
+			    editor.commit();	
 				Intent intent=new Intent(Profile.this,Categories.class);
 				startActivity(intent);
 				
-			}else{
+			}else if(status==-1){
+				Toast.makeText(Profile.this, "Username already exist", Toast.LENGTH_LONG).show();
 				Intent intent=new Intent(Profile.this,Profile.class);
 				startActivity(intent);
 			}
+			
 		   
 		}
 		

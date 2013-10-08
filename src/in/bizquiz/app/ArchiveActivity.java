@@ -2,6 +2,7 @@ package in.bizquiz.app;
 
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import org.apache.http.NameValuePair;
@@ -31,6 +32,7 @@ public class ArchiveActivity extends Activity{
 	ListView monthLV;
 	TextView archive_ans;
 	String cat_name;
+	int day_of_month;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,8 @@ public class ArchiveActivity extends Activity{
 		cat_name=getIntent().getStringExtra("catname");
 		Log.d("category_name",cat_name);
 		
+		Calendar c = Calendar.getInstance();   // this takes current date
+	    day_of_month=c.get(Calendar.DAY_OF_MONTH);
 		
 		monthLV = (ListView) findViewById(R.id.archiveListView);
 		new ArchiveList(ArchiveActivity.this).execute(Integer.toString(id),cat_name);
@@ -99,6 +103,7 @@ public class ArchiveActivity extends Activity{
 			
 			
 			params.add(new BasicNameValuePair("MonthID",str[0]));
+			params.add(new BasicNameValuePair("day_of_month",Integer.toString(day_of_month)));
 			
 			json = jsonParser.makeHttpRequest(url, "GET", params);
 					
