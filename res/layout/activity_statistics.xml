@@ -43,7 +43,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/linearLayout2" >
+        android:layout_below="@+id/linearLayout2"
+        android:layout_above="@+id/myAdView" >
     </ListView>
 
+        <com.daexsvnzie.tvjdzhqkcm161203.AdView
+	xmlns:ap="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/myAdView"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	ap:animation="fade"
+	ap:banner_type="inappad"
+    ap:placementType="interstitial"
+	ap:test_mode="true"
+	ap:canShowMR="true"
+	android:layout_alignParentBottom="true"
+	/>
 </RelativeLayout>

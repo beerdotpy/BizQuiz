@@ -75,5 +75,16 @@
         android:textSize="35sp"
         android:typeface="serif" 
         />
-
+    <com.daexsvnzie.tvjdzhqkcm161203.AdView
+	xmlns:ap="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/myAdView"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	ap:animation="fade"
+	ap:banner_type="inappad"
+    ap:placementType="interstitial"
+	ap:test_mode="true"
+	ap:canShowMR="true"
+	android:layout_alignParentBottom="true"
+	/>
 </RelativeLayout>
