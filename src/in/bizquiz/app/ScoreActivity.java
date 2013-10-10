@@ -80,8 +80,12 @@ public class ScoreActivity extends Activity {
 	   if((first_attempt && first_time_score==-1) || (category_name.compareToIgnoreCase(getResources().getString(R.string.Category6))==0 && first_time_score_cat7)){
 	        	
 	    	      if(QuizDetails.getscore()==QuizDetails.getmax_ques()){
-	    	    	  badge.setVisibility(View.VISIBLE); 
-	    	    	  badge.setText("Congratulations! You scored"+ QuizDetails.getscore()/QuizDetails.getmax_ques()+".Badge awarded."); 
+	    	    	  badge.setVisibility(View.VISIBLE);
+	    	    	  try{
+	    	    		  badge.setText("Congratulations! You scored "+ QuizDetails.getscore()/QuizDetails.getmax_ques()+".\nBadge awarded."); 
+	    	    	  }catch(ArithmeticException ae){
+	    	    		  badge.setText("There was some problem!"); 
+	    	    	  }
 	    	      }
 	    	      	    	  	  
 	    	  	  if(category_name.compareToIgnoreCase(getResources().getString(R.string.Category6))==0){
