@@ -46,7 +46,8 @@
         <activity
             android:name="in.bizquiz.app.Statistics"></activity>
         <activity
-            android:name="in.bizquiz.app.Feedback"></activity>
+            android:name="in.bizquiz.app.Feedback"
+            android:windowSoftInputMode="stateHidden"></activity>
         <activity
             android:name="in.bizquiz.app.AboutUs"></activity>
         <activity

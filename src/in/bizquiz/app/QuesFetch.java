@@ -388,7 +388,7 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
 	 
 	protected void onPostExecute(Boolean b){
 		
-      if(max_ques<QuizDetails.getqid()){
+      if(max_ques<QuizDetails.getqid() && max_ques!=0){
 			
     	    
 			Intent score=new Intent (QuesFetch.this,ScoreActivity.class);
@@ -396,6 +396,12 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
 			startActivity(score);
 		
 		}
+      
+      if(max_ques==0){
+    	  
+    	  Intent back=new Intent(QuesFetch.this,Categories.class);
+    	  startActivity(back);
+      }
 
 		QuizDetails.setques(question);
 		QuizDetails.setans(qanswer);

@@ -86,18 +86,6 @@
         android:text="Sell"
         android:textColor="#ffffff" />
 
-    <EditText
-        android:id="@+id/answer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:ems="10"
-        android:hint="Answer" >
-
-        <requestFocus />
-    </EditText>
-
     <Button
         android:id="@+id/submit"
         android:layout_width="wrap_content"
@@ -135,5 +123,14 @@
         android:paddingRight="10dp"
         android:text="Previous"
         android:textColor="#ffffff" />
+
+    <EditText
+        android:id="@+id/answer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:ems="10"
+        android:hint="Answer" />
 
 </RelativeLayout>

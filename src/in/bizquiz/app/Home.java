@@ -144,7 +144,7 @@ public class Home extends Activity {
    		}
     
        }
-	protected CountDownTimer mCountDown = new CountDownTimer(10000, 1000)
+	protected CountDownTimer mCountDown = new CountDownTimer(3000, 1000)
     {
 
         @Override
