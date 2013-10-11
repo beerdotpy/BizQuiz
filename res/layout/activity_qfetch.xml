@@ -149,6 +149,7 @@
              android:layout_alignLeft="@+id/answer"
              android:layout_below="@+id/relativeLayout1"
              android:layout_marginTop="20dp"
+             android:gravity="center"
              android:text="Loading Question"
              android:textSize="14sp"
              android:typeface="serif" />

@@ -17,7 +17,8 @@
             android:paddingLeft="100dp"
             android:text="Archives"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            android:typeface="serif" />
 
     </LinearLayout>
 

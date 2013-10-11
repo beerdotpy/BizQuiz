@@ -18,14 +18,14 @@
 	<string name="app_id">154125568128582</string>
     
 	
-	<string name="Category1">Category1</string>
-	<string name="Category2">Category2</string>
-	<string name="Category3">Category3</string>
-	<string name="Category4">Category4</string>
-	<string name="Category5">Category5</string>
-	<string name="Category6">Category6</string>
-	<string name="Category7">Category7</string>
-	<string name="Category8">Category8</string>
+	<string name="Category1">BizUpdate</string>
+	<string name="Category2">Brandology</string>
+	<string name="Category3">WhatDFact</string>
+	<string name="Category4">Bizness</string>
+	<string name="Category5">CryptiClues</string>
+	<string name="Category6">QoftheDay</string>
+	<string name="Category7">BizJargons</string>
+	<string name="Category8">HotStocks</string>
     <string name="DialogBox_start">Info about the Quiz-
 				For each correct answer +1 point is awarded.Quiz has a time limit of 3min
 				Press Back to Quit or OK to Play</string>

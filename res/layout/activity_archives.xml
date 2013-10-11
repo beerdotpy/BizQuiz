@@ -23,7 +23,9 @@
             android:gravity="center"
             android:text="Answer"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="#ffffff" />
+            android:textColor="#ffffff"
+            android:typeface="serif" />
+
     </LinearLayout>
 
     <ListView
