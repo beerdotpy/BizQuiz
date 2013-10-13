@@ -186,7 +186,7 @@
             android:layout_marginTop="4dp"
             android:text="‘For more quizzing action, visit us at:"
             android:textAlignment="center"
-            android:textSize="16dp" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/site_link"
@@ -195,7 +195,7 @@
             android:layout_marginLeft="100dp"
             android:text="www.bizquiz.in "
             android:textAlignment="center"
-            android:textSize="18dp" />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/facebook_link"
@@ -203,8 +203,9 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:text="On Facebook: www.facebook.com/www.bizquiz.in "
-            android:textSize="18dp" />
+            android:textSize="18sp" />
     </LinearLayout>
+<<<<<<< HEAD
     <com.daexsvnzie.tvjdzhqkcm161203.AdView
 	xmlns:ap="http://schemas.android.com/apk/res-auto"
 	android:id="@+id/myAdView"
@@ -220,3 +221,8 @@
 </RelativeLayout>
 
 </ScrollView>
+=======
+
+</RelativeLayout>
+</ScrollView>
+>>>>>>> origin/category-names

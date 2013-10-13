@@ -206,6 +206,10 @@
         
 
     </LinearLayout>
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/category-names
     <com.daexsvnzie.tvjdzhqkcm161203.AdView
 	xmlns:ap="http://schemas.android.com/apk/res-auto"
 	android:id="@+id/myAdView"
@@ -218,6 +222,15 @@
 	ap:canShowMR="true"
 	android:layout_alignParentBottom="true"
 	/>
+<<<<<<< HEAD
 </RelativeLayout>
+=======
+
+
+>>>>>>> origin/category-names
 
 </ScrollView>
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/category-names
