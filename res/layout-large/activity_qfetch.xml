@@ -60,29 +60,6 @@
         android:text="Sell"
         android:textColor="#ffffff" />
 
-    <TextView
-        android:id="@+id/question"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/relativeLayout1"
-        android:layout_marginTop="56dp"
-        android:layout_toLeftOf="@+id/submit"
-        android:text="Loading Question"
-        android:textSize="14sp"
-        android:typeface="serif" />
-
-    <EditText
-        android:id="@+id/answer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:ems="10"
-        android:hint="Answer" >
-
-        <requestFocus />
-    </EditText>
-
     <Button
         android:id="@+id/buy"
         android:layout_width="wrap_content"
@@ -94,19 +71,6 @@
         android:paddingLeft="30dp"
         android:paddingRight="30dp"
         android:text="Buy"
-        android:textColor="#ffffff" />
-
-    <Button
-        android:id="@+id/submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/buy"
-        android:layout_alignBottom="@+id/buy"
-        android:layout_centerHorizontal="true"
-        android:background="#2f1c05"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
-        android:text="Submit"
         android:textColor="#ffffff" />
 
     <Button
@@ -133,6 +97,40 @@
         android:paddingLeft="30dp"
         android:paddingRight="30dp"
         android:text="Next"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:layout_centerHorizontal="true"
+        android:layout_below="@+id/relativeLayout1"
+        android:layout_marginTop="25dp"
+        android:text="Loading Question"
+        android:textSize="14sp"
+        android:typeface="serif" />
+
+    <EditText
+        android:id="@+id/answer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/question"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="33dp"
+        android:ems="10"
+        android:hint="Answer" />
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:layout_centerHorizontal="true"
+        android:layout_below="@+id/answer"
+        android:layout_marginTop="24dp"
+        android:background="#2f1c05"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:text="Submit"
         android:textColor="#ffffff" />
 
 </RelativeLayout>

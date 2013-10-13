@@ -205,7 +205,6 @@
             android:text="On Facebook: www.facebook.com/www.bizquiz.in "
             android:textSize="18dp" />
     </LinearLayout>
-<<<<<<< HEAD
     <com.daexsvnzie.tvjdzhqkcm161203.AdView
 	xmlns:ap="http://schemas.android.com/apk/res-auto"
 	android:id="@+id/myAdView"
@@ -219,8 +218,5 @@
 	android:layout_alignParentBottom="true"
 	/>
 </RelativeLayout>
-=======
 
-</RelativeLayout>
 </ScrollView>
->>>>>>> changes

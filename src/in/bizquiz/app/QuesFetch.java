@@ -434,7 +434,8 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
 	    if(check){
 	  
 	  	        QuizDetails.setqid(QuizDetails.getqid()+1);
-	  	        Toast.makeText(this, "Right ! \nAnswer is: "+QuizDetails.getans(), Toast.LENGTH_LONG).show();
+//	  	        Toast.makeText(this, "Right ! \nAnswer is: "+QuizDetails.getans(), Toast.LENGTH_LONG).show();
+	  	        Toast.makeText(this, "Right ! \nAnswer is: Chosen Answer Here", Toast.LENGTH_LONG).show();
 	  	        QuizDetails.set_score(QuizDetails.getscore()+1);
 	  	        pDialog.dismiss();
 	  	        
@@ -444,7 +445,8 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
 
 		
 		          QuizDetails.setqid(QuizDetails.getqid()+1);
-	  	          Toast.makeText(this, "Wrong. \nAnswer is: "+QuizDetails.getans(), Toast.LENGTH_LONG).show();
+		  	      Toast.makeText(this, "Wrong ! \nAnswer is: Chosen Answer Here", Toast.LENGTH_LONG).show();
+		//          Toast.makeText(this, "Wrong. \nAnswer is: "+QuizDetails.getans(), Toast.LENGTH_LONG).show();
 	  	        pDialog.dismiss();
 	  	        
 	  	        new Questionfetch(QuesFetch.this).execute(category);
