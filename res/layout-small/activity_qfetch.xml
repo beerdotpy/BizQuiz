@@ -45,18 +45,8 @@
             android:text="3:00"
             android:textColor="#ffffff"
             android:textSize="18sp" />
-    </RelativeLayout>
 
-    <TextView
-        android:id="@+id/question"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/previous"
-        android:layout_below="@+id/relativeLayout1"
-        android:layout_marginTop="29dp"
-        android:text="Loading Question"
-        android:textSize="14sp"
-        android:typeface="serif" />
+    </RelativeLayout>
 
     <Button
         android:id="@+id/category2"
@@ -132,5 +122,15 @@
         android:layout_centerVertical="true"
         android:ems="10"
         android:hint="Answer" />
+
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/relativeLayout1"
+        android:text="Loading Question"
+        android:textSize="14sp"
+        android:typeface="serif" />
 
 </RelativeLayout>

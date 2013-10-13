@@ -106,16 +106,6 @@
         android:text="Submit"
         android:textColor="#ffffff" />
 
-    <EditText
-        android:id="@+id/answer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/buy"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="42dp"
-        android:ems="10"
-        android:hint="Answer" />
-
     <Button
         android:id="@+id/buy"
         android:layout_width="wrap_content"
@@ -146,13 +136,26 @@
              android:id="@+id/question"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
-             android:layout_alignLeft="@+id/answer"
+             android:layout_alignParentLeft="true"
              android:layout_below="@+id/relativeLayout1"
-             android:layout_marginTop="20dp"
+             android:layout_marginTop="16dp"
              android:gravity="center"
              android:text="Loading Question"
              android:textSize="14sp"
              android:typeface="serif" />
+
+         <EditText
+             android:id="@+id/answer"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_above="@+id/sell"
+             android:layout_centerHorizontal="true"
+             android:layout_marginBottom="38dp"
+             android:ems="10"
+             android:hint="Answer" >
+
+             <requestFocus />
+         </EditText>
 
 </RelativeLayout>
 </FrameLayout>

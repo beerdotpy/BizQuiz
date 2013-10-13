@@ -289,8 +289,8 @@ containing a value of this type.
         public static final int bt_login=0x7f050030;
         public static final int bt_share=0x7f050055;
         public static final int buy=0x7f050043;
-        public static final int cat7_next=0x7f05000b;
-        public static final int cat7_prev=0x7f05000c;
+        public static final int cat7_next=0x7f050009;
+        public static final int cat7_prev=0x7f05000a;
         public static final int catListView=0x7f05001a;
         public static final int category1=0x7f05000e;
         public static final int category2=0x7f05000f;
@@ -336,7 +336,7 @@ containing a value of this type.
         public static final int et_name=0x7f050036;
         public static final int etpass=0x7f050049;
         public static final int facebook_link=0x7f05002d;
-        public static final int fact=0x7f050009;
+        public static final int fact=0x7f05000b;
         public static final int fd_submit=0x7f050027;
         public static final int heading=0x7f050008;
         public static final int imageView1=0x7f05002e;
@@ -385,7 +385,7 @@ containing a value of this type.
         public static final int tableRow6=0x7f050025;
         public static final int tableRow7=0x7f050052;
         public static final int textView1=0x7f050026;
-        public static final int textView2=0x7f05000a;
+        public static final int textView2=0x7f05000c;
         public static final int textView3=0x7f050028;
         public static final int textView4=0x7f050029;
         public static final int textView5=0x7f050020;

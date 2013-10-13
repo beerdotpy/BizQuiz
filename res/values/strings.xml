@@ -29,7 +29,7 @@
     <string name="DialogBox_start">Info about the Quiz-
 				For each correct answer +1 point is awarded.Quiz has a time limit of 3min
 				Press Back to Quit or OK to Play</string>
-    <string name="DialogBox_end">Sorry your time is over.Press OK to play again and Back to Quit</string>
+    <string name="DialogBox_end">Time Up</string>
     <string name="DialogBox_back">Are you sure you want to Quit? Your score wont be considered again.Press Back to Play again or OK to Quit </string>
     
     <string name="BizUpdate">Covering recent developments in the corporate world.</string>

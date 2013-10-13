@@ -29,7 +29,6 @@ public class User_Category_Score extends Activity {
             getResources().getString(R.string.Category4),
             getResources().getString(R.string.Category5),
             getResources().getString(R.string.Category6),
-            getResources().getString(R.string.Category7),
             getResources().getString(R.string.Category8)};
     
     sp=this.getSharedPreferences("First_run",this.MODE_PRIVATE );
@@ -39,10 +38,10 @@ public class User_Category_Score extends Activity {
     score[3] =sp.getInt("Category4", 0);
     score[4] =sp.getInt("Category5", 0);
     score[5] =sp.getInt("Category6", 0);
-    score[6] =sp.getInt("Category7", 0);
-    score[7] =sp.getInt("Category8", 0);
     
-    for(int i=0;i<8;i++){
+    score[6] =sp.getInt("Category8", 0);
+    
+    for(int i=0;i<7;i++){
     	if(score[i]==-1){
     		    		     
     		score[i]=0;
@@ -51,7 +50,7 @@ public class User_Category_Score extends Activity {
     
 	lv_score=(ListView) findViewById(R.id.lv_score);
 	
-	for(int i=0;i<8;i++){
+	for(int i=0;i<7;i++){
 		ListData list=new ListData();
 		list.setcatname(name[i]);
 		list.setscore(score[i]);
