@@ -360,7 +360,7 @@ containing a value of this type.
         public static final int previous=0x7f05003f;
         public static final int profile=0x7f050034;
         public static final int profile_submit=0x7f050033;
-        public static final int question=0x7f050044;
+        public static final int question=0x7f050046;
         public static final int reg=0x7f050053;
         public static final int relativeLayout1=0x7f050007;
         public static final int score=0x7f050047;
@@ -372,7 +372,7 @@ containing a value of this type.
         public static final int small=0x7f050000;
         public static final int spinner1=0x7f050021;
         public static final int stats=0x7f050040;
-        public static final int submit=0x7f050046;
+        public static final int submit=0x7f050044;
         public static final int t1=0x7f05001e;
         public static final int t2=0x7f05004c;
         public static final int t3=0x7f050050;

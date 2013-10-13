@@ -5,6 +5,7 @@ import java.util.Calendar;
 import java.util.List;
 
 import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -36,7 +37,7 @@ public class Statistics extends Activity {
     String[] user_array=new String[11];
     SharedPreferences sp;
 	TextView month_name;
-	
+	public String user_name;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		
@@ -45,7 +46,7 @@ public class Statistics extends Activity {
     setContentView(R.layout.activity_statistics);
     
     sp=this.getSharedPreferences("First_run",this.MODE_PRIVATE );
-	final String user_name =sp.getString("Username", " ");
+	 user_name =sp.getString("Username", " ");
     
      lv=(ListView) findViewById(R.id.listView1);
      
@@ -136,13 +137,11 @@ public class Statistics extends Activity {
 		
 		@Override
 		protected Boolean doInBackground(String... str) {
-			
-			
-			
-			
+											
 			json = jsonParser.makeHttpRequest(url, "GET", params);
 					
 			try {
+				boolean userflag = false;
 				jArray= json.getJSONArray("data");
 				System.out.println("*****JARRAY*****"+jArray.length());
 				
@@ -152,11 +151,12 @@ public class Statistics extends Activity {
                 
 				score_array[i]=json_data.getInt("Score");
 				user_array[i]=json_data.getString("Username");
-				
+
 				Log.i("log_tag","score"+json_data.getInt("Score")+
 				  ", user_name"+json_data.getString("Username") );
                   
-				}			
+				}		
+				
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

@@ -132,7 +132,7 @@ public class ArchiveActivity extends Activity{
 				
 				
 				Log.i("log_tag","ques"+json_data.getString("question")+
-				  ", answer"+json_data.getString("answer")+" length "+jArray.length() );
+				  ", answer"+json_data.getString("keyword")+" length "+jArray.length() );
                   
 				}			
 			} catch (JSONException e) {
