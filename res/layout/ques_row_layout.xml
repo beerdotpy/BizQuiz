@@ -10,6 +10,7 @@
         android:layout_height="wrap_content"
         android:text=""
         android:textAppearance="?android:attr/textAppearanceMedium"
+        android:padding="5dp"
         android:typeface="serif" />
     
 

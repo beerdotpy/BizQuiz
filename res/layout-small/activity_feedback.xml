@@ -6,7 +6,7 @@
 
 <RelativeLayout 
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@drawable/bqhomescreen2" >
     
     <TableLayout
@@ -206,10 +206,6 @@
         
 
     </LinearLayout>
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/category-names
     <com.daexsvnzie.tvjdzhqkcm161203.AdView
 	xmlns:ap="http://schemas.android.com/apk/res-auto"
 	android:id="@+id/myAdView"
@@ -222,15 +218,9 @@
 	ap:canShowMR="true"
 	android:layout_alignParentBottom="true"
 	/>
-<<<<<<< HEAD
 </RelativeLayout>
-=======
 
 
->>>>>>> origin/category-names
 
 </ScrollView>
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/category-names

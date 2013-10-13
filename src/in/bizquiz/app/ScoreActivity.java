@@ -201,11 +201,11 @@ public class ScoreActivity extends Activity {
 
 
 	        Bundle postParams = new Bundle();
-	        postParams.putString("name", "***URGENT***");
-	        postParams.putString("caption", "This is an automated status update by BizQuiz for Android");
-	        postParams.putString("description", "score is "+score);
-//	        postParams.putString("link", "http://blog.boilingstocks.com");
-	        postParams.putString("picture", "http://blog.boilingstocks.com/wp-content/uploads/2013/06/keep-calm-and-carry-on-programming-150x150.png");
+	        postParams.putString("name", "I just finished a quiz!");
+	        postParams.putString("caption", "The most awesome Business Quizzing App");
+	        postParams.putString("description", "Can you beat my score of "+score+"?");
+	        postParams.putString("link", "http://www.bizquiz.in");
+	        postParams.putString("picture", "http://www.hostgator.co.in/files/writeable/uploads/hostgator70503/image/q4-01.png");
 
 	        Request.Callback callback= new Request.Callback() {
 	            public void onCompleted(Response response) {

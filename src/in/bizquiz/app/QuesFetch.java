@@ -328,6 +328,7 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
     String nameofcat;
     String question;
     String qanswer;
+    String keyword;
     int quesid;
     
        
@@ -373,9 +374,11 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
 			 question=jsonObject.getString("question");
 			 qanswer=jsonObject.getString("answer");
 			 max_ques=jsonObject.getInt("max_question");
+			 keyword = jsonObject.getString("keyword");
+			
 			 
 			Log.d("qid+shuffle",Integer.toString(qid));
-			Log.d("question+answer",question+" + "+qanswer);
+			Log.d("question+answer",question+" + "+qanswer+" KEYWORD = "+keyword);
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -405,6 +408,7 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
 
 		QuizDetails.setques(question);
 		QuizDetails.setans(qanswer);
+		QuizDetails.setKeyword(keyword);
 		QuizDetails.setshuffle(0);
 		QuizDetails.set_maxques(max_ques);
 		tvquestion.setText(QuizDetails.getques());
@@ -434,8 +438,8 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
 	    if(check){
 	  
 	  	        QuizDetails.setqid(QuizDetails.getqid()+1);
-//	  	        Toast.makeText(this, "Right ! \nAnswer is: "+QuizDetails.getans(), Toast.LENGTH_LONG).show();
-	  	        Toast.makeText(this, "Right ! \nAnswer is: Chosen Answer Here", Toast.LENGTH_LONG).show();
+	  	        Toast.makeText(this, "Right ! \nAnswer is: "+QuizDetails.getKeyword(), Toast.LENGTH_SHORT).show();
+//	  	        Toast.makeText(this, "Right ! \nAnswer is: Chosen Answer Here", Toast.LENGTH_SHORT).show();
 	  	        QuizDetails.set_score(QuizDetails.getscore()+1);
 	  	        pDialog.dismiss();
 	  	        
@@ -445,8 +449,8 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
 
 		
 		          QuizDetails.setqid(QuizDetails.getqid()+1);
-		  	      Toast.makeText(this, "Wrong ! \nAnswer is: Chosen Answer Here", Toast.LENGTH_LONG).show();
-		//          Toast.makeText(this, "Wrong. \nAnswer is: "+QuizDetails.getans(), Toast.LENGTH_LONG).show();
+	//	  	      Toast.makeText(this, "Wrong ! \nAnswer is: Chosen Answer Here", Toast.LENGTH_SHORT).show();
+		          Toast.makeText(this, "Wrong. \nAnswer is: "+QuizDetails.getKeyword(), Toast.LENGTH_SHORT).show();
 	  	        pDialog.dismiss();
 	  	        
 	  	        new Questionfetch(QuesFetch.this).execute(category);
@@ -475,12 +479,12 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
     	correctans=correctans.replaceAll("//s+", "");
     	
     	for(int i=0;i<correctans.length();i++){		
-    try{		
-    	  if(ans.charAt(i)==correctans.charAt(i)){
-    		   counter++;		
-    		}
+    		try{		
+    			if(ans.charAt(i)==correctans.charAt(i)){
+    				counter++;		
+    			}
     		}catch(StringIndexOutOfBoundsException e){
-    		e.printStackTrace();
+    			e.printStackTrace();
     		}
     	}
     	

@@ -66,7 +66,7 @@ public class Home extends Activity {
 	           cal_alarm.add(Calendar.DATE,1);
 	       }
 	       //---PendingIntent to launch activity when the alarm triggers---                    
-	       Intent i = new Intent(this,DisplayNotification.class);
+	       Intent i = new Intent(Home.this,DisplayNotification.class);
 
 	       //---assign an ID of 1---
 	       i.putExtra("NotifID", 1);                                

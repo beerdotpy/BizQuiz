@@ -205,7 +205,6 @@
             android:text="On Facebook: www.facebook.com/www.bizquiz.in "
             android:textSize="18sp" />
     </LinearLayout>
-<<<<<<< HEAD
     <com.daexsvnzie.tvjdzhqkcm161203.AdView
 	xmlns:ap="http://schemas.android.com/apk/res-auto"
 	android:id="@+id/myAdView"
@@ -218,11 +217,6 @@
 	ap:canShowMR="true"
 	android:layout_alignParentBottom="true"
 	/>
-</RelativeLayout>
-
-</ScrollView>
-=======
 
 </RelativeLayout>
 </ScrollView>
->>>>>>> origin/category-names
