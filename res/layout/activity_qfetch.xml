@@ -95,6 +95,21 @@
         android:textColor="#ffffff" />
 
     <Button
+<<<<<<< HEAD
+=======
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/answer"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/button_bg"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="Submit"
+        android:textColor="#ffffff" />
+
+    <Button
+>>>>>>> category-names
         android:id="@+id/buy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -124,9 +139,15 @@
              android:id="@+id/question"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
+<<<<<<< HEAD
              android:layout_below="@+id/relativeLayout1"
              android:layout_centerHorizontal="true"
              android:layout_marginTop="20dp"
+=======
+             android:layout_alignParentLeft="true"
+             android:layout_below="@+id/relativeLayout1"
+             android:layout_marginTop="16dp"
+>>>>>>> category-names
              android:gravity="center"
              android:text="Loading Question"
              android:textSize="14sp"
@@ -136,15 +157,22 @@
              android:id="@+id/answer"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
+<<<<<<< HEAD
              android:layout_below="@+id/question"
              android:layout_centerHorizontal="true"
              android:layout_marginTop="26dp"
+=======
+             android:layout_above="@+id/sell"
+             android:layout_centerHorizontal="true"
+             android:layout_marginBottom="38dp"
+>>>>>>> category-names
              android:ems="10"
              android:hint="Answer" >
 
              <requestFocus />
          </EditText>
 
+<<<<<<< HEAD
          <Button
              android:id="@+id/submit"
              android:layout_width="wrap_content"
@@ -158,5 +186,7 @@
              android:text="Submit"
              android:textColor="#ffffff" />
 
+=======
+>>>>>>> category-names
 </RelativeLayout>
 </FrameLayout>

@@ -73,6 +73,7 @@ public class ArchiveActivity extends Activity{
 		List<NameValuePair> params = new ArrayList<NameValuePair>();
 	    JSONParser jsonParser = new JSONParser();
 	    JSONArray jArray=new JSONArray();
+	    int length;
 	    String url="http://bizquiz.in/BizQuiz/Archive.php";
 	    
 	    JSONObject json=new JSONObject();
@@ -104,11 +105,14 @@ public class ArchiveActivity extends Activity{
 			
 			params.add(new BasicNameValuePair("MonthID",str[0]));
 			params.add(new BasicNameValuePair("day_of_month",Integer.toString(day_of_month)));
-			
+			params.add(new BasicNameValuePair("Category_name",cat_name));
+			 
 			json = jsonParser.makeHttpRequest(url, "GET", params);
 					
 			try {
 				jArray= json.getJSONArray("data");
+				length=json.getInt("length");
+				Log.d("length",Integer.toString(length));				
 				
 				array_id=new String[jArray.length()];
 				array_question=new String[jArray.length()];
@@ -124,7 +128,7 @@ public class ArchiveActivity extends Activity{
                 
 				array_id[i]=json_data.getString("id");
 				array_question[i]=json_data.getString("question");
-				array_answer[i]=json_data.getString("answer");
+				array_answer[i]=json_data.getString("keyword");
 				
 				
 				Log.i("log_tag","ques"+json_data.getString("question")+
@@ -157,7 +161,7 @@ public class ArchiveActivity extends Activity{
 				}
 			}
 					
-			for(int k=0;k<jArray.length();k++){		
+			for(int k=0;k<length;k++){		
 				ArchQues ques_list=new ArchQues();
 				ques_list.set_Question(temp_question[k]);
 				ques_list.set_Answer(temp_answer[k]);

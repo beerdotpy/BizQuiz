@@ -180,7 +180,7 @@ public class Register extends Activity {
   			    
   		   }
   		   else if(status==0){
-  			   Toast.makeText(context, "Registeration Failed.Username alreday exist.Please try different username",
+  			   Toast.makeText(context, "Username alreday exists.Please enter a different username",
   					   Toast.LENGTH_LONG).show();
   			   context.startActivity(new Intent(context,Register.class));
   			   finish();

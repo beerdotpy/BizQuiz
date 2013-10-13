@@ -198,7 +198,7 @@ public class QuesFetch extends Activity {
 	if(catid!=6){
 		
 	builder1 = new AlertDialog.Builder(context);
-	builder1.setMessage(dialog_start+"\n Time: 3minutes")
+	builder1.setMessage(dialog_start+"\n Time: 3 minutes")
 			.setCancelable(true)
 			.setOnCancelListener(new OnCancelListener() {
 				
@@ -560,7 +560,7 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
     						
     					}
     				})
-    				.setPositiveButton("Ok",new DialogInterface.OnClickListener() {
+    				.setPositiveButton("Reattempt",new DialogInterface.OnClickListener() {
     					
     					public void onClick(DialogInterface dialog, int which) {
     						// TODO Auto-generated method stub
