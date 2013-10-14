@@ -149,14 +149,14 @@ public class Login extends Activity {
 			    editor.putString("Email",uemail);
 			    editor.putString("Age",uage);
 			    editor.putString("City",ucity);
-			    editor.putInt("Category1",score1);
-			    editor.putInt("Category2",score2);
-			    editor.putInt("Category3",score3);
-			    editor.putInt("Category4",score4);
-			    editor.putInt("Category5",score5);
-			    editor.putInt("Category6",score6);
-			    editor.putInt("Category7",score7);
-			    editor.putInt("Category8",score8);
+			    editor.putInt(getResources().getString(R.string.Category1),score1);
+			    editor.putInt(getResources().getString(R.string.Category2),score2);
+			    editor.putInt(getResources().getString(R.string.Category3),score3);
+			    editor.putInt(getResources().getString(R.string.Category4),score4);
+			    editor.putInt(getResources().getString(R.string.Category5),score5);
+			    editor.putInt(getResources().getString(R.string.Category6),score6);
+			    editor.putInt(getResources().getString(R.string.Category7),score7);
+			    editor.putInt(getResources().getString(R.string.Category8),score8);
 			    editor.commit();	    
 
 			    Toast.makeText(context, "Login Correct.", Toast.LENGTH_LONG).show();

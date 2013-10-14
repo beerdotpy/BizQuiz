@@ -32,14 +32,14 @@ public class User_Category_Score extends Activity {
             getResources().getString(R.string.Category8)};
     
     sp=this.getSharedPreferences("First_run",this.MODE_PRIVATE );
-    score[0] =sp.getInt("Category1", 0);
-    score[1] =sp.getInt("Category2", 0);
-    score[2] =sp.getInt("Category3", 0);
-    score[3] =sp.getInt("Category4", 0);
-    score[4] =sp.getInt("Category5", 0);
-    score[5] =sp.getInt("Category6", 0);
+    score[0] =sp.getInt(getResources().getString(R.string.Category1), 0);
+    score[1] =sp.getInt(getResources().getString(R.string.Category2), 0);
+    score[2] =sp.getInt(getResources().getString(R.string.Category3), 0);
+    score[3] =sp.getInt(getResources().getString(R.string.Category4), 0);
+    score[4] =sp.getInt(getResources().getString(R.string.Category5), 0);
+    score[5] =sp.getInt(getResources().getString(R.string.Category6), 0);
     
-    score[6] =sp.getInt("Category8", 0);
+    score[6] =sp.getInt(getResources().getString(R.string.Category8), 0);
     
     for(int i=0;i<7;i++){
     	if(score[i]==-1){

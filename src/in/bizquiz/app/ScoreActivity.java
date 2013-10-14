@@ -92,7 +92,7 @@ public class ScoreActivity extends Activity {
 	    	  		  
 	    	  		  editor.putBoolean(Integer.toString(QuizDetails.getday()),false);
 	    	  		  
-	    	  		  int temp=sp.getInt("Category6", 0);
+	    	  		  int temp=sp.getInt(getResources().getString(R.string.Category6), 0);
 	    	  		  if(temp==-1){
 	    	  			  temp=0;
 	    	  		  }
@@ -107,14 +107,14 @@ public class ScoreActivity extends Activity {
 	    	  	  editor.putBoolean(category_name+"_run",false);  //score will be calculated only first time
 	    	  	  editor.commit();
 	    	 
-	    	  	    user_score[0] =sp.getInt("Category1", 0);
-	    	  	    user_score[1] =sp.getInt("Category2", 0);
-	    	  	    user_score[2] =sp.getInt("Category3", 0);
-	    	  	    user_score[3] =sp.getInt("Category4", 0);
-	    	  	    user_score[4] =sp.getInt("Category5", 0);
-	    	  	    user_score[5] =sp.getInt("Category6", 0);
-	    	  	    user_score[6] =sp.getInt("Category7", 0);
-	    	  	    user_score[7] =sp.getInt("Category8", 0);
+	    	  	    user_score[0] =sp.getInt(getResources().getString(R.string.Category1), 0);
+	    	  	    user_score[1] =sp.getInt(getResources().getString(R.string.Category2), 0);
+	    	  	    user_score[2] =sp.getInt(getResources().getString(R.string.Category3), 0);
+	    	  	    user_score[3] =sp.getInt(getResources().getString(R.string.Category4), 0);
+	    	  	    user_score[4] =sp.getInt(getResources().getString(R.string.Category5), 0);
+	    	  	    user_score[5] =sp.getInt(getResources().getString(R.string.Category6), 0);
+	    	  	    user_score[6] =sp.getInt(getResources().getString(R.string.Category7), 0);
+	    	  	    user_score[7] =sp.getInt(getResources().getString(R.string.Category8), 0);
 	    		    
 	    		    for(int i=0;i<8;i++){
 	    		    	if(user_score[i]==-1){
