@@ -35,6 +35,7 @@
         android:layout_marginTop="28dp"
         android:text="Loading Fact"
         android:textSize="14sp"
+        android:layout_marginLeft="10sp"
         android:typeface="serif" />
 
     <Button

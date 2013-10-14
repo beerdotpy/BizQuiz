@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -101,30 +104,12 @@
         android:text="Previous"
         android:textColor="#ffffff" />
 
-    <TextView
-        android:id="@+id/question"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/relativeLayout1"
-        android:layout_centerHorizontal="true"
-        android:text="Loading Question"
-        android:textSize="14sp"
-        android:typeface="serif" />
-
-    <EditText
-        android:id="@+id/answer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/question"
-        android:layout_centerHorizontal="true"
-        android:ems="10"
-        android:hint="Answer" />
-
     <Button
         android:id="@+id/submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/answer"
+        android:layout_alignBaseline="@+id/buy"
+        android:layout_alignBottom="@+id/buy"
         android:layout_centerHorizontal="true"
         android:background="#2f1c05"
         android:paddingLeft="15dp"
@@ -132,5 +117,27 @@
         android:text="Submit"
         android:textColor="#ffffff" />
 
+    <EditText
+        android:id="@+id/answer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:ems="10"
+        android:hint="Answer" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/relativeLayout1"
+        android:text="Loading Question"
+        android:textSize="14sp"
+        android:layout_marginLeft="10sp"
+        android:typeface="serif" />
 
 </RelativeLayout>

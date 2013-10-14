@@ -141,6 +141,7 @@
              android:layout_marginTop="20dp"
              android:layout_alignParentLeft="true"
              android:gravity="center"
+             android:layout_marginLeft="10sp"
              android:text="Loading Question"
              android:textSize="14sp"
              android:typeface="serif" />
@@ -149,29 +150,14 @@
              android:id="@+id/answer"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
-             android:layout_below="@+id/question"
-             android:layout_centerHorizontal="true"
-             android:layout_marginTop="26dp"
              android:layout_above="@+id/sell"
+             android:layout_centerHorizontal="true"
              android:layout_marginBottom="38dp"
              android:ems="10"
              android:hint="Answer" >
 
              <requestFocus />
          </EditText>
-
-         <Button
-             android:id="@+id/submit"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_below="@+id/answer"
-             android:layout_centerHorizontal="true"
-             android:layout_marginTop="18dp"
-             android:background="@drawable/button_bg"
-             android:paddingLeft="15dp"
-             android:paddingRight="15dp"
-             android:text="Submit"
-             android:textColor="#ffffff" />
 
 </RelativeLayout>
 </FrameLayout>

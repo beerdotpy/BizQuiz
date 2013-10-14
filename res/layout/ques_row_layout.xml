@@ -8,10 +8,10 @@
         android:id="@+id/tv_quesText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:padding="5dp"
         android:text=""
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:padding="5dp"
+        android:textSize="14sp"
         android:typeface="serif" />
-    
 
 </LinearLayout>
