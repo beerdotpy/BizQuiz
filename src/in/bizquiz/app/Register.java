@@ -180,12 +180,12 @@ public class Register extends Activity {
   			    
   		   }
   		   else if(status==0){
-  			   Toast.makeText(context, "Username alreday exists.Please enter a different username",
+  			   Toast.makeText(context, "Username already exists. Please enter a different username",
   					   Toast.LENGTH_LONG).show();
   			   context.startActivity(new Intent(context,Register.class));
   			   finish();
             }else{
-            	Toast.makeText(context, "Registeration Failed.Please try again",
+            	Toast.makeText(context, "Registration Failed. Please try again",
    					   Toast.LENGTH_LONG).show();
    			   context.startActivity(new Intent(context,Home.class));
    			   finish();

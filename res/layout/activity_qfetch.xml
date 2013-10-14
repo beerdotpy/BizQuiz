@@ -95,18 +95,6 @@
         android:textColor="#ffffff" />
 
     <Button
-        android:id="@+id/submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/answer"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/button_bg"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp"
-        android:text="Submit"
-        android:textColor="#ffffff" />
-
-    <Button
         android:id="@+id/buy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -127,6 +115,7 @@
 	ap:animation="fade"
 	ap:banner_type="inappad"
     ap:placementType="interstitial"
+    android:layout_marginTop="15dp"
 	ap:test_mode="true"
 	ap:canShowMR="true"
 	android:layout_alignParentBottom="true"
@@ -136,12 +125,10 @@
              android:id="@+id/question"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true"
              android:layout_below="@+id/relativeLayout1"
-             android:layout_centerHorizontal="true"
-             android:layout_marginTop="20dp"
-             android:layout_alignParentLeft="true"
-             android:gravity="center"
-             android:layout_marginLeft="10sp"
+             android:layout_marginTop="16dp"
+             android:paddingLeft="8dp"
              android:text="Loading Question"
              android:textSize="14sp"
              android:typeface="serif" />
@@ -150,14 +137,24 @@
              android:id="@+id/answer"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
-             android:layout_above="@+id/sell"
+             android:layout_below="@+id/question"
              android:layout_centerHorizontal="true"
-             android:layout_marginBottom="38dp"
+             android:layout_marginTop="20dp"
              android:ems="10"
-             android:hint="Answer" >
+             android:hint="Answer" />
 
-             <requestFocus />
-         </EditText>
+         <Button
+             android:id="@+id/submit"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_below="@+id/answer"
+             android:layout_centerHorizontal="true"
+             android:layout_marginTop="20dp"
+             android:background="@drawable/button_bg"
+             android:paddingLeft="15dp"
+             android:paddingRight="15dp"
+             android:text="Submit"
+             android:textColor="#ffffff" />
 
 </RelativeLayout>
 </FrameLayout>

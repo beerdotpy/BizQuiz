@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     android:background="@drawable/bqhomescreen3" >
 
    <RelativeLayout
@@ -35,6 +38,8 @@
         android:layout_marginTop="28dp"
         android:text="Loading Fact"
         android:textSize="14sp"
+        android:ems="10"
+        android:scrollbars="vertical"
         android:layout_marginLeft="10sp"
         android:typeface="serif" />
 
@@ -56,14 +61,27 @@
         android:id="@+id/cat7_prev"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="42dp"
-        android:layout_marginRight="45dp"
-        android:layout_toLeftOf="@+id/cat7_next"
+        android:layout_alignLeft="@+id/fact"
+        android:layout_below="@+id/fact"
+        android:layout_above="@+id/myAdView"
         android:background="#2f1c05"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:text="Previous"
         android:textColor="#ffffff" />
-
+         <com.daexsvnzie.tvjdzhqkcm161203.AdView
+	xmlns:ap="http://schemas.android.com/apk/res-auto"
+	android:id="@+id/myAdView"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content"
+	android:paddingTop="8dp"
+	ap:animation="fade"
+	ap:banner_type="inappad"
+    ap:placementType="interstitial"
+	ap:test_mode="true"
+	ap:canShowMR="true"
+	android:layout_alignParentBottom="true"
+	/>
 </RelativeLayout>
+
+</ScrollView>
