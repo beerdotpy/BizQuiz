@@ -5,6 +5,7 @@ import java.util.Calendar;
 import java.util.List;
 
 import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -32,10 +33,11 @@ public class Statistics extends Activity {
 	ListView lv;
 	private ArrayList<ListData> myList = new ArrayList<ListData>();
 	StatisticsRowAdapter adapter;
-	int[] score_array=new int[11];
-    String[] user_array=new String[11];
+	int[] score_array;
+    String[] user_array;
     SharedPreferences sp;
 	TextView month_name;
+	String user_name;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +47,7 @@ public class Statistics extends Activity {
     setContentView(R.layout.activity_statistics);
     
     sp=this.getSharedPreferences("First_run",this.MODE_PRIVATE );
-	final String user_name =sp.getString("Username", " ");
+	user_name =sp.getString("Username", " ");
     
      lv=(ListView) findViewById(R.id.listView1);
      
@@ -114,11 +116,11 @@ public class Statistics extends Activity {
 		List<NameValuePair> params = new ArrayList<NameValuePair>();
 	    JSONParser jsonParser = new JSONParser();
 	    String url="http://bizquiz.in/BizQuiz/Statistics.php";
-	    
+	    int user_score;
+	    int user_rank;
 	    JSONObject json=new JSONObject();
-	    
-	    
-	    
+	    int rank;
+	       
 	       
 	   public Stats(Context ctx) {
 	    	this.context = ctx;
@@ -138,13 +140,16 @@ public class Statistics extends Activity {
 		protected Boolean doInBackground(String... str) {
 			
 			
-			
+			params.add(new BasicNameValuePair("username",user_name));
 			
 			json = jsonParser.makeHttpRequest(url, "GET", params);
 					
 			try {
 				jArray= json.getJSONArray("data");
 				System.out.println("*****JARRAY*****"+jArray.length());
+				
+				score_array=new int[jArray.length()];
+				user_array=new String[jArray.length()];
 				
 				for(int i=0;i<jArray.length();i++){
 				
@@ -153,10 +158,17 @@ public class Statistics extends Activity {
 				score_array[i]=json_data.getInt("Score");
 				user_array[i]=json_data.getString("Username");
 				
+				if(user_array[i].compareToIgnoreCase(user_name)==0){
+					
+					rank=i;
+					Log.d("i",Integer.toString(rank));
+				}
+				
 				Log.i("log_tag","score"+json_data.getInt("Score")+
 				  ", user_name"+json_data.getString("Username") );
                   
-				}			
+				}
+								
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -172,7 +184,9 @@ public class Statistics extends Activity {
 			
 			pDialog.dismiss();
 			
-			for(int i=0;i<jArray.length();i++){
+			
+						
+			for(int i=0;i<10;i++){
 				ListData myListData = new ListData(); 
 				myListData.setscore(score_array[i]);
 				myListData.setusername(user_array[i]);
@@ -180,7 +194,16 @@ public class Statistics extends Activity {
 
 			}
 			
-			adapter = new StatisticsRowAdapter(Statistics.this, myList);
+			if(rank>10){
+				
+				ListData myListData = new ListData(); 
+				myListData.setscore(score_array[rank]);
+				myListData.setusername(user_array[rank]);
+				myList.add(myListData);
+				
+			}
+			
+			adapter = new StatisticsRowAdapter(Statistics.this, myList,rank);
 			
 			
 			lv.setAdapter(adapter);

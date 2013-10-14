@@ -19,11 +19,13 @@ public class StatisticsRowAdapter extends BaseAdapter {
 	private LayoutInflater inflater;
 	SharedPreferences sp;
 	int score[]=new int[8];
+	int rank;
 
-	public StatisticsRowAdapter(Context context, ArrayList<ListData> myList) {
+	public StatisticsRowAdapter(Context context, ArrayList<ListData> myList,int user_rank) {
 		this.context = context;
 		this.myList = myList;
 		inflater = LayoutInflater.from(this.context);
+		this.rank=user_rank;
 	}
 
 	String return_username(){
@@ -88,10 +90,10 @@ public class StatisticsRowAdapter extends BaseAdapter {
 			convertView.setBackgroundColor(Color.parseColor("#FFDBB8"));
 			if(position<10)
 			{
-				String rankAppendedUsername = (position+1)+". "+myList.get(position).getusername();
+				String rankAppendedUsername = rank+". "+myList.get(position).getusername();
 				mViewHolder.u_name.setText(rankAppendedUsername);		
 			}else{
-				mViewHolder.u_name.setText(myList.get(position).getusername());		
+				mViewHolder.u_name.setText(rank+"."+myList.get(position).getusername());		
 
 			}
 			mViewHolder.scre.setText(Integer.toString(myList.get(position).getscore()));
