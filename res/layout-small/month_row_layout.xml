@@ -10,6 +10,7 @@
         android:layout_height="wrap_content"
         android:text="September , 2013"
         android:textAppearance="?android:attr/textAppearanceLarge"
+        android:padding="5dp"
         android:typeface="serif" />
 
 </LinearLayout>

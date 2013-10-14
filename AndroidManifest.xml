@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="in.bizquiz.app"
-    android:versionCode="3"
-    android:versionName="1.2" >
+    android:versionCode="5"
+    android:versionName="1.4" >
 
     <uses-sdk
         android:minSdkVersion="8"
@@ -35,14 +35,14 @@
         <activity
             android:name="in.bizquiz.app.User_Category_Score"></activity>
         <activity
-            android:name="in.bizquiz.app.Login"></activity>
+            android:name="in.bizquiz.app.Login" android:windowSoftInputMode="adjustPan"></activity>
         <activity
             android:name="in.bizquiz.app.Settings"
             android:theme="@style/PreferencesTheme">
             
         </activity>
         <activity
-            android:name="in.bizquiz.app.Profile"></activity>
+            android:name="in.bizquiz.app.Profile" android:windowSoftInputMode="adjustPan"></activity>
         <activity
             android:name="in.bizquiz.app.Statistics"></activity>
         <activity
@@ -53,7 +53,7 @@
         <activity
             android:name="in.bizquiz.app.DisplayNotification"></activity>
         <activity
-            android:name="in.bizquiz.app.Register"></activity>
+            android:name="in.bizquiz.app.Register" android:windowSoftInputMode="adjustPan"></activity>
         <activity
             android:name="in.bizquiz.app.ValidateAnswer"></activity>
         <activity

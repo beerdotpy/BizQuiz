@@ -37,8 +37,12 @@ public class Statistics extends Activity {
     String[] user_array;
     SharedPreferences sp;
 	TextView month_name;
+<<<<<<< HEAD
 	String user_name;
 	
+=======
+	public String user_name;
+>>>>>>> 54760c27ca39c0fac91d9080934a3a898fbc9ff4
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		
@@ -47,7 +51,11 @@ public class Statistics extends Activity {
     setContentView(R.layout.activity_statistics);
     
     sp=this.getSharedPreferences("First_run",this.MODE_PRIVATE );
+<<<<<<< HEAD
 	user_name =sp.getString("Username", " ");
+=======
+	 user_name =sp.getString("Username", " ");
+>>>>>>> 54760c27ca39c0fac91d9080934a3a898fbc9ff4
     
      lv=(ListView) findViewById(R.id.listView1);
      
@@ -138,13 +146,18 @@ public class Statistics extends Activity {
 		
 		@Override
 		protected Boolean doInBackground(String... str) {
+<<<<<<< HEAD
 			
 			
 			params.add(new BasicNameValuePair("username",user_name));
 			
+=======
+											
+>>>>>>> 54760c27ca39c0fac91d9080934a3a898fbc9ff4
 			json = jsonParser.makeHttpRequest(url, "GET", params);
 					
 			try {
+				boolean userflag = false;
 				jArray= json.getJSONArray("data");
 				System.out.println("*****JARRAY*****"+jArray.length());
 				
@@ -157,6 +170,7 @@ public class Statistics extends Activity {
                 
 				score_array[i]=json_data.getInt("Score");
 				user_array[i]=json_data.getString("Username");
+<<<<<<< HEAD
 				
 				if(user_array[i].compareToIgnoreCase(user_name)==0){
 					
@@ -169,6 +183,14 @@ public class Statistics extends Activity {
                   
 				}
 								
+=======
+
+				Log.i("log_tag","score"+json_data.getInt("Score")+
+				  ", user_name"+json_data.getString("Username") );
+                  
+				}		
+				
+>>>>>>> 54760c27ca39c0fac91d9080934a3a898fbc9ff4
 			} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

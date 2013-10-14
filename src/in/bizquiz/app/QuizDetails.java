@@ -16,8 +16,23 @@ public class QuizDetails {
     static int final_score=0;
     static int[] arr={1,2,3,4,5};
     static int day_of_month;    
+    static String keyword;
     
-  static void setcategory(int cat){
+  /**
+	 * @return the keyword
+	 */
+	public static String getKeyword() {
+		return keyword;
+	}
+
+	/**
+	 * @param keyword the keyword to set
+	 */
+	public static void setKeyword(String keyword) {
+		QuizDetails.keyword = keyword;
+	}
+
+static void setcategory(int cat){
 	  category=cat;
   }
   

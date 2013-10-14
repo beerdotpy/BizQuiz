@@ -43,7 +43,9 @@
         android:layout_marginTop="48dp"
         android:text="Badge"
         android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_above="@+id/myAdView"
         android:typeface="serif" />
+    
     <com.daexsvnzie.tvjdzhqkcm161203.AdView
 	xmlns:ap="http://schemas.android.com/apk/res-auto"
 	android:id="@+id/myAdView"
