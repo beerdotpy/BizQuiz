@@ -50,29 +50,40 @@ public class Category7 extends Activity {
        switch(month){
 	     
 	     case 0: month_id=4;
+	             day_of_month=31+30+31+day_of_month;
 	             break;
 	     case 1: month_id=5;
+	             day_of_month=31+30+31+31+day_of_month;
 	             break;
 	     case 2: month_id=6;
-	             break;
+	             day_of_month=31+30+31+31+28+day_of_month;
+	              break;
 	     case 3: month_id=7;
+	             day_of_month=31+30+31+31+28+31+day_of_month;
 	             break;
 	     case 4: month_id=8;
+	             day_of_month=31+30+31+31+28+31+30+day_of_month;
 	             break;
 	     case 5: month_id=9;
+	             day_of_month=31+30+31+31+28+31+30+31+day_of_month;
 	             break;
 	     case 6: month_id=10;
+	             day_of_month=31+30+31+31+28+31+30+31+30+day_of_month;
 	             break;
 	     case 7: month_id=11;
+	             day_of_month=31+30+31+31+28+31+30+31+30+31+day_of_month;
 	             break;
 	     case 8: month_id=12;
+	             day_of_month=31+30+31+31+28+31+30+31+30+31+31+day_of_month;
 	             break; 
 	     case 9: month_id=1;
 	             break;
 	     case 10: month_id=2;
+	              day_of_month=31+day_of_month;
 	             break;
 	     case 11: month_id=3;
-	              break;
+	              day_of_month=31+30+day_of_month;         
+	                 break;
 	     	     
 	     default: month_id=0;
 	     }
@@ -144,7 +155,7 @@ public class Category7 extends Activity {
 			
 			
 			params.add(new BasicNameValuePair("day_of_month",str[0]));
-			params.add(new BasicNameValuePair("month_id",Integer.toString(month_id)));
+			params.add(new BasicNameValuePair("month_id",Integer.toString(1)));
 			
 			json = jsonParser.makeHttpRequest(url, "GET", params);
 					
