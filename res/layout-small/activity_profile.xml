@@ -136,18 +136,6 @@
         </TableRow>
     </TableLayout>
 
-    <Button
-        android:id="@+id/profile_submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/profile"
-        android:layout_below="@+id/tableLayout1"
-        android:background="#2f1c05"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:text="Submit"
-        android:textColor="#ffffff" />
-
     <TextView
         android:id="@+id/profile"
         android:layout_width="wrap_content"
@@ -157,16 +145,17 @@
         android:text="Profile"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:textSize="32sp" />
-    <com.daexsvnzie.tvjdzhqkcm161203.AdView
-	xmlns:ap="http://schemas.android.com/apk/res-auto"
-	android:id="@+id/myAdView"
-	android:layout_width="wrap_content"
-	android:layout_height="wrap_content"
-	ap:animation="fade"
-	ap:banner_type="inappad"
-    ap:placementType="interstitial"
-	ap:test_mode="true"
-	ap:canShowMR="true"
-	android:layout_alignParentBottom="true"
-	/>
+
+    <Button
+        android:id="@+id/profile_submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:background="#2f1c05"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:text="Submit"
+        android:textColor="#ffffff" />
+
 </RelativeLayout>

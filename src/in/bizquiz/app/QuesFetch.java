@@ -21,6 +21,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -75,6 +76,7 @@ public class QuesFetch extends Activity {
        submit=(Button) findViewById(R.id.submit);
        next=(Button) findViewById(R.id.category2);
        tvquestion=(TextView) findViewById(R.id.question);
+       tvquestion.setMovementMethod(new ScrollingMovementMethod());
        etanswer=(EditText) findViewById(R.id.answer);
        timer=(TextView) findViewById(R.id.timer);
        name_of_quiz=(TextView) findViewById(R.id.heading);

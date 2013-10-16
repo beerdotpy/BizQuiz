@@ -15,6 +15,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -191,7 +192,7 @@ public class Statistics extends Activity {
 			
 			
 						
-			for(int i=0;i<10;i++){
+			for(int i=0;i<jArray.length();i++){
 				ListData myListData = new ListData(); 
 				myListData.setscore(score_array[i]);
 				myListData.setusername(user_array[i]);
@@ -210,7 +211,7 @@ public class Statistics extends Activity {
 			
 			adapter = new StatisticsRowAdapter(Statistics.this, myList,rank+1);
 			
-			
+//			lv.setCacheColorHint(Color.parseColor("#00000000"));
 			lv.setAdapter(adapter);
 				
 		}

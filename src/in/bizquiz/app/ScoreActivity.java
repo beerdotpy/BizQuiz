@@ -78,7 +78,7 @@ public class ScoreActivity extends Activity {
 		Log.d("usernme",username);
 	    
 	   if((first_attempt && first_time_score==-1) || (category_name.compareToIgnoreCase(getResources().getString(R.string.Category6))==0 && first_time_score_cat7)){
-	        	
+	 /*       	
 	    	      if(QuizDetails.getscore()==QuizDetails.getmax_ques()){
 	    	    	  badge.setVisibility(View.VISIBLE);
 	    	    	  try{
@@ -87,7 +87,7 @@ public class ScoreActivity extends Activity {
 	    	    		  badge.setText("There was some problem!"); 
 	    	    	  }
 	    	      }
-	    	      	    	  	  
+	   */ 	      	    	  	  
 	    	  	  if(category_name.compareToIgnoreCase(getResources().getString(R.string.Category6))==0){
 	    	  		  
 	    	  		  editor.putBoolean(Integer.toString(QuizDetails.getday()),false);
@@ -129,7 +129,7 @@ public class ScoreActivity extends Activity {
 	  			  Integer.toString(finalscore));
 	    
 	    }else{
-	    	Log.d("Attempt","SOrry Second attempt");
+	    	Log.d("Attempt","Sorry Second attempt");
 	    }
 		
 		
@@ -201,9 +201,9 @@ public class ScoreActivity extends Activity {
 
 
 	        Bundle postParams = new Bundle();
-	        postParams.putString("name", "I just finished a quiz!");
-	        postParams.putString("caption", "The most awesome Business Quizzing App");
-	        postParams.putString("description", "Can you beat my score of "+score+"?");
+	        postParams.putString("name", "Bizzinga!");
+	        postParams.putString("caption", "Business quizzing on your mobile, download BizQuiz.in's Android App.");
+	        postParams.putString("description", "Scored "+score+"/"+QuizDetails.getmax_ques()+" in "+ category_name);
 	        postParams.putString("link", "http://www.bizquiz.in");
 	        postParams.putString("picture", "http://www.hostgator.co.in/files/writeable/uploads/hostgator70503/image/q4-01.png");
 

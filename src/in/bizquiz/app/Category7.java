@@ -16,6 +16,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -91,6 +92,7 @@ public class Category7 extends Activity {
        
        name_of_quiz=(TextView) findViewById(R.id.heading);
        fact=(TextView) findViewById(R.id.fact);
+       fact.setMovementMethod(new ScrollingMovementMethod());
        cat7_prev=(Button) findViewById(R.id.cat7_prev);
        cat7_next=(Button) findViewById(R.id.cat7_next);
        
