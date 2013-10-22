@@ -138,21 +138,11 @@
         android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="50dp"
-            android:text="Reach Us"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textSize="25sp" />
-
-        <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="50dp"
             android:text="Suggestions and critical reviews are welcome!"
             android:textAlignment="center"
             android:textAppearance="?android:attr/textAppearanceMedium" />
@@ -172,10 +162,8 @@
         android:id="@+id/linearLayout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
         android:layout_below="@+id/tableLayout1"
-        android:orientation="vertical"
-        android:layout_alignParentBottom="true" >
+        android:orientation="vertical" >
 
         <TextView
             android:id="@+id/textView6"
@@ -216,7 +204,7 @@
     ap:placementType="interstitial"
 	ap:test_mode="true"
 	ap:canShowMR="true"
-	android:layout_alignParentBottom="true"
+	android:layout_below="@+id/linearLayout1"
 	/>
 </RelativeLayout>
 

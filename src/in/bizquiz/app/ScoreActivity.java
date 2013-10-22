@@ -199,7 +199,7 @@ public class ScoreActivity extends Activity {
 
 	        Bundle postParams = new Bundle();
 	        postParams.putString("name", "Bizzinga!");
-	        postParams.putString("caption", "Business quizzing on your mobile,\nDownload BizQuiz.in's Android App.");
+	        postParams.putString("caption", "Business quizzing on your mobile,\n Download BizQuiz.in's Android App.");
 	        postParams.putString("description", "Scored "+score+"/"+QuizDetails.getmax_ques()+" in "+ category_name);
 	        postParams.putString("link", "http://www.bizquiz.in");
 	        postParams.putString("picture", "http://www.bizquiz.in/logo4.png");
@@ -339,10 +339,6 @@ public class ScoreActivity extends Activity {
    		switch (item.getItemId()) {
    		case R.id.menu_settings:
    			startActivity(new Intent(this, Settings.class));
-   			finish();
-   			return true;
-   		case R.id.menu_about:
-   			startActivity(new Intent(this, AboutUs.class));
    			finish();
    			return true;
    		case R.id.menu_exit:

@@ -166,10 +166,6 @@ public class ArchiveMonthsActivity extends Activity {
    			startActivity(new Intent(this, Settings.class));
    			finish();
    			return true;
-   		case R.id.menu_about:
-   			startActivity(new Intent(this, AboutUs.class));
-   			finish();
-   			return true;
    		case R.id.menu_exit:
    			Intent intent = new Intent(Intent.ACTION_MAIN);
    			intent.addCategory(Intent.CATEGORY_HOME);

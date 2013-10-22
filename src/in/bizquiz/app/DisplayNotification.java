@@ -40,7 +40,7 @@ public class DisplayNotification extends Activity {
         
         NotificationCompat.Builder builder=
         		new NotificationCompat.Builder(this)
-        .setSmallIcon(R.drawable.logo)
+        .setSmallIcon(R.drawable.ic_launcher)
         .setContentIntent(displayIntent)
         .setContentTitle("BizQuiz")
         .setContentText("Q Of The Day Updated!");

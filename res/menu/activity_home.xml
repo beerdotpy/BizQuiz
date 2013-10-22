@@ -3,7 +3,6 @@
     
     <item android:id="@+id/menu_statistics" android:orderInCategory="100" android:title="Statistics"></item>
     <item android:id="@+id/menu_archive" android:orderInCategory="100" android:title="Archive"></item>
-    <item android:id="@+id/menu_about" android:orderInCategory="100" android:title="FAQs/Rules"></item>
     <item android:id="@+id/menu_feedback" android:orderInCategory="100" android:title="Reach Us"></item>
     <item
         android:id="@+id/menu_settings"
