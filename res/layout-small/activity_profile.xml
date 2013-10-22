@@ -152,7 +152,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:background="#2f1c05"
+        android:background="@drawable/button_bg"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:text="Submit"

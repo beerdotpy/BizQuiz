@@ -193,6 +193,9 @@ public class Statistics extends Activity {
 			
 						
 			for(int i=0;i<jArray.length();i++){
+				if(i>=10){
+					break;
+				}
 				ListData myListData = new ListData(); 
 				myListData.setscore(score_array[i]);
 				myListData.setusername(user_array[i]);

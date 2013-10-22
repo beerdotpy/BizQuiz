@@ -275,7 +275,7 @@ public class QuesFetch extends Activity {
 			if(QuizDetails.getans().equalsIgnoreCase("Sell"))
 			{
 				QuizDetails.setqid(QuizDetails.getqid()+1);
-	  	        Toast.makeText(QuesFetch.this, "Right! \nAnswer is: Sell ", Toast.LENGTH_LONG).show();
+	  	        Toast.makeText(QuesFetch.this, "Right! \nAnswer is: "+QuizDetails.getKeyword(), Toast.LENGTH_LONG).show();
 	  	        QuizDetails.set_score(QuizDetails.getscore()+1);
 	  	        
 	  	        
@@ -283,7 +283,7 @@ public class QuesFetch extends Activity {
 			}else{
 				
 				 QuizDetails.setqid(QuizDetails.getqid()+1);
-	  	         Toast.makeText(QuesFetch.this, "Wrong \nAnswer is: Sell", Toast.LENGTH_LONG).show();
+	  	         Toast.makeText(QuesFetch.this, "Wrong \nAnswer is: "+QuizDetails.getKeyword(), Toast.LENGTH_LONG).show();
 	  	        	  	        
 	  	        new Questionfetch(QuesFetch.this).execute(category);
 			
@@ -300,7 +300,7 @@ public class QuesFetch extends Activity {
 			if(QuizDetails.getans().equalsIgnoreCase("Buy"))
 			{
 				QuizDetails.setqid(QuizDetails.getqid()+1);
-	  	        Toast.makeText(QuesFetch.this, "Right! \nAnswer is: Buy ", Toast.LENGTH_LONG).show();
+	  	        Toast.makeText(QuesFetch.this, "Right! \nAnswer is: "+QuizDetails.getKeyword(), Toast.LENGTH_LONG).show();
 	  	        QuizDetails.set_score(QuizDetails.getscore()+1);
 	  	        
 	  	        
@@ -308,8 +308,7 @@ public class QuesFetch extends Activity {
 			}else{
 				
 				 QuizDetails.setqid(QuizDetails.getqid()+1);
-	  	         Toast.makeText(QuesFetch.this, "Wrong! \nAnswer is: Buy "+QuizDetails.getans(), Toast.LENGTH_LONG).show();
-	  	        	  	        
+	  	         Toast.makeText(QuesFetch.this, "Wrong! \nAnswer is: "+QuizDetails.getKeyword(), Toast.LENGTH_LONG).show();	  	        
 	  	        new Questionfetch(QuesFetch.this).execute(category);
 			
 			}		
@@ -465,9 +464,9 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
     	
     	if(length>10){
     		
-    		threshvalue=(length*3)/4;
+    		threshvalue=(length*90)/100;
     	}else{
-    		threshvalue=length/2;
+    		threshvalue=(length*95)/100;
     	}
     	
     	Log.d("threshvalue",Integer.toString(threshvalue)); 	  	
@@ -608,12 +607,17 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
         
         @Override
         public boolean onTouchEvent(MotionEvent event) {
-            InputMethodManager imm = (InputMethodManager)getSystemService(Context.
+            try{
+            	InputMethodManager imm = (InputMethodManager)getSystemService(Context.
+            
                                                             INPUT_METHOD_SERVICE);
             if(imm != null)
              {
             	imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
              }
+            }catch(NullPointerException npe){
+            	
+            }
             return true;
         }
 

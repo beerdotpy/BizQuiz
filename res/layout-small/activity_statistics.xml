@@ -45,6 +45,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
+        android:layout_above="@+id/myAdView"
         android:layout_below="@+id/linearLayout2"
         android:background="@drawable/bqhomescreen2"
         android:cacheColorHint="@android:color/transparent" >

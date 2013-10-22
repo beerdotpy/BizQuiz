@@ -6,13 +6,14 @@
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/bqhomescreen1" >
+    android:background="@drawable/bqhomescreen1_small" >
 
     <TableLayout
         android:id="@+id/tableLayout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
         android:layout_centerVertical="true" >
 
         <TableRow
@@ -24,7 +25,6 @@
                 android:id="@+id/score"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="22dp"
                 android:text="Username"
                 android:textSize="18sp" />
 
@@ -55,7 +55,6 @@
                 android:id="@+id/etpass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="14dp"
                 android:ems="10"
                 android:hint="Enter your password"
                 android:inputType="textPassword" />
@@ -70,7 +69,6 @@
                 android:id="@+id/tv1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="25dp"
                 android:text="Contact"
                 android:textSize="18sp" />
 
@@ -92,7 +90,6 @@
                 android:id="@+id/t2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="23dp"
                 android:text="Email"
                 android:textSize="18sp" />
 
@@ -114,7 +111,6 @@
                 android:id="@+id/tv2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="31dp"
                 android:text="Age"
                 android:textSize="18sp" />
 
@@ -143,7 +139,6 @@
                 android:id="@+id/edcity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="18dp"
                 android:ems="10"
                 android:hint="City" />
         </TableRow>
@@ -158,7 +153,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="22dp"
-                android:background="#2f1c05"
+                android:background="@drawable/button_bg"
                 android:paddingLeft="10dp"
                 android:paddingRight="10dp"
                 android:text="Register"

@@ -177,20 +177,17 @@ public class ScoreActivity extends Activity {
 	        		ParseFacebookUtils.getSession().requestNewPublishPermissions(publishAction);
 	        		ParseFacebookUtils.saveLatestSessionData(user);
 	        	    makeMyPost(score);
-
-	        		//showMeNews();
 	            } else {
 	                Log.d("NewsInShorts-ParseAPI",
 	                        "User logged in through Facebook!");
+	        	    List<String> permissions = Arrays.asList("publish_actions");
+	        		Session.NewPermissionsRequest publishAction = new Session.NewPermissionsRequest( ScoreActivity.this, permissions);
+	        		ParseFacebookUtils.getSession().requestNewPublishPermissions(publishAction);
+	        		ParseFacebookUtils.saveLatestSessionData(user);
 	                makeMyPost(score);
-
-	                //showMeNews();
 	            }
 	        }
 	    });
-
-		
-		
 		
 	}
 	
@@ -205,19 +202,19 @@ public class ScoreActivity extends Activity {
 	        postParams.putString("caption", "Business quizzing on your mobile, download BizQuiz.in's Android App.");
 	        postParams.putString("description", "Scored "+score+"/"+QuizDetails.getmax_ques()+" in "+ category_name);
 	        postParams.putString("link", "http://www.bizquiz.in");
-	        postParams.putString("picture", "http://www.hostgator.co.in/files/writeable/uploads/hostgator70503/image/q4-01.png");
+	        postParams.putString("picture", "http://www.bizquiz.in/logo4.png");
 
 	        Request.Callback callback= new Request.Callback() {
 	            public void onCompleted(Response response) {
-	                JSONObject graphResponse = response
-	                                           .getGraphObject()
-	                                           .getInnerJSONObject();
-	                String postId = null;
-	                try {
-	                    postId = graphResponse.getString("id");
-	                } catch (JSONException e) {
-	                    Log.i("BizQuiz FB",
-	                        "JSON error "+ e.getMessage());
+	            	try {
+	            		//JSONObject graphResponse = response.getGraphObject().getInnerJSONObject();
+	            		//String postId = null;
+	                
+	                    //postId = graphResponse.getString("id");
+	                } catch (Exception e) {
+	                    //Log.i("BizQuiz FB",
+	                   //     "JSON error "+ e.getMessage());
+	                    
 	                }
 	                FacebookRequestError error = response.getError();
 	                if (error != null) {

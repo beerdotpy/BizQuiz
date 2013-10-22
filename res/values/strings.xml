@@ -8,9 +8,8 @@
     <string name="menu_aboutus">About Us</string>
    <string name="feedback">Chose the type of feedback</string>
     <string-array name="type_feedback">
-        <item>Question</item>
-        <item>Suggestion</item>
         <item>Feedback</item>
+        <item>Share a BizQ</item>
         
     </string-array>
 
@@ -21,7 +20,7 @@
 	<string name="Category1">BizUpdate</string>
 	<string name="Category2">Brandology</string>
 	<string name="Category3">WhatDFact</string>
-	<string name="Category4">Bizness</string>
+	<string name="Category4">Biznessinc</string>
 	<string name="Category5">CryptiClues</string>
 	<string name="Category6">QoftheDay</string>
 	<string name="Category7">BizJargons</string>
