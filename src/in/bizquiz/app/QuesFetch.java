@@ -466,7 +466,7 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
     		
     		threshvalue=(length*90)/100;
     	}else{
-    		threshvalue=(length*95)/100;
+    		threshvalue=(length*90)/100;
     	}
     	
     	Log.d("threshvalue",Integer.toString(threshvalue)); 	  	
