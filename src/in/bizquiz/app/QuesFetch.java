@@ -430,7 +430,8 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
 	    pDialog.setIndeterminate(true);
 	    pDialog.show();
 	
-	    int length=QuizDetails.getans().length();
+	    String temp_ans=QuizDetails.getans().replaceAll("//s+", "");
+	    int length=temp_ans.length();
 	   // threshvalue=length/2+1;
 	    
 	    //Log.d("ThreshValue",Integer.toString(threshvalue));

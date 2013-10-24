@@ -52,7 +52,7 @@
         android:textColor="#ffffff" />
 
     <Button
-        android:id="@+id/cat7_prev"
+        android:id="@+id/cat7_nex"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/cat7_next"

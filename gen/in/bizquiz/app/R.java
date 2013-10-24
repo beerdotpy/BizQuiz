@@ -281,127 +281,128 @@ containing a value of this type.
         public static final int timerstrip=0x7f020037;
     }
     public static final class id {
-        public static final int answer=0x7f050047;
+        public static final int answer=0x7f050048;
         public static final int archiveListView=0x7f050007;
         public static final int archive_answer=0x7f050006;
-        public static final int attempt_ques=0x7f05001c;
-        public static final int badge=0x7f050023;
-        public static final int bt_login=0x7f050031;
-        public static final int bt_share=0x7f050056;
-        public static final int buy=0x7f050045;
+        public static final int attempt_ques=0x7f05001d;
+        public static final int badge=0x7f050024;
+        public static final int bt_login=0x7f050032;
+        public static final int bt_share=0x7f050057;
+        public static final int buy=0x7f050046;
+        public static final int cat7_nex=0x7f05000e;
         public static final int cat7_next=0x7f05000c;
         public static final int cat7_prev=0x7f05000b;
-        public static final int catListView=0x7f05001a;
-        public static final int category1=0x7f05000f;
-        public static final int category2=0x7f050010;
-        public static final int category3=0x7f050012;
-        public static final int category4=0x7f050013;
-        public static final int category5=0x7f050015;
-        public static final int category6=0x7f050016;
-        public static final int category7=0x7f050018;
-        public static final int category8=0x7f050019;
-        public static final int com_facebook_login_activity_progress_bar=0x7f05005d;
-        public static final int com_facebook_picker_activity_circle=0x7f05005c;
-        public static final int com_facebook_picker_checkbox=0x7f05005f;
-        public static final int com_facebook_picker_checkbox_stub=0x7f050063;
-        public static final int com_facebook_picker_divider=0x7f050067;
-        public static final int com_facebook_picker_done_button=0x7f050066;
-        public static final int com_facebook_picker_image=0x7f050060;
-        public static final int com_facebook_picker_list_section_header=0x7f050064;
-        public static final int com_facebook_picker_list_view=0x7f05005b;
-        public static final int com_facebook_picker_profile_pic_stub=0x7f050061;
-        public static final int com_facebook_picker_row_activity_circle=0x7f05005e;
-        public static final int com_facebook_picker_title=0x7f050062;
-        public static final int com_facebook_picker_title_bar=0x7f050069;
-        public static final int com_facebook_picker_title_bar_stub=0x7f050068;
-        public static final int com_facebook_picker_top_bar=0x7f050065;
-        public static final int com_facebook_placepickerfragment_search_box_stub=0x7f05006a;
-        public static final int com_facebook_usersettingsfragment_login_button=0x7f05006f;
-        public static final int com_facebook_usersettingsfragment_logo_image=0x7f05006d;
-        public static final int com_facebook_usersettingsfragment_profile_name=0x7f05006e;
-        public static final int ed_about=0x7f050024;
-        public static final int ed_email=0x7f05001f;
-        public static final int ed_login=0x7f050030;
-        public static final int ed_pass=0x7f050032;
-        public static final int ed_username=0x7f05001d;
-        public static final int edage=0x7f050051;
-        public static final int edcity=0x7f050053;
-        public static final int edcontact=0x7f05004d;
-        public static final int edeamil=0x7f05004f;
-        public static final int edname=0x7f05004a;
-        public static final int et_age=0x7f05003a;
-        public static final int et_city=0x7f05003e;
-        public static final int et_contact=0x7f05003c;
-        public static final int et_email=0x7f050038;
-        public static final int et_name=0x7f050036;
-        public static final int etpass=0x7f05004b;
-        public static final int facebook_link=0x7f05002d;
+        public static final int catListView=0x7f05001b;
+        public static final int category1=0x7f050010;
+        public static final int category2=0x7f050011;
+        public static final int category3=0x7f050013;
+        public static final int category4=0x7f050014;
+        public static final int category5=0x7f050016;
+        public static final int category6=0x7f050017;
+        public static final int category7=0x7f050019;
+        public static final int category8=0x7f05001a;
+        public static final int com_facebook_login_activity_progress_bar=0x7f05005e;
+        public static final int com_facebook_picker_activity_circle=0x7f05005d;
+        public static final int com_facebook_picker_checkbox=0x7f050060;
+        public static final int com_facebook_picker_checkbox_stub=0x7f050064;
+        public static final int com_facebook_picker_divider=0x7f050068;
+        public static final int com_facebook_picker_done_button=0x7f050067;
+        public static final int com_facebook_picker_image=0x7f050061;
+        public static final int com_facebook_picker_list_section_header=0x7f050065;
+        public static final int com_facebook_picker_list_view=0x7f05005c;
+        public static final int com_facebook_picker_profile_pic_stub=0x7f050062;
+        public static final int com_facebook_picker_row_activity_circle=0x7f05005f;
+        public static final int com_facebook_picker_title=0x7f050063;
+        public static final int com_facebook_picker_title_bar=0x7f05006a;
+        public static final int com_facebook_picker_title_bar_stub=0x7f050069;
+        public static final int com_facebook_picker_top_bar=0x7f050066;
+        public static final int com_facebook_placepickerfragment_search_box_stub=0x7f05006b;
+        public static final int com_facebook_usersettingsfragment_login_button=0x7f050070;
+        public static final int com_facebook_usersettingsfragment_logo_image=0x7f05006e;
+        public static final int com_facebook_usersettingsfragment_profile_name=0x7f05006f;
+        public static final int ed_about=0x7f050025;
+        public static final int ed_email=0x7f050020;
+        public static final int ed_login=0x7f050031;
+        public static final int ed_pass=0x7f050033;
+        public static final int ed_username=0x7f05001e;
+        public static final int edage=0x7f050052;
+        public static final int edcity=0x7f050054;
+        public static final int edcontact=0x7f05004e;
+        public static final int edeamil=0x7f050050;
+        public static final int edname=0x7f05004b;
+        public static final int et_age=0x7f05003b;
+        public static final int et_city=0x7f05003f;
+        public static final int et_contact=0x7f05003d;
+        public static final int et_email=0x7f050039;
+        public static final int et_name=0x7f050037;
+        public static final int etpass=0x7f05004c;
+        public static final int facebook_link=0x7f05002e;
         public static final int fact=0x7f05000a;
-        public static final int fd_submit=0x7f050027;
+        public static final int fd_submit=0x7f050028;
         public static final int heading=0x7f050009;
-        public static final int imageView1=0x7f05002f;
-        public static final int l1=0x7f05002e;
+        public static final int imageView1=0x7f050030;
+        public static final int l1=0x7f05002f;
         public static final int large=0x7f050002;
         public static final int linear=0x7f050004;
-        public static final int linearLayout1=0x7f05002a;
-        public static final int linearLayout2=0x7f050057;
-        public static final int listView1=0x7f050059;
-        public static final int lv_score=0x7f05005a;
-        public static final int menu_archive=0x7f050075;
-        public static final int menu_exit=0x7f050078;
-        public static final int menu_feedback=0x7f050076;
-        public static final int menu_settings=0x7f050077;
-        public static final int menu_statistics=0x7f050074;
-        public static final int monthListView=0x7f050033;
-        public static final int month_name=0x7f050058;
+        public static final int linearLayout1=0x7f05002b;
+        public static final int linearLayout2=0x7f050058;
+        public static final int listView1=0x7f05005a;
+        public static final int lv_score=0x7f05005b;
+        public static final int menu_archive=0x7f050076;
+        public static final int menu_exit=0x7f050079;
+        public static final int menu_feedback=0x7f050077;
+        public static final int menu_settings=0x7f050078;
+        public static final int menu_statistics=0x7f050075;
+        public static final int monthListView=0x7f050034;
+        public static final int month_name=0x7f050059;
         public static final int myAdView=0x7f050005;
         public static final int normal=0x7f050001;
-        public static final int picker_subtitle=0x7f05006c;
-        public static final int previous=0x7f050041;
-        public static final int profile=0x7f050034;
-        public static final int profile_submit=0x7f050040;
-        public static final int question=0x7f050046;
-        public static final int reg=0x7f050054;
+        public static final int picker_subtitle=0x7f05006d;
+        public static final int previous=0x7f050042;
+        public static final int profile=0x7f050035;
+        public static final int profile_submit=0x7f050041;
+        public static final int question=0x7f050047;
+        public static final int reg=0x7f050055;
         public static final int relativeLayout1=0x7f050008;
-        public static final int score=0x7f050049;
-        public static final int scre=0x7f050072;
-        public static final int search_box=0x7f05006b;
-        public static final int sell=0x7f050044;
-        public static final int signin=0x7f050055;
-        public static final int site_link=0x7f05002c;
+        public static final int score=0x7f05004a;
+        public static final int scre=0x7f050073;
+        public static final int search_box=0x7f05006c;
+        public static final int sell=0x7f050045;
+        public static final int signin=0x7f050056;
+        public static final int site_link=0x7f05002d;
         public static final int small=0x7f050000;
-        public static final int spinner1=0x7f050021;
-        public static final int stats=0x7f050042;
-        public static final int submit=0x7f050048;
-        public static final int t1=0x7f05001e;
-        public static final int t2=0x7f05004e;
-        public static final int t3=0x7f050052;
-        public static final int tableLayout1=0x7f05001b;
-        public static final int tableRow1=0x7f05000e;
-        public static final int tableRow2=0x7f050011;
-        public static final int tableRow3=0x7f050014;
-        public static final int tableRow4=0x7f050017;
-        public static final int tableRow5=0x7f050022;
-        public static final int tableRow6=0x7f050025;
-        public static final int tableRow7=0x7f05003f;
-        public static final int textView1=0x7f050026;
+        public static final int spinner1=0x7f050022;
+        public static final int stats=0x7f050043;
+        public static final int submit=0x7f050049;
+        public static final int t1=0x7f05001f;
+        public static final int t2=0x7f05004f;
+        public static final int t3=0x7f050053;
+        public static final int tableLayout1=0x7f05001c;
+        public static final int tableRow1=0x7f05000f;
+        public static final int tableRow2=0x7f050012;
+        public static final int tableRow3=0x7f050015;
+        public static final int tableRow4=0x7f050018;
+        public static final int tableRow5=0x7f050023;
+        public static final int tableRow6=0x7f050026;
+        public static final int tableRow7=0x7f050040;
+        public static final int textView1=0x7f050027;
         public static final int textView2=0x7f05000d;
-        public static final int textView3=0x7f050028;
-        public static final int textView4=0x7f050029;
-        public static final int textView5=0x7f050020;
-        public static final int textView6=0x7f05002b;
-        public static final int timer=0x7f050043;
-        public static final int tv1=0x7f05004c;
-        public static final int tv2=0x7f050050;
-        public static final int tv_age=0x7f05003b;
-        public static final int tv_city=0x7f05003d;
-        public static final int tv_contact=0x7f050039;
-        public static final int tv_email=0x7f050037;
-        public static final int tv_monthText=0x7f050070;
-        public static final int tv_name=0x7f050035;
-        public static final int tv_quesText=0x7f050071;
+        public static final int textView3=0x7f050029;
+        public static final int textView4=0x7f05002a;
+        public static final int textView5=0x7f050021;
+        public static final int textView6=0x7f05002c;
+        public static final int timer=0x7f050044;
+        public static final int tv1=0x7f05004d;
+        public static final int tv2=0x7f050051;
+        public static final int tv_age=0x7f05003c;
+        public static final int tv_city=0x7f05003e;
+        public static final int tv_contact=0x7f05003a;
+        public static final int tv_email=0x7f050038;
+        public static final int tv_monthText=0x7f050071;
+        public static final int tv_name=0x7f050036;
+        public static final int tv_quesText=0x7f050072;
         public static final int tv_score=0x7f050003;
-        public static final int user_name=0x7f050073;
+        public static final int user_name=0x7f050074;
     }
     public static final class layout {
         public static final int activity_aboutus=0x7f030000;
@@ -558,7 +559,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name in.bizquiz.app:animation
+          @attr name android:animation
         */
         public static final int AdView_animation = 2;
         /**
@@ -572,7 +573,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name in.bizquiz.app:banner_type
+          @attr name android:banner_type
         */
         public static final int AdView_banner_type = 1;
         /**
@@ -586,7 +587,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name in.bizquiz.app:canShowMR
+          @attr name android:canShowMR
         */
         public static final int AdView_canShowMR = 4;
         /**
@@ -600,7 +601,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name in.bizquiz.app:placementType
+          @attr name android:placementType
         */
         public static final int AdView_placementType = 3;
         /**
@@ -614,7 +615,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name in.bizquiz.app:test_mode
+          @attr name android:test_mode
         */
         public static final int AdView_test_mode = 0;
         /** Attributes that can be used with a com_facebook_friend_picker_fragment.
@@ -641,7 +642,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name in.bizquiz.app:multi_select
+          @attr name android:multi_select
         */
         public static final int com_facebook_friend_picker_fragment_multi_select = 0;
         /** Attributes that can be used with a com_facebook_login_view.
@@ -674,7 +675,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name in.bizquiz.app:confirm_logout
+          @attr name android:confirm_logout
         */
         public static final int com_facebook_login_view_confirm_logout = 0;
         /**
@@ -688,7 +689,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name in.bizquiz.app:fetch_user_info
+          @attr name android:fetch_user_info
         */
         public static final int com_facebook_login_view_fetch_user_info = 1;
         /**
@@ -702,7 +703,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name in.bizquiz.app:login_text
+          @attr name android:login_text
         */
         public static final int com_facebook_login_view_login_text = 2;
         /**
@@ -716,7 +717,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name in.bizquiz.app:logout_text
+          @attr name android:logout_text
         */
         public static final int com_facebook_login_view_logout_text = 3;
         /** Attributes that can be used with a com_facebook_picker_fragment.
@@ -752,7 +753,7 @@ containing a value of this type.
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name in.bizquiz.app:done_button_background
+          @attr name android:done_button_background
         */
         public static final int com_facebook_picker_fragment_done_button_background = 6;
         /**
@@ -766,7 +767,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name in.bizquiz.app:done_button_text
+          @attr name android:done_button_text
         */
         public static final int com_facebook_picker_fragment_done_button_text = 4;
         /**
@@ -780,7 +781,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name in.bizquiz.app:extra_fields
+          @attr name android:extra_fields
         */
         public static final int com_facebook_picker_fragment_extra_fields = 1;
         /**
@@ -794,7 +795,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name in.bizquiz.app:show_pictures
+          @attr name android:show_pictures
         */
         public static final int com_facebook_picker_fragment_show_pictures = 0;
         /**
@@ -808,7 +809,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name in.bizquiz.app:show_title_bar
+          @attr name android:show_title_bar
         */
         public static final int com_facebook_picker_fragment_show_title_bar = 2;
         /**
@@ -818,7 +819,7 @@ containing a value of this type.
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name in.bizquiz.app:title_bar_background
+          @attr name android:title_bar_background
         */
         public static final int com_facebook_picker_fragment_title_bar_background = 5;
         /**
@@ -832,7 +833,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name in.bizquiz.app:title_text
+          @attr name android:title_text
         */
         public static final int com_facebook_picker_fragment_title_text = 3;
         /** Attributes that can be used with a com_facebook_place_picker_fragment.
@@ -865,7 +866,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name in.bizquiz.app:radius_in_meters
+          @attr name android:radius_in_meters
         */
         public static final int com_facebook_place_picker_fragment_radius_in_meters = 0;
         /**
@@ -879,7 +880,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name in.bizquiz.app:results_limit
+          @attr name android:results_limit
         */
         public static final int com_facebook_place_picker_fragment_results_limit = 1;
         /**
@@ -893,7 +894,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name in.bizquiz.app:search_text
+          @attr name android:search_text
         */
         public static final int com_facebook_place_picker_fragment_search_text = 2;
         /**
@@ -907,7 +908,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name in.bizquiz.app:show_search_box
+          @attr name android:show_search_box
         */
         public static final int com_facebook_place_picker_fragment_show_search_box = 3;
         /** Attributes that can be used with a com_facebook_profile_picture_view.
@@ -936,7 +937,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name in.bizquiz.app:is_cropped
+          @attr name android:is_cropped
         */
         public static final int com_facebook_profile_picture_view_is_cropped = 1;
         /**
@@ -954,7 +955,7 @@ containing a value of this type.
 <tr><td><code>normal</code></td><td>-3</td><td></td></tr>
 <tr><td><code>large</code></td><td>-4</td><td></td></tr>
 </table>
-          @attr name in.bizquiz.app:preset_size
+          @attr name android:preset_size
         */
         public static final int com_facebook_profile_picture_view_preset_size = 0;
     };
