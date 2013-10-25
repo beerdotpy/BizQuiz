@@ -93,8 +93,8 @@ public class Category7 extends Activity {
        name_of_quiz=(TextView) findViewById(R.id.heading);
        fact=(TextView) findViewById(R.id.fact);
        fact.setMovementMethod(new ScrollingMovementMethod());
-       cat7_prev=(Button) findViewById(R.id.cat7_next);
-       cat7_next=(Button) findViewById(R.id.cat7_prev);
+       cat7_prev=(Button) findViewById(R.id.cat7_prev);
+       cat7_next=(Button) findViewById(R.id.cat7_next);
        
        name_of_quiz.setText("Biz Jargons");
        new Facts(Category7.this).execute(Integer.toString(day_of_month));

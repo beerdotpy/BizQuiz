@@ -290,8 +290,8 @@ containing a value of this type.
         public static final int bt_share=0x7f050057;
         public static final int buy=0x7f050046;
         public static final int cat7_nex=0x7f05000e;
-        public static final int cat7_next=0x7f05000c;
-        public static final int cat7_prev=0x7f05000b;
+        public static final int cat7_next=0x7f05000b;
+        public static final int cat7_prev=0x7f05000c;
         public static final int catListView=0x7f05001b;
         public static final int category1=0x7f050010;
         public static final int category2=0x7f050011;

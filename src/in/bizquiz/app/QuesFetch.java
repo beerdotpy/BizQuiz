@@ -430,11 +430,10 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
 	    pDialog.setIndeterminate(true);
 	    pDialog.show();
 	
-	    String temp_ans=QuizDetails.getans().replaceAll("//s+", "");
+	    String temp_ans=QuizDetails.getans();
+	    temp_ans=temp_ans.replaceAll("\\s+", "");
 	    int length=temp_ans.length();
-	   // threshvalue=length/2+1;
-	    
-	    //Log.d("ThreshValue",Integer.toString(threshvalue));
+	   
 	    Boolean check=compareanswer(useranswer,length);
 	      
 	    if(check){
@@ -475,12 +474,13 @@ class Questionfetch extends AsyncTask<String, Void, Boolean> {
     	int counter = 0;
     	
     	ans=ans.toLowerCase();
-    	ans=ans.replaceAll("//s+","");
+    	ans=ans.replaceAll("\\s+","");
     	
     	String correctans=QuizDetails.getans().toLowerCase();
-    	correctans=correctans.replaceAll("//s+", "");
+    	correctans=correctans.replaceAll("\\s+", "");
     	
-    	for(int i=0;i<correctans.length();i++){		
+    	
+    	for(int i=0;i<length;i++){		
     		try{		
     			if(ans.charAt(i)==correctans.charAt(i)){
     				counter++;		
