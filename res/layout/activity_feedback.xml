@@ -3,19 +3,19 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bqhomescreen2">
+    android:background="@drawable/bqhomescreen1_small">
 
 <RelativeLayout 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bqhomescreen2" >
+    android:background="@drawable/bqhomescreen1_small" >
 
     <TableLayout
         android:id="@+id/tableLayout1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="130dp" >
+        android:layout_below="@+id/l1"
+        android:layout_centerHorizontal="true" >
 
         <TableRow
             android:id="@+id/tableRow2"
@@ -132,21 +132,13 @@
     </TableLayout>
 
     <LinearLayout
+        android:id="@+id/l1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
+		android:layout_marginTop="60dp"
         android:orientation="vertical" >
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="100dp"
-            android:text="Reach Us"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/textView3"
@@ -175,7 +167,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/tableLayout1"
-        android:layout_marginTop="39dp"
         android:orientation="vertical" >
 
         <TextView
@@ -215,7 +206,7 @@
     ap:placementType="interstitial"
 	ap:test_mode="true"
 	ap:canShowMR="true"
-	android:layout_alignParentBottom="true"
+	android:layout_below="@+id/linearLayout1"
 	/>
 
 </RelativeLayout>
