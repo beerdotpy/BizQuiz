@@ -42,17 +42,18 @@
         android:typeface="serif" />
 
     <Button
-        android:id="@+id/cat7_prev"
+        android:id="@+id/cat7_next"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-		android:layout_alignParentLeft="true"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/fact"
         android:layout_marginLeft="15dp"
-  		android:layout_below="@+id/fact"
         android:background="@drawable/button_bg"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:text="Previous"
         android:textColor="#ffffff" />
+
          <com.daexsvnzie.tvjdzhqkcm161203.AdView
 	xmlns:ap="http://schemas.android.com/apk/res-auto"
 	android:id="@+id/myAdView"
@@ -68,14 +69,14 @@
 	/>
 
          <Button
-             android:id="@+id/cat7_next"
+             android:id="@+id/cat7_prev"
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
              android:layout_above="@+id/myAdView"
-			 android:layout_alignParentRight="true"
+             android:layout_alignBaseline="@+id/cat7_next"
+             android:layout_alignParentRight="true"
              android:layout_marginRight="15dp"
-             android:layout_alignBaseline="@+id/cat7_prev"
-             android:background="#2f1c05"
+             android:background="@drawable/button_bg"
              android:paddingLeft="25dp"
              android:paddingRight="25dp"
              android:text="Next"
