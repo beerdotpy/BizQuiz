@@ -199,9 +199,9 @@ public class ScoreActivity extends Activity {
 
 	        Bundle postParams = new Bundle();
 	        postParams.putString("name", "Bizzinga!");
-	        postParams.putString("caption", "Business quizzing on your mobile,\n Download BizQuiz.in's Android App.");
-	        postParams.putString("description", "Scored "+score+"/"+QuizDetails.getmax_ques()+" in "+ category_name);
-	        postParams.putString("link", "http://www.bizquiz.in");
+	        postParams.putString("description", "Business quizzing on your mobile,\n Download BizQuiz.in's Android App.");
+	        postParams.putString("caption", "Scored "+score+"/"+QuizDetails.getmax_ques()+" in "+ category_name);
+	        postParams.putString("link", "https://play.google.com/store/apps/details?id=in.bizquiz.app");
 	        postParams.putString("picture", "http://www.bizquiz.in/logo4.png");
 
 	        Request.Callback callback= new Request.Callback() {
