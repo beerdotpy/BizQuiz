@@ -52,10 +52,6 @@ public class Home extends Activity {
     	   
           }
        
-       
-		
-		                 
-	     
 		   Date date=new Date(0);  
 	       //---get current date and time---
 	       Calendar cal_alarm = Calendar.getInstance();       
