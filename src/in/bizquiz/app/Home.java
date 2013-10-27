@@ -24,6 +24,8 @@ public class Home extends Activity {
 		super.onCreate(savedInstanceState);
        setContentView(R.layout.activity_home);
        
+       AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+       
        sp=this.getSharedPreferences("First_run", MODE_PRIVATE);
        SharedPreferences.Editor editor = sp.edit();
        boolean clear_prefs=sp.getBoolean("clear_prefrences", true);
@@ -52,15 +54,15 @@ public class Home extends Activity {
        
        
 		
-		AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);                 
+		                 
 	     
 		   Date date=new Date(0);  
 	       //---get current date and time---
 	       Calendar cal_alarm = Calendar.getInstance();       
 	       Calendar cal_now=Calendar.getInstance();
 	       //---sets the time for the alarm to trigger---      
-	       cal_alarm.set(Calendar.HOUR_OF_DAY, 00);
-	       cal_alarm.set(Calendar.MINUTE, 05);
+	       cal_alarm.set(Calendar.HOUR_OF_DAY, 23);
+	       cal_alarm.set(Calendar.MINUTE, 56);
 	       cal_alarm.set(Calendar.SECOND, 00);
 	       if(cal_alarm.before(cal_now)){//if its in the past increment
 	           cal_alarm.add(Calendar.DATE,1);
