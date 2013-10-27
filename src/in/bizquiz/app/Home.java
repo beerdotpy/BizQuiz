@@ -18,7 +18,7 @@ public class Home extends Activity {
 	
 	SharedPreferences sp;
 	
-	//////
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
