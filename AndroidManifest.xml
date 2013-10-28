@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="in.bizquiz.app"
+<<<<<<< HEAD
     android:versionCode="13"
     android:versionName="1.12" >
+=======
+    android:versionCode="11"
+
+    android:versionName="1.11" >
+
+    android:versionName="1.10" >
+>>>>>>> 8cf936e093d25bca30dd3e7575023c509bc98ef2
+>>>>>>> 5eeac5cf63ebf501df087ac6ceebc8ff72fe8192
 
     <uses-sdk
         android:minSdkVersion="8"
