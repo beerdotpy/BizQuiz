@@ -19,11 +19,13 @@ public class Home extends Activity {
 	
 	SharedPreferences sp;
 	
-	//////
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
        setContentView(R.layout.activity_home);
+       
+       AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
        
        sp=this.getSharedPreferences("First_run", MODE_PRIVATE);
        SharedPreferences.Editor editor = sp.edit();
@@ -51,10 +53,6 @@ public class Home extends Activity {
     	   
           }
        
-       
-		
-		AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);                 
-	     
 		   Date date=new Date(0);  
 	       //---get current date and time---
 	       Calendar cal_alarm = Calendar.getInstance();       
