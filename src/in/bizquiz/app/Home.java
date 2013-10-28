@@ -13,6 +13,7 @@ import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class Home extends Activity {
 	
@@ -43,7 +44,7 @@ public class Home extends Activity {
     	   this.getSharedPreferences("First_run", MODE_PRIVATE).edit().clear().commit();
     	   Log.d("prefrences","cleared");
     	   System.out.println(c.getTime()); 
-    	   
+    	   Toast.makeText(getApplicationContext(), "Questions Updated!", Toast.LENGTH_LONG).show();
     	   editor.putBoolean("clear_prefrences", false);
     	   editor.putInt("Month_of_year", month_of_year);
     	   editor.commit();
