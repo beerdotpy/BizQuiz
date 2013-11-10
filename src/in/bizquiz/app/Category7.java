@@ -101,7 +101,12 @@ public class Category7 extends Activity {
        
        
        if(index==0){
+    	
+    	   try{
     	   cat7_prev.setEnabled(false);
+    	   }catch(Exception e){
+    		   finish();
+    	   }
        }
        
        cat7_prev.setOnClickListener(new OnClickListener() {

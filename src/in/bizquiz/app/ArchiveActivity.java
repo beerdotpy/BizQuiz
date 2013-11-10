@@ -117,8 +117,8 @@ public class ArchiveActivity extends Activity{
 				array_id=new String[jArray.length()];
 				array_question=new String[jArray.length()];
 				array_answer=new String[jArray.length()];
-				temp_question=new String[jArray.length()];
-				temp_answer=new String[jArray.length()];
+				temp_question=new String[length];
+				temp_answer=new String[length];
 				
 				System.out.println("*****JARRAY*****"+jArray.length());
 				

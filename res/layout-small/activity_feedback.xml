@@ -143,7 +143,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="50dp"
-            android:text="Suggestions and critical reviews are welcome!"
+            android:text="Suggestions and reviews are welcome!"
             android:textAlignment="center"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 

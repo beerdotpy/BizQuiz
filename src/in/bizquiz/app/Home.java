@@ -44,6 +44,7 @@ public class Home extends Activity {
        if(clear_prefs){
     	
     	   this.getSharedPreferences("First_run", MODE_PRIVATE).edit().clear().commit();
+    	   Toast.makeText(Home.this, "Question Updated", Toast.LENGTH_LONG).show();
     	   Log.d("prefrences","cleared");
     	   System.out.println(c.getTime()); 
     	   Toast.makeText(getApplicationContext(), "Questions Updated!", Toast.LENGTH_LONG).show();
@@ -74,8 +75,8 @@ public class Home extends Activity {
 	           this, 0, i, 0);               
 
 	       //---sets the alarm to trigger---
-	       alarmManager.set(AlarmManager.RTC_WAKEUP, 
-	           cal_alarm.getTimeInMillis(), displayIntent);  
+	       alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, 
+	           cal_alarm.getTimeInMillis(),1*60*60*1000, displayIntent);  
 
 	       
 

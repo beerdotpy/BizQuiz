@@ -149,7 +149,7 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="2dp"
             android:textAlignment="center"
-            android:text="Suggestions and critical reviews are welcome!"
+            android:text="Suggestions and reviews are welcome!"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <TextView
