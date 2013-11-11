@@ -44,7 +44,7 @@ public class Home extends Activity {
        if(clear_prefs){
     	
     	   this.getSharedPreferences("First_run", MODE_PRIVATE).edit().clear().commit();
-    	   Toast.makeText(Home.this, "Question Updated", Toast.LENGTH_LONG).show();
+    	   
     	   Log.d("prefrences","cleared");
     	   System.out.println(c.getTime()); 
     	   Toast.makeText(getApplicationContext(), "Questions Updated!", Toast.LENGTH_LONG).show();
@@ -59,8 +59,8 @@ public class Home extends Activity {
 	       Calendar cal_alarm = Calendar.getInstance();       
 	       Calendar cal_now=Calendar.getInstance();
 	       //---sets the time for the alarm to trigger---      
-	       cal_alarm.set(Calendar.HOUR_OF_DAY, 00);
-	       cal_alarm.set(Calendar.MINUTE, 05);
+	       cal_alarm.set(Calendar.HOUR_OF_DAY, 22);
+	       cal_alarm.set(Calendar.MINUTE, 48);
 	       cal_alarm.set(Calendar.SECOND, 00);
 	       if(cal_alarm.before(cal_now)){//if its in the past increment
 	           cal_alarm.add(Calendar.DATE,1);
