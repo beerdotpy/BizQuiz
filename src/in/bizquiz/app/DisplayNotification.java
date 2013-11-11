@@ -1,5 +1,6 @@
 package in.bizquiz.app;
 
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Notification;
@@ -36,7 +37,7 @@ public class DisplayNotification extends Activity {
         
         NotificationCompat.Builder builder=
         		new NotificationCompat.Builder(this)
-        .setSmallIcon(R.drawable.ic_launcher)
+        .setSmallIcon(R.drawable.bqicon)
         .setContentIntent(displayIntent)
         .setContentTitle("BizQuiz")
         .setContentText("Q Of The Day Updated!")
