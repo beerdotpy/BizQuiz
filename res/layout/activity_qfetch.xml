@@ -116,7 +116,7 @@
 	ap:banner_type="inappad"
     ap:placementType="interstitial"
     android:layout_marginTop="15dp"
-	ap:test_mode="true"
+	ap:test_mode="false"
 	ap:canShowMR="true"
 	android:layout_alignParentBottom="true"
 	/>

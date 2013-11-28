@@ -185,7 +185,7 @@
 	ap:animation="fade"
 	ap:banner_type="inappad"
     ap:placementType="interstitial"
-	ap:test_mode="true"
+	ap:test_mode="false"
 	ap:canShowMR="true"
 	android:layout_alignParentBottom="true"
 	/>
